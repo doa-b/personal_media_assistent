@@ -7,8 +7,17 @@ const initialState = {
             episode: 2,
             episodeTitle: 'Ye of little faith',
             episodeDescription: 'bla bla bla bla bla',
-            seriesEnded: false,
-            nextAirDate: Date(),
+            nextAirDate: '12-12-2020',
+            status: 'continuing'
+        },
+        {
+            id: 1,
+            name: 'Dexter',
+            season: 5,
+            episode: 12,
+            episodeTitle: 'Death comes in many ways',
+            episodeDescription: 'bla bla bla bla bla',
+            nextAirDate: null,
             status: 'continuing'
         }
     ]

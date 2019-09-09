@@ -60,6 +60,15 @@
     margin: 2px 2px
 }
 
+.cardDetails em {
+    color: blue;
+    font-weight: bold;
+}
+
+.next {
+    color: darkgrey;
+}
+
 @media all and (min-width: 300px) {
     .aside { flex: 1 0 0; }
 }

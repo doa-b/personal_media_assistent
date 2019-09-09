@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 
 import classes from './SeriesList.module.css'
 import SeriesListItem from '../../components/SeriesListItem/SeriesListItem'
@@ -9,11 +10,21 @@ class SeriesList extends Component {
 
     render() {
 
-        return (<div className={classes.SeriesList}>
-            <SeriesListItem/>
-        </div>);
+        return (
+            this.props.seriesList.map((series) =>
+            <div className={classes.SeriesList}
+            key={series.id}>
+            <SeriesListItem
+            series={series}/>
+        </div>));
 
     }
 }
 
-export default SeriesList;
+const mapStateToProps = (state) => {
+    return {
+        seriesList: state.series
+    }
+};
+
+export default connect(mapStateToProps)(SeriesList);

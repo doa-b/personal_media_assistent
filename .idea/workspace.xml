@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d6efb2d-828b-47d4-89d1-429d0a33d734" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/step_forward.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StatusIcon/StatusIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StatusIcon/statusIcon.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/seriesReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/seriesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/seriesReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +28,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="21" />
-          <entry key="js" value="25" />
+          <entry key="css" value="23" />
+          <entry key="js" value="26" />
           <entry key="json" value="2" />
           <entry key="lock" value="1" />
           <entry key="txt" value="1" />
@@ -47,9 +37,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="21" />
+          <entry key="CSS" value="23" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="25" />
+          <entry key="JavaScript" value="26" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="yarn.lock" value="1" />
         </counts>
@@ -61,132 +51,149 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="493" />
+          <entry key="css" value="545" />
           <entry key="ft" value="9" />
-          <entry key="js" value="2907" />
+          <entry key="js" value="3565" />
           <entry key="json" value="6" />
-          <entry key="txt" value="36" />
+          <entry key="txt" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="493" />
+          <entry key="CSS" value="545" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="2907" />
-          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="JavaScript" value="3565" />
+          <entry key="PLAIN_TEXT" value="83" />
           <entry key="VTL" value="9" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.9">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/SeriesList/SeriesList.module.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/store/reducers/seriesReducer.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="935">
-                  <caret line="73" selection-start-line="73" selection-end-line="73" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/StatusIcon/StatusIcon.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/StatusIcon/statusIcon.module.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Avatar/Avatar.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="57" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="57" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Avatar/Avatar.module.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="9" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/containers/SeriesList/SeriesList.module.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="34">
+                      <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="340">
+                      <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+                      <folding>
+                        <element signature="e#0#39#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css">
+                  <provider selected="true" editor-type-id="text-editor" />
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="408">
+                      <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+                      <folding>
+                        <element signature="e#0#26#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/store/reducers/seriesReducer.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="374">
+                      <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="935">
+                      <caret line="82" selection-start-line="82" selection-end-line="82" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/components/StatusIcon/StatusIcon.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="34">
+                      <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/components/StatusIcon/statusIcon.module.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="136">
+                      <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/components/Avatar/Avatar.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="204">
+                      <caret line="12" column="57" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="57" />
+                      <folding>
+                        <element signature="e#0#26#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/components/Avatar/Avatar.module.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state>
+                      <caret selection-end-line="9" selection-end-column="1" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="1156">
+                      <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css">
+            <entry file="file://$PROJECT_DIR$/src/store/reducers/seriesReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+                <state relative-caret-position="391">
+                  <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -242,15 +249,15 @@
         <option value="$PROJECT_DIR$/src/store/reducers/reducer.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/SeriesReducer.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/store/reducers/seriesReducer.js" />
         <option value="$PROJECT_DIR$/src/hoc/Layout/Layout.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" />
         <option value="$PROJECT_DIR$/src/components/StatusIcon/statusIcon.css" />
-        <option value="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css" />
         <option value="$PROJECT_DIR$/src/components/StatusIcon/StatusIcon.js" />
         <option value="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.module.css" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/seriesReducer.js" />
+        <option value="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css" />
         <option value="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css" />
         <option value="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js" />
       </list>
@@ -437,7 +444,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568043428249" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568046319883" />
     <property name="last_opened_file_path" value="D:/PROJECTS/burger-builder" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -487,7 +494,7 @@
       <option name="presentableId" value="Default" />
       <updated>1567942622184</updated>
       <workItem from="1567942623641" duration="7802000" />
-      <workItem from="1568020614085" duration="17319000" />
+      <workItem from="1568020614085" duration="20487000" />
     </task>
     <task id="LOCAL-00001" summary="Created Responsive layout closes #4">
       <created>1568024706359</created>
@@ -496,15 +503,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568024706359</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Build and Styled SeriesListItem closes #6">
+      <created>1568043533973</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568043533973</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25121000" />
+    <option name="totallyTimeSpent" value="28289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2249467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -546,7 +559,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created Responsive layout closes #4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Responsive layout closes #4" />
+    <MESSAGE value="Build and Styled SeriesListItem closes #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build and Styled SeriesListItem closes #6" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Nieuw tekstdocument.txt">
@@ -699,9 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/StatusIcon/statusIcon.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -723,16 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -743,27 +744,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/seriesReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        <state relative-caret-position="408">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/seriesReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
         </state>
       </provider>
     </entry>

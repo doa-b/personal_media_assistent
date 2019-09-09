@@ -11,24 +11,28 @@ import StatusIcon from '../../components/StatusIcon/StatusIcon'
 const SeriesListItem = (props) => {
     return (
         <div className={classes.cardBody}>
-            <div className={classes.cardHeader}>Series Title</div>
+            <div className={classes.cardHeader}>{props.series.name}</div>
             <div className={classes.cardMain}>
                 <div className={classes.cardDetails}>
-                    <p>Season 1</p>
-                    <p>Episode 5</p>
-                    <p>Next airdate 12-3-2016</p>
+                    <p>Season <em>{props.series.season}</em></p>
+                    <p>Episode <em>{props.series.episode}</em></p>
+                    <div className={classes.next}>
+                        {props.series.nextAirDate
+                            ? <p>Next airdate {props.series.nextAirDate}</p>
+                            : <p> series ended</p>
+                        }
+                    </div>
                 </div>
-                {/*<div className={classes.image}>*/}
-                    <img className={classes.image}
-                        src={seriesPlaceHolder}
-                       />
-                {/*</div>*/}
-                {/*<div className={classes.forward}>*/}
-                    <img className={classes.forward}
-                        src={stepForward}
-                        /></div>
-            {/*</div>*/}
-            <div className={classes.cardFooter}>Episode Title</div>
+                <img className={classes.image}
+                     src={seriesPlaceHolder}
+                     alt='season'/>
+
+                <img className={classes.forward}
+                     src={stepForward}
+                     alt='forward' />
+            </div>
+
+            <div className={classes.cardFooter}>{props.series.episodeTitle}</div>
         </div>
     )
 };
