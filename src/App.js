@@ -1,12 +1,15 @@
 import React from 'react';
+import './App.css';
 
 import Layout from './hoc/Layout/Layout'
-import './App.css';
+import SeriesList from './containers/SeriesList/SeriesList'
 
 function App() {
   return (
     <div>
-      <Layout/>
+        <Layout>
+            <SeriesList/>
+        </Layout>
     </div>
   );
 }
