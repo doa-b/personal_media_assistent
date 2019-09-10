@@ -20,7 +20,10 @@ const initialState = {
             nextAirDate: null,
             status: 'continuing'
         }
-    ]
+    ],
+    search: 'dead',
+    filter: 'continuing',
+    order: 'Ascending'
 }
 ;
 

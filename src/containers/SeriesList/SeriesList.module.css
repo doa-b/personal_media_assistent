@@ -1,3 +1,44 @@
 .SeriesList {
-    margin: 10px 10px
+    margin: 10px 10px;
+    border: 1px solid #999;
+    box-shadow: 0 2px 3px #ccc;
+}
+
+.searchBar {
+    display: flex;
+    min-height: fit-content;
+    justify-content: space-between;
+    margin: 10px 10px;
+    padding: 1px 5px;
+    border: 1px solid #999;
+    border-radius: 7px;
+    box-shadow: 0 2px 3px #ccc;
+    cursor: pointer;
+}
+
+.closeIcon {
+    margin: auto 0px;
+    color: red;
+}
+
+.sortIcon {
+    margin: auto 0px;
+    font-size: 1.5em;
+}
+
+.filterBar {
+    display: flex;
+    min-height: fit-content;
+    justify-content: space-between;
+    margin: 10px 10px;
+    padding: 1px 5px;
+    border: 1px solid #999;
+    border-radius: 7px;
+    box-shadow: 0 2px 3px #ccc;
+    cursor: pointer;
+}
+
+.filterBar p {
+    margin: 0px;
+    padding: 1px;
 }

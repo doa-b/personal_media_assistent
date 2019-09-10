@@ -17,12 +17,34 @@
     height: 100%;
 }
 
-.AvatarHeight {
-    height: 80%;
-}
-
 @media (max-width: 499px) {
     .DesktopOnly {
         display: none;
+    }
+}
+.Icon {
+    margin: auto 0px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    cursor: pointer;
+}
+
+.Hamburger {
+    margin: auto 0px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    cursor: pointer;
+}
+
+.Avatar {
+    margin: auto 0px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .Hamburger {
+        display: none;
+    }
+    .Avatar {
+        order: -1
     }
 }
