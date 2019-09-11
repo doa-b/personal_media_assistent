@@ -13,15 +13,15 @@
     z-index: 90;
 }
 
-.Toolbar nav {
-    height: 100%;
-}
+/*.Toolbar nav {*/
+    /*height: 100%;*/
+/*}*/
 
-@media (max-width: 499px) {
-    .DesktopOnly {
-        display: none;
-    }
-}
+/*@media (max-width: 499px) {*/
+    /*.DesktopOnly {*/
+        /*display: none;*/
+    /*}*/
+/*}*/
 .Icon {
     margin: auto 0px;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -35,8 +35,7 @@
 }
 
 .Avatar {
-    margin: auto 0px;
-    -webkit-font-smoothing: subpixel-antialiased;
+    height: 90%;
     cursor: pointer;
 }
 

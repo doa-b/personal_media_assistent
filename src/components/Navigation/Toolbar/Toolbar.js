@@ -4,7 +4,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import classes from './Toolbar.module.css'
 
-import HamburgerMenu from '../SideDrawer/HamburgerMenu/HamburgerMenu';
 import Avatar from '../../../components/Avatar/Avatar'
 
 
@@ -33,10 +32,10 @@ const toolbar = (props) => (
             icon={'search'}
             size={'2x'}/>
 
-        <FontAwesomeIcon
-            className={classes.Avatar}
-            icon={'user-tie'}
-            size={'2x'}/>
+        <div className={classes.Avatar}>
+            <Avatar/>
+        </div>
+
     </header>
 );
 

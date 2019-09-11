@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import { BrowserRouter } from 'react-router-dom';
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {
@@ -34,7 +35,13 @@ library.add(
 
 const store = createStore(seriesReducer);
 
-ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
+const app = (
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
+);
+
+ReactDOM.render(<Provider store={store}>{app}</Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
