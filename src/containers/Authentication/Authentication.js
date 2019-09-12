@@ -9,6 +9,7 @@ import Email from '../../components/UI/Input/Email'
 import Password from '../../components/UI/Input/Password'
 import * as constants from '../../shared/constants'
 import * as actions from '../../store/actions/index'
+import { updateObject } from "../../shared/utility";
 
 /**
  * Created by Doa on 11-9-2019.
@@ -25,12 +26,13 @@ class Authentication extends Component {
     };
 
     switchAuthModeHandler = (operation) => {
-        this.setState({...this.state, operation: operation})
+        this.setState(updateObject(this.state, {operation: operation}))
     };
 
     changeHandler = (event, controlName) => {
-        console.log(event.target.value);
-        this.setState({...this.state, formdata: {[controlName]: event.target.value}})
+        const updatedForm = updateObject(this.state.formData,
+            {[controlName]: event.target.value});
+        this.setState({formData: updatedForm});
     };
 
     submitHandler = (event) => {

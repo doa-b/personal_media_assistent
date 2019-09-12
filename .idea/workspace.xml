@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d6efb2d-828b-47d4-89d1-429d0a33d734" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/axios/seriesAxios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/utility.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Authentication/Authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Authentication/Authentication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Authentication/Authentication.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Authentication/Authentication.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/authActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/authActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/authReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +28,7 @@
         <counts>
           <entry key="css" value="40" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="59" />
+          <entry key="js" value="60" />
           <entry key="json" value="2" />
           <entry key="lock" value="1" />
           <entry key="png" value="1" />
@@ -52,7 +41,7 @@
           <entry key="CSS" value="40" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="59" />
+          <entry key="JavaScript" value="60" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="TypeScript" value="1" />
           <entry key="yarn.lock" value="1" />
@@ -69,30 +58,30 @@
           <entry key="css" value="1227" />
           <entry key="ft" value="11" />
           <entry key="gitignore" value="18" />
-          <entry key="js" value="9146" />
+          <entry key="js" value="9659" />
           <entry key="json" value="6" />
-          <entry key="txt" value="232" />
+          <entry key="txt" value="302" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1227" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="9146" />
-          <entry key="PLAIN_TEXT" value="250" />
+          <entry key="JavaScript" value="9659" />
+          <entry key="PLAIN_TEXT" value="320" />
           <entry key="VTL" value="11" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.56232876">
+    <splitter split-orientation="horizontal" split-proportion="0.70958906">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.module.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
+                <state relative-caret-position="459">
                   <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
                 </state>
               </provider>
@@ -125,7 +114,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/store/reducers/authReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="466">
+                <state relative-caret-position="493">
                   <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#54#0" expanded="true" />
@@ -137,8 +126,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+                <state relative-caret-position="374">
+                  <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -177,15 +166,6 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/shared/utility.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/store/actions/actionTypes.js">
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
@@ -194,14 +174,23 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1418">
-                  <caret line="121" column="2" lean-forward="true" selection-start-line="121" selection-start-column="2" selection-end-line="121" selection-end-column="2" />
+                  <caret line="123" column="2" lean-forward="true" selection-start-line="123" selection-start-column="2" selection-end-line="123" selection-end-column="2" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/shared/utility.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -282,8 +271,8 @@
         <option value="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/store/actions/authActions.js" />
-        <option value="$PROJECT_DIR$/src/containers/Authentication/Authentication.js" />
         <option value="$PROJECT_DIR$/src/containers/Authentication/Authentication.module.css" />
+        <option value="$PROJECT_DIR$/src/containers/Authentication/Authentication.js" />
       </list>
     </option>
   </component>
@@ -502,7 +491,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568289949734" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568293102502" />
     <property name="last_opened_file_path" value="D:/PROJECTS/burger-builder" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -560,7 +549,7 @@
       <workItem from="1568098686775" duration="9494000" />
       <workItem from="1568213675142" duration="10992000" />
       <workItem from="1568232360877" duration="712000" />
-      <workItem from="1568284042770" duration="5797000" />
+      <workItem from="1568284042770" duration="8571000" />
     </task>
     <task id="LOCAL-00001" summary="Created Responsive layout closes #4">
       <created>1568024706359</created>
@@ -604,11 +593,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568284278907</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added firebase Authentication. ERROR: 2 way binding is broken">
+      <created>1568290046039</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1568290046039</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60171000" />
+    <option name="totallyTimeSpent" value="62945000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,7 +617,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2217484" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -669,7 +664,8 @@
     <MESSAGE value="Integrated Font Awesome Closes #7" />
     <MESSAGE value="Added Routes and Login / Sign-up Page Closes #15" />
     <MESSAGE value="Starting to add Firebase Auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting to add Firebase Auth" />
+    <MESSAGE value="Added firebase Authentication. ERROR: 2 way binding is broken" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added firebase Authentication. ERROR: 2 way binding is broken" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Nieuw tekstdocument.txt">
@@ -885,13 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/utility.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions/actionTypes.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -935,7 +924,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="459">
           <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
         </state>
       </provider>
@@ -960,9 +949,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/utility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/authReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
+        <state relative-caret-position="493">
           <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
@@ -972,8 +968,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+        <state relative-caret-position="374">
+          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
