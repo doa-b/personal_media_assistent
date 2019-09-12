@@ -28,3 +28,8 @@
  background-color: lightgreen;
     padding: 5px 2px;
 }
+
+.Error {
+    font-weight: bold;
+    color: red;
+}

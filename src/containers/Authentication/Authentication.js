@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 import classes from './Authentication.module.css'
@@ -7,6 +8,7 @@ import Name from '../../components/UI/Input/Name'
 import Email from '../../components/UI/Input/Email'
 import Password from '../../components/UI/Input/Password'
 import * as constants from '../../shared/constants'
+import * as actions from '../../store/actions/index'
 
 /**
  * Created by Doa on 11-9-2019.
@@ -27,15 +29,26 @@ class Authentication extends Component {
     };
 
     changeHandler = (event, controlName) => {
+        console.log(event.target.value);
         this.setState({...this.state, formdata: {[controlName]: event.target.value}})
     };
 
     submitHandler = (event) => {
         event.preventDefault();
-        console.log(this.state)
+        console.log(this.state);
+        this.props.onAuth(this.state.formData.email,
+            this.state.formData.password,
+            this.state.operation)
     };
 
     render() {
+
+        let errorMessage = null;
+        if (this.props.error) {
+            errorMessage = (
+                <p className={classes.Error}>{this.props.error.message}</p>
+            )
+        }
 
         let header = '';
         let footer = null;
@@ -75,6 +88,7 @@ class Authentication extends Component {
         return (
             <div className={classes.Authentication}>
                 <h2> {header} </h2>
+                {errorMessage}
                 <form onSubmit={this.submitHandler}>
                     {details}
                     <Email
@@ -93,4 +107,18 @@ class Authentication extends Component {
     }
 }
 
-export default Authentication;
+const mapStatetoProps = (state) => {
+    return {
+        loading: state.auth.loading,
+        error: state.auth.error
+    }
+};
+
+const mapDispatchtoProps = (dispatch) => {
+    return {
+        onAuth: (email, password, operation) =>
+            dispatch(actions.auth(email, password, operation))
+    }
+};
+
+export default connect(mapStatetoProps, mapDispatchtoProps)(Authentication);

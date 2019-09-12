@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux'
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import {Provider} from 'react-redux'
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
+import thunk from 'redux-thunk'
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import seriesReducer from './store/reducers/seriesReducer'
+import authReducer from './store/reducers/authReducer'
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {
@@ -16,11 +22,6 @@ import {
     faBars
 } from '@fortawesome/free-solid-svg-icons'
 
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import seriesReducer from './store/reducers/seriesReducer'
-
 library.add(
     faStepForward,
     faTimesCircle,
@@ -33,7 +34,16 @@ library.add(
 )
 ;
 
-const store = createStore(seriesReducer);
+const rootReducer = combineReducers({
+    series: seriesReducer,
+    auth: authReducer,
+});
+
+const composeEnhancers = (process.env.NODE_ENV ==='development') ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
+
+const store = createStore(rootReducer,
+    composeEnhancers(applyMiddleware(thunk)));
 
 const app = (
     <BrowserRouter>

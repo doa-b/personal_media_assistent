@@ -62,10 +62,10 @@ class SeriesList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        seriesList: state.series,
-        search: state.search,
-        filter: state.filter,
-        Order: state.order
+        seriesList: state.series.series,
+        search: state.series.search,
+        filter: state.series.filter,
+        Order: state.series.order
     }
 };
 
