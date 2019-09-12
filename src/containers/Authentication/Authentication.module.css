@@ -18,3 +18,13 @@
     margin: 5px 5px;
     box-sizing: border-box;
 }
+
+.Authentication form button {
+    margin: auto;
+    width: fit-content;
+}
+
+.footer {
+ background-color: lightgreen;
+    padding: 5px 2px;
+}

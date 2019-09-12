@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
 
 import classes from './Authentication.module.css'
 
@@ -50,11 +51,14 @@ class Authentication extends Component {
             }
             case constants.AUTH_CHANGE_INFO: {
                 header = 'Change account info';
+                footer = (
+                    <p>Forgot password? <Link to={'/newpassword'}>Get new password</Link></p>
+                )
                 break
             }
             default : {
                 header = 'Sign in';
-                footer = (<p> Don't have an account yet? <button
+                footer = (<p className={classes.footer}> Don't have an account yet? <button
                     onClick={() => this.switchAuthModeHandler(constants.AUTH_SIGN_UP)}>
                     Sign up
                 </button></p>);
@@ -79,7 +83,7 @@ class Authentication extends Component {
                     <Password
                         value={this.state.formData.password}
                         changed={(event) => this.changeHandler(event, 'password')}/>
-                    <button>
+                    <button type='submit'>
                         Submit
                     </button>
                 </form>
