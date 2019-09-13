@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import classes from './SideDrawer.module.css'
 import Aux from '../../../hoc/Auxiliary/Auxiliary'
@@ -21,6 +22,7 @@ const sideDrawer = (props) => {
             <div className={attachedClasses.join(' ')} onClick={props.closed}>
                 <div className={classes.AvatarHeight}>
                     <Avatar/>
+                    {props.auth ? <Link to='/logout'>Logout</Link> : null}
                 </div>
                 <div className={classes.SideDrawerBottom}>
                 </div>
