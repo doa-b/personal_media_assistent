@@ -4,6 +4,7 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import {Provider} from 'react-redux'
 import {BrowserRouter} from 'react-router-dom';
 import thunk from 'redux-thunk'
+import axios from 'axios'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -33,6 +34,9 @@ library.add(
     faBars
 )
 ;
+
+// axios configurations
+axios.defaults.headers.post['content-Type'] = 'application/json';
 
 const rootReducer = combineReducers({
     series: seriesReducer,

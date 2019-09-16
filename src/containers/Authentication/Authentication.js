@@ -20,7 +20,8 @@ class Authentication extends Component {
         formData: {
             name: 'Doa',
             email: 'djdoa@hotmail.com',
-            password: '123456'
+            password: '123456',
+            photoUrl: 'https://images1.persgroep.net/rcs/Lv_LIy7x1aZbGNHgwU46vnEznhc/diocontent/100818159/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.9'
         },
         operation: constants.AUTH_SIGN_IN
     };
@@ -41,6 +42,7 @@ class Authentication extends Component {
         this.props.onAuth(this.state.formData.email,
             this.state.formData.password,
             this.state.operation)
+        this.props.onTvdbAuth();
     };
 
     render() {
@@ -68,7 +70,7 @@ class Authentication extends Component {
                 header = 'Change account info';
                 footer = (
                     <p>Forgot password? <Link to={'/newpassword'}>Get new password</Link></p>
-                )
+                );
                 break
             }
             default : {
@@ -104,6 +106,9 @@ class Authentication extends Component {
                     </button>
                 </form>
                 {footer}
+                <button onClick={this.props.onSeries}>
+                    get series test
+                </button>
             </div>);
 
     }
@@ -118,8 +123,10 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => {
     return {
-        onAuth: (email, password, operation) =>
-            dispatch(actions.auth(email, password, operation))
+        onAuth: (email, password, operation, name, photoUrl) =>
+            dispatch(actions.auth(email, password, operation, name, photoUrl)),
+        onTvdbAuth: () => dispatch(actions.loginTvdb()),
+        onSeries: () => dispatch(actions.getSeriesDetails())
     }
 };
 

@@ -1,3 +1,6 @@
+import * as actionTypes from '../actions/actionTypes'
+import { updateObject } from '../../shared/utility';
+
 const initialState = {
     series: [
         {
@@ -23,12 +26,30 @@ const initialState = {
     ],
     search: 'dead',
     filter: 'continuing',
-    order: 'Ascending'
-}
-;
+    order: 'Ascending',
+    idToken: null,
+    error: null,
+    loading: false
+};
+
+const tvdbLoginSucces = (state, action) => {
+    return updateObject ( state, {
+        idToken: action.idToken,
+        error: null,
+        loading: false
+    })
+};
 
 const seriesReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case actionTypes.TVDB_LOGIN_SUCCESS: return tvdbLoginSucces(state, action);
+        case actionTypes.TVDB_FAIL: return updateObject(state, {error: action.error, loading: false});
+
+
+
+        default: return state;
+    }
+
 };
 
 export default seriesReducer;
