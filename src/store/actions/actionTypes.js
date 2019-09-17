@@ -1,8 +1,7 @@
 // series
-export const TVDB_LOGIN_START = 'TVDB_LOGIN_START';
-export const TVDB_LOGIN_SUCCESS = 'TVDB_LOGIN_SUCCESS';
-export const TVDB_FAIL = 'TVDB_FAIL';
-//export const TVDB_LOGOUT = 'TVDB_LOGOUT';
+export const TMDB_START = 'TMDB_START';
+export const TMDB_FIND_SERIES_SUCCES = 'TMDB_FIND_SERIES_SUCCES';
+export const TMDB_FAIL = 'TMDB_FAIL';
 
 export const DELETE_ORDER_START = 'DELETE_ORDER_START';
 export const DELETE_ORDER_SUCCESS = 'DELETE_ORDER_SUCCESS';

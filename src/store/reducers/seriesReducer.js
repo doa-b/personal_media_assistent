@@ -29,12 +29,13 @@ const initialState = {
     order: 'Ascending',
     idToken: null,
     error: null,
-    loading: false
+    loading: false,
+    results: []
 };
 
-const tvdbLoginSucces = (state, action) => {
+const tmdbFindSeries = (state, action) => {
     return updateObject ( state, {
-        idToken: action.idToken,
+        results: action.results,
         error: null,
         loading: false
     })
@@ -42,8 +43,8 @@ const tvdbLoginSucces = (state, action) => {
 
 const seriesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.TVDB_LOGIN_SUCCESS: return tvdbLoginSucces(state, action);
-        case actionTypes.TVDB_FAIL: return updateObject(state, {error: action.error, loading: false});
+        case actionTypes.TMDB_FIND_SERIES_SUCCES: return tmdbFindSeries(state, action);
+        case actionTypes.TMDB_FAIL: return updateObject(state, {error: action.error, loading: false});
 
 
 

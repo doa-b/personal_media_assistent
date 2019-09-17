@@ -2,7 +2,6 @@ import axios from 'axios'
 import * as keys from '../../kluis'
 import * as actionTypes from './actionTypes';
 import * as constants from '../../shared/constants';
-import {seriesSuccess} from "./seriesActions";
 
 export const authStart = () => {
     return {
@@ -29,7 +28,6 @@ export const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('expirationDate');
     localStorage.removeItem('userId');
-    localStorage.removeItem('tvdbToken');
     return {
         type: actionTypes.AUTH_LOGOUT
     }
@@ -46,7 +44,6 @@ export const authCheckState = () => {
             if(expirationDate > new Date()) {
                 const userId = localStorage.getItem('userId');
                 dispatch(authSuccess(token, userId));
-                dispatch(seriesSuccess(tvdbToken));
                 dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime())/1000));
             } else dispatch(logout());
         }
@@ -54,7 +51,6 @@ export const authCheckState = () => {
 };
 
 // Asynchronous actionCreators
-
 export const auth = (email, password, operation, name, photoUrl) => {
     return dispatch => {
         dispatch(authStart());

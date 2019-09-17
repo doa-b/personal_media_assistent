@@ -5,6 +5,6 @@ export {
 } from './authActions'
 
 export {
-    loginTvdb,
-    getSeriesDetails
+    getSeriesDetails,
+    findSeries
 } from './seriesActions'

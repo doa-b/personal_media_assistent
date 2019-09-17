@@ -36,7 +36,8 @@ library.add(
 ;
 
 // axios configurations
-axios.defaults.headers.post['content-Type'] = 'application/json';
+axios.defaults.headers.post['content-type'] = 'application/json';
+axios.defaults.headers.get['content-type'] = 'application/json';
 
 const rootReducer = combineReducers({
     series: seriesReducer,

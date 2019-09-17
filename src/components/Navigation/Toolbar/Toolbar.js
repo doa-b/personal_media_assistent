@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
@@ -22,10 +23,13 @@ const toolbar = (props) => (
         />
         </span>
 
+        <Link
+            to={'series/add'}>
         <FontAwesomeIcon
             className={classes.Icon}
             icon={'plus-circle'}
             size={'2x'}/>
+        </Link>
 
         <FontAwesomeIcon
             className={classes.Icon}

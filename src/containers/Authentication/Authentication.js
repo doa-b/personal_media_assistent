@@ -41,8 +41,7 @@ class Authentication extends Component {
         console.log(this.state);
         this.props.onAuth(this.state.formData.email,
             this.state.formData.password,
-            this.state.operation)
-        this.props.onTvdbAuth();
+            this.state.operation);
     };
 
     render() {
@@ -106,7 +105,7 @@ class Authentication extends Component {
                     </button>
                 </form>
                 {footer}
-                <button onClick={this.props.onSeries}>
+                <button onClick={()=> this.props.onSeries('62286')}>
                     get series test
                 </button>
             </div>);
@@ -117,7 +116,8 @@ class Authentication extends Component {
 const mapStatetoProps = (state) => {
     return {
         loading: state.auth.loading,
-        error: state.auth.error
+        error: state.auth.error,
+        tvdbToken: state.series.idToken
     }
 };
 
@@ -125,8 +125,7 @@ const mapDispatchtoProps = (dispatch) => {
     return {
         onAuth: (email, password, operation, name, photoUrl) =>
             dispatch(actions.auth(email, password, operation, name, photoUrl)),
-        onTvdbAuth: () => dispatch(actions.loginTvdb()),
-        onSeries: () => dispatch(actions.getSeriesDetails())
+        onSeries: (tvdbToken) => dispatch(actions.getSeriesDetails(tvdbToken))
     }
 };
 

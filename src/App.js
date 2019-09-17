@@ -8,6 +8,7 @@ import Layout from './hoc/Layout/Layout'
 import SeriesList from './containers/SeriesList/SeriesList'
 import Authentication from './containers/Authentication/Authentication'
 import Logout from './containers/Authentication/Logout/Logout'
+import AddSeries from './containers/Series/AddSeries/AddSeries'
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
 
         let routes = (
             <Switch>
+                <Route path="/series/add" exact component={AddSeries} />
                 <Route path="/" exact component={SeriesList} />
                 <Route path="/authentication" exact component={Authentication} />
                 <Route path="/logout" exact component={Logout}/>
