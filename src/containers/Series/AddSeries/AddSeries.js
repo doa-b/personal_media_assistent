@@ -9,6 +9,8 @@ import SeriesDetailsMain from '../../../components/Series/SeriesDetails/SeriesDe
 import WithModal from '../../../hoc/withModal/withModal'
 import axios from "../../../axios/tvdbAxios";
 import * as keys from "../../../kluis";
+import Spinner from '../../../components/UI/Spinner/Spinner'
+import {findSeriesSucces, tmdbFail} from "../../../store/actions/seriesActions";
 
 
 /**
@@ -17,6 +19,7 @@ import * as keys from "../../../kluis";
 class AddSeries extends Component {
     state = {
         query: '',
+        results: [],
         seriesDetails: null,
         showDetails: false,
         loading: false,
@@ -29,11 +32,31 @@ class AddSeries extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        this.props.onFind(this.state.query)
+        this.setState({loading: true});
+        axios.get('/search/tv', {
+            params: {
+                api_key: keys.TMDB_SLEUTEL,
+                query: this.state.query
+            }
+        })
+            .then((response) => {
+                console.log(response.data.results);
+                this.setState({
+                    results: response.data.results,
+                    loading: false
+                })
+            })
+            .catch((err) => {
+                this.setState({
+                    error: err,
+                    loading: false
+                })
+            })
     };
+    //this.props.onFind(this.state.query)
 
     showDetailsHandler = (id) => {
-        this.setState({loading: false});
+        this.setState({loading: true});
         console.log(this.state);
         axios.get(`/tv/${id}`, {
             params: {
@@ -44,15 +67,23 @@ class AddSeries extends Component {
                     console.log(this.state);
                     this.setState({
                         seriesDetails: response.data,
-                        showDetails: true
+                        showDetails: true,
+                        loading: false
                     });
                     console.log('[seriesDetails] ' + this.state)
                 }
             )
             .catch((err) => {
-                this.setState({error: err})
+                this.setState({
+                    error: err,
+                    loading: false
+                })
             })
+    };
 
+    addSeriesHandler = (id) => {
+        this.props.onAddSeries(id);
+        this.props.history.push('/');
     };
 
     hideDetailsHandler = () => {
@@ -64,8 +95,9 @@ class AddSeries extends Component {
         console.log(this.props.results);
         let table = null;
         let modal = null;
+        let loading = (this.state.loading) ? <Spinner/> : null
 
-        if (this.props.results.length > 0) {
+        if (this.state.results.length > 0) {
             table = (
                 <table>
                     <tbody>
@@ -73,13 +105,13 @@ class AddSeries extends Component {
                         <th>First Aired</th>
                         <th>name</th>
                     </tr>
-                    {this.props.results.map((result) => {
+                    {this.state.results.map((result) => {
                         return (
                             <tr key={result.id}>
                                 <td> {result.first_air_date} </td>
                                 <td onClick={() => this.showDetailsHandler(result.id)}> {result.name} </td>
                                 <td>
-                                    <button>Add</button>
+                                    <button onClick={()=> this.addSeriesHandler(result.id)}>Add</button>
                                 </td>
                             </tr>
                         )
@@ -89,7 +121,6 @@ class AddSeries extends Component {
             );
         }
 
-
         modal = (
             <WithModal show={this.state.showDetails}
                        modalClosed={this.hideDetailsHandler}>
@@ -98,6 +129,7 @@ class AddSeries extends Component {
 
 
         return (<div>
+            {loading}
             {(this.state.seriesDetails) ? modal : null}
             <form onSubmit={this.submitHandler}>
                 <input type='text'
@@ -120,7 +152,8 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => {
     return {
-        onFind: (query) => dispatch(actions.findSeries(query))
+        onFind: (query) => dispatch(actions.findSeries(query)),
+        onAddSeries: (seriesId) => dispatch(actions.addSeries(seriesId))
     };
 };
 

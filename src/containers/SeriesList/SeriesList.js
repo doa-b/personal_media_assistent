@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import classes from './SeriesList.module.css'
 import SeriesListItem from '../../components/SeriesListItem/SeriesListItem'
 import Aux from '../../hoc/Auxiliary/Auxiliary'
+import * as actions from "../../store/actions";
 
 /**
  * Created by Doa on 9-9-2019.
@@ -23,7 +24,7 @@ class SeriesList extends Component {
                 <div className={classes.searchBar}
                      onClick={this.props.onSearch}>
                     <div>
-                    <b>search: </b>{this.props.search}
+                        <b>search: </b>{this.props.search}
                     </div>
                     <FontAwesomeIcon
                         className={classes.closeIcon}
@@ -52,7 +53,15 @@ class SeriesList extends Component {
                 {filterBar}
                 {this.props.seriesList.map((series) =>
                     <div className={classes.SeriesList}
-                         key={series.id}>
+                         key={series.id}
+                         onClick={() => this.props.history.push({
+                             pathname: '/details',
+                             state: {
+                                 id: series.id,
+                                 season: series.season,
+                                 episode: series.episode
+                             }
+                         })}>
                         <SeriesListItem
                             series={series}/>
                     </div>)}

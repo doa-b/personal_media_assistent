@@ -23,6 +23,21 @@ export const tmdbFail = (error) => {
     }
 };
 
+// export const addSeriesStart = () => {
+//     return {
+//         type: actionTypes.ADD_SERIES_START
+//     }
+// };
+
+export const AddSeriesSucces = (details) => {
+    return {
+        type: actionTypes.ADD_SERIES_SUCCES,
+        details: details
+    }
+};
+
+// Asynchronous ActionReducers
+
 export const findSeries = (query) => {
     return dispatch => {
         dispatch(seriesStart());
@@ -58,6 +73,42 @@ export const getSeriesDetails = (seriesId) => {
                 console.log(err);
                 dispatch(tmdbFail(err.response.data.error));
 
+            });
+    }
+};
+
+export const addSeries = (seriesId) => {
+    return dispatch => {
+        dispatch(seriesStart());
+        axios.get(`/tv/${seriesId}`, {
+            params: {
+                api_key: keys.TMDB_SLEUTEL
+            }
+        })
+            .then((response) => {
+                console.log(response);
+                dispatch(AddSeriesSucces(response.data))
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+};
+
+export const getEpisodeDetails = (seriesId, season, episode)=> {
+    return dispatch => {
+        dispatch(seriesStart());
+        axios.get(`/tv/${seriesId}/season/${season}/episode/${episode}`, {
+            params: {
+                api_key: keys.TMDB_SLEUTEL
+            }
+        })
+            .then((response) => {
+                console.log(response);
+               // dispatch(AddSeriesSucces(response.data))
+            })
+            .catch((err) => {
+                console.log(err);
             });
     }
 };

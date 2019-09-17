@@ -41,8 +41,30 @@ const tmdbFindSeries = (state, action) => {
     })
 };
 
+const addSeries = (state, action) => {
+    const newSeries = {
+        id: action.details.id,
+        name: action.details.name,
+        season: 1,
+        seasonTotal: action.details.season_number,
+        episode: 1,
+        episodeTotal: action.details.seasons[1].episode_count,
+        episodeTitle: action.details.seasons[1].name,
+        episodeDescription: 'bla bla bla bla bla',
+        nextEpisode: action.details.next_episode_to_air, // TODO aanpassen
+        status: action.details.name.status
+    };
+    return updateObject (state, {
+        series: state.series.concat(newSeries),
+        loading: false,
+        error: null,
+    } )
+};
+
 const seriesReducer = (state = initialState, action) => {
     switch (action.type) {
+        case actionTypes.TMDB_START: return updateObject(state, {error: null, loading: true})
+        case actionTypes.ADD_SERIES_SUCCES: return addSeries(state, action);
         case actionTypes.TMDB_FIND_SERIES_SUCCES: return tmdbFindSeries(state, action);
         case actionTypes.TMDB_FAIL: return updateObject(state, {error: action.error, loading: false});
 

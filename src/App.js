@@ -9,6 +9,7 @@ import SeriesList from './containers/SeriesList/SeriesList'
 import Authentication from './containers/Authentication/Authentication'
 import Logout from './containers/Authentication/Logout/Logout'
 import AddSeries from './containers/Series/AddSeries/AddSeries'
+import SeriesDetails from './containers/Series/SeriesDetails/SeriesDetails'
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
                 <Route path="/" exact component={SeriesList} />
                 <Route path="/authentication" exact component={Authentication} />
                 <Route path="/logout" exact component={Logout}/>
+                <Route path="/details" exact component={SeriesDetails}/>
             </Switch>
         );
         return (

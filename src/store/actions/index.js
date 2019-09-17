@@ -6,5 +6,8 @@ export {
 
 export {
     getSeriesDetails,
-    findSeries
+    findSeries,
+    addSeries,
+    getEpisodeDetails
+
 } from './seriesActions'
