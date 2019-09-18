@@ -13,6 +13,18 @@ import * as actions from "../../store/actions";
  */
 class SeriesList extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: false
+        }
+    }
+
+    componentDidMount() {
+        this.props.onTryAutoSignup();
+        this.props.onFetchMyData();
+}
+
     showDetailsHandler = (mySeries) => {
         this.props.history.push({
             pathname: '/details',
@@ -60,6 +72,9 @@ class SeriesList extends Component {
 
         return (
             <Aux>
+                {this.props.loading?<p>loading</p>: null}
+                <button
+                    onClick={()=>this.props.onFetchMyData(this.props.idToken, this.props.userId)}></button>
                 {searchbar}
                 {filterBar}
                 {this.props.seriesList.map((series) =>
@@ -75,11 +90,30 @@ class SeriesList extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        userId: state.auth.userId,
+        idToken: state.auth.idToken,
         seriesList: state.series.series,
         search: state.series.search,
         filter: state.series.filter,
-        Order: state.series.order
+        Order: state.series.order,
+        loading: state.mySeries.loading
     }
 };
 
-export default connect(mapStateToProps)(SeriesList);
+const mapDispatchtoProps = (dispatch) => {
+    return {
+        onTryAutoSignup: () => dispatch(actions.authCheckState()),
+
+        onSaveSeries: (token, userId, seriesData) =>
+            dispatch(actions.saveMySeries(token, userId, seriesData)),
+
+        onSaveOptions: (token, userId, options) =>
+            dispatch(actions.saveMyOptions(token, userId, options)),
+
+        onFetchMyData: (token, userId) =>
+            dispatch(actions.fetchMyData(token, userId))
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchtoProps)(SeriesList);

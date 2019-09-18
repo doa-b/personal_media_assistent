@@ -16,6 +16,7 @@ class SeriesDetails extends Component {
         seriesId: 0,
         season: 0,
         episode: 0,
+        firebaseId: null,
 
         seriesDetails: null,
         showDetails: false,
@@ -75,6 +76,24 @@ class SeriesDetails extends Component {
         this.props.history.goBack();
     };
 
+    saveSeries = () => {
+        const seriesData = {
+            seriesId: this.state.seriesId,
+            season: this.state.season,
+            episode: this.state.episode,
+        };
+        this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData)
+    };
+
+    saveOptions = () => {
+        const seriesData = {
+            seriesId: this.state.seriesId,
+            season: this.state.season,
+            episode: this.state.episode,
+        };
+        this.props.onSaveOptions(this.props.idToken, this.props.userId, seriesData)
+    };
+
     render() {
         console.log(this.state);
 
@@ -83,6 +102,8 @@ class SeriesDetails extends Component {
             {(this.state.seriesDetails) ? <SeriesDetailsMain details={this.state.seriesDetails}/> : <Spinner/>}
             <p>SeriesDetails</p>
             <button onClick={this.showState}>load details</button>
+            <button onClick={this.saveSeries}>Save</button>
+            <button onClick={this.saveOptions}>Save Options</button>
         </div>);
 
     }
@@ -91,13 +112,21 @@ class SeriesDetails extends Component {
 const mapStateToProps = (state) => {
     return {
         episodeDetails: state.series.episodeDetails,
+        userId: state.auth.userId,
+        idToken: state.auth.idToken
     }
 };
 
 const mapDispatchtoProps = (dispatch) => {
     return {
         onGetEpisodeDetails: (seriesId, season, episode) =>
-            dispatch(actions.getEpisodeDetails(seriesId, season, episode))
+            dispatch(actions.getEpisodeDetails(seriesId, season, episode)),
+
+        onSaveSeries: (token, userId, seriesData) =>
+            dispatch(actions.saveMySeries(token, userId, seriesData)),
+
+        onSaveOptions: (token, userId, options) =>
+            dispatch(actions.saveMyOptions(token, userId, options))
     };
 };
 

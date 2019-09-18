@@ -10,6 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import seriesReducer from './store/reducers/seriesReducer'
 import authReducer from './store/reducers/authReducer'
+import myTrackedSeriesReducer from './store/reducers/myTrackedSeriesReducer';
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {
@@ -23,6 +24,7 @@ import {
     faBars,
     faHome
 } from '@fortawesome/free-solid-svg-icons'
+
 
 library.add(
     faStepForward,
@@ -44,6 +46,7 @@ axios.defaults.headers.get['content-type'] = 'application/json';
 const rootReducer = combineReducers({
     series: seriesReducer,
     auth: authReducer,
+    mySeries: myTrackedSeriesReducer
 });
 
 const composeEnhancers = (process.env.NODE_ENV ==='development') ?

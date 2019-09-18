@@ -82,7 +82,6 @@ export const auth = (email, password, operation, name, photoUrl) => {
 
 // timer that will fire logout action after token expires
 export const checkAuthTimeout = (expirationTime) => {
-    console.log(expirationTime);
     return dispatch => {
         setTimeout(() => {
             dispatch(logout());

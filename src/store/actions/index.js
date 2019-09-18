@@ -9,6 +9,10 @@ export {
     findSeries,
     addSeries,
     getEpisodeDetails,
-    saveMySeries
-
 } from './seriesActions'
+
+export {
+    saveMySeries,
+    saveMyOptions,
+    fetchMyData
+} from './myTrackedSeriesActions'
