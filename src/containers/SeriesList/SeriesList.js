@@ -13,6 +13,17 @@ import * as actions from "../../store/actions";
  */
 class SeriesList extends Component {
 
+    showDetailsHandler = (mySeries) => {
+        this.props.history.push({
+            pathname: '/details',
+            state: {
+                seriesId: mySeries.id,
+                season: mySeries.season,
+                episode: mySeries.episode,
+            }
+        })
+    };
+
     render() {
 
         let searchbar = null;
@@ -54,14 +65,7 @@ class SeriesList extends Component {
                 {this.props.seriesList.map((series) =>
                     <div className={classes.SeriesList}
                          key={series.id}
-                         onClick={() => this.props.history.push({
-                             pathname: '/details',
-                             state: {
-                                 id: series.id,
-                                 season: series.season,
-                                 episode: series.episode
-                             }
-                         })}>
+                         onClick={()=> this.showDetailsHandler(series)}>
                         <SeriesListItem
                             series={series}/>
                     </div>)}

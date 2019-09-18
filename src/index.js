@@ -20,7 +20,8 @@ import {
     faSearch,
     faPlusCircle,
     faUserTie,
-    faBars
+    faBars,
+    faHome
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -31,7 +32,8 @@ library.add(
     faSearch,
     faPlusCircle,
     faUserTie,
-    faBars
+    faBars,
+    faHome
 )
 ;
 

@@ -8,6 +8,7 @@ export {
     getSeriesDetails,
     findSeries,
     addSeries,
-    getEpisodeDetails
+    getEpisodeDetails,
+    saveMySeries
 
 } from './seriesActions'

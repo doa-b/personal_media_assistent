@@ -22,6 +22,13 @@ const toolbar = (props) => (
             size={'2x'}
         />
         </span>
+        <Link
+            to={'/'}>
+            <FontAwesomeIcon
+                className={classes.Icon}
+                icon={'home'}
+                size={'2x'}/>
+        </Link>
 
         <Link
             to={'series/add'}>

@@ -12,6 +12,7 @@ import * as keys from "../../../kluis";
 import Spinner from '../../../components/UI/Spinner/Spinner'
 import {findSeriesSucces, tmdbFail} from "../../../store/actions/seriesActions";
 
+//TODO store search query in options Store, and load on mount, so we can go back to this page
 
 /**
  * Created by Doa on 16-9-2019.
@@ -56,30 +57,41 @@ class AddSeries extends Component {
     //this.props.onFind(this.state.query)
 
     showDetailsHandler = (id) => {
-        this.setState({loading: true});
-        console.log(this.state);
-        axios.get(`/tv/${id}`, {
-            params: {
-                api_key: keys.TMDB_SLEUTEL
+        this.props.history.push({
+            pathname: '/details',
+            state: {
+                seriesId: id,
+                season: 1,
+                episode: 1,
             }
         })
-            .then((response) => {
-                    console.log(this.state);
-                    this.setState({
-                        seriesDetails: response.data,
-                        showDetails: true,
-                        loading: false
-                    });
-                    console.log('[seriesDetails] ' + this.state)
-                }
-            )
-            .catch((err) => {
-                this.setState({
-                    error: err,
-                    loading: false
-                })
-            })
     };
+
+    // showDetailsHandler = (id) => {
+    //     this.setState({loading: true});
+    //     console.log(this.state);
+    //     axios.get(`/tv/${id}`, {
+    //         params: {
+    //             api_key: keys.TMDB_SLEUTEL
+    //         }
+    //     })
+    //         .then((response) => {
+    //                 console.log(this.state);
+    //                 this.setState({
+    //                     seriesDetails: response.data,
+    //                     showDetails: true,
+    //                     loading: false
+    //                 });
+    //                 console.log('[seriesDetails] ' + this.state)
+    //             }
+    //         )
+    //         .catch((err) => {
+    //             this.setState({
+    //                 error: err,
+    //                 loading: false
+    //             })
+    //         })
+    // };
 
     addSeriesHandler = (id) => {
         this.props.onAddSeries(id);
@@ -146,14 +158,18 @@ class AddSeries extends Component {
 
 const mapStatetoProps = (state) => {
     return {
-        results: state.series.results
+        results: state.series.results,
+        userId: state.auth.userId,
+        token: state.auth.IdToken
     }
 };
 
 const mapDispatchtoProps = (dispatch) => {
     return {
         onFind: (query) => dispatch(actions.findSeries(query)),
-        onAddSeries: (seriesId) => dispatch(actions.addSeries(seriesId))
+        onAddSeries: (seriesId) => dispatch(actions.addSeries(seriesId)),
+        onSaveSeries: (token, userId, seriesData) =>
+            dispatch(actions.saveMySeries(token, userId, seriesData))
     };
 };
 

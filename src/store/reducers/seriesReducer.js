@@ -30,7 +30,8 @@ const initialState = {
     idToken: null,
     error: null,
     loading: false,
-    results: []
+    episodeDetails: null,
+    results: [] // todo Kan weg
 };
 
 const tmdbFindSeries = (state, action) => {
@@ -63,7 +64,8 @@ const addSeries = (state, action) => {
 
 const seriesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.TMDB_START: return updateObject(state, {error: null, loading: true})
+        case actionTypes.FETCH_EPISODE_DETAILSSUCCES: return updateObject(state, {episodeDetails: action.episodeDetails, error: null, loading: true})
+        case actionTypes.TMDB_START: return updateObject(state, {error: null, loading: true});
         case actionTypes.ADD_SERIES_SUCCES: return addSeries(state, action);
         case actionTypes.TMDB_FIND_SERIES_SUCCES: return tmdbFindSeries(state, action);
         case actionTypes.TMDB_FAIL: return updateObject(state, {error: action.error, loading: false});
