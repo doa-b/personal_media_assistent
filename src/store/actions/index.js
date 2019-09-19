@@ -5,10 +5,9 @@ export {
 } from './authActions'
 
 export {
-    getSeriesDetails,
     findSeries,
-    addSeries,
-    getEpisodeDetails,
+    fetchSeriesDetails,
+    fetchEpisodeDetails,
 } from './seriesActions'
 
 export {

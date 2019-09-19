@@ -125,7 +125,7 @@ const mapDispatchtoProps = (dispatch) => {
     return {
         onAuth: (email, password, operation, name, photoUrl) =>
             dispatch(actions.auth(email, password, operation, name, photoUrl)),
-        onSeries: (tvdbToken) => dispatch(actions.getSeriesDetails(tvdbToken))
+        onSeries: (tvdbToken) => dispatch(actions.fetchSeriesDetails(tvdbToken))
     }
 };
 

@@ -37,7 +37,7 @@ export const saveMySeries = (token, userId, seriesData) => {
         axios.put(`${userId}/series/${seriesData.seriesId}.json?auth=` + token, data)
             .then((response) => {
                 console.log(response);
-                dispatch(fireBaseSaveSucces)
+                dispatch(fireBaseSaveSucces())
             })
             .catch(error => {
                 dispatch(fireBaseFail(error));
@@ -53,7 +53,7 @@ export const saveMyOptions = (token, userId, options) => {
         };
         axios.put(`${userId}/options.json?auth=` + token, data)
             .then((response) => {
-                dispatch(fireBaseSaveSucces)
+                dispatch(fireBaseSaveSucces())
             })
             .catch(error => {
                 dispatch(fireBaseFail(error));

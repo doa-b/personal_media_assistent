@@ -92,7 +92,7 @@ const mapStateToProps = (state) => {
     return {
         userId: state.auth.userId,
         idToken: state.auth.idToken,
-        seriesList: state.series.series,
+        seriesList: state.mySeries.series,
         search: state.series.search,
         filter: state.series.filter,
         Order: state.series.order,

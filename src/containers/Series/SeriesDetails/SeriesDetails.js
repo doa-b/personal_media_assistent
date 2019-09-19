@@ -20,8 +20,6 @@ class SeriesDetails extends Component {
 
         seriesDetails: null,
         showDetails: false,
-        loading: false,
-        error: null,
     };
 
     componentWillMount() {
@@ -33,43 +31,17 @@ class SeriesDetails extends Component {
     }
 
     componentDidMount() {
-        this.props.onGetEpisodeDetails(
+        this.props.onFetchSeriesDetails(this.state.seriesId);
+        this.props.onFetchEpisodeDetails(
             this.state.seriesId,
             this.state.season,
             this.state.episode
         );
-        this.showDetailsHandler(this.state.seriesId)
     }
 
-    showDetailsHandler = (id) => {
-        this.setState({loading: true});
-        console.log(this.state);
-        axios.get(`/tv/${id}`, {
-            params: {
-                api_key: keys.TMDB_SLEUTEL
-            }
-        })
-            .then((response) => {
-                    console.log(this.state);
-                    this.setState({
-                        seriesDetails: response.data,
-                        showDetails: true,
-                        loading: false
-                    });
-                    console.log('[seriesDetails] ' + this.state)
-                }
-            )
-            .catch((err) => {
-                this.setState({
-                    error: err,
-                    loading: false
-                })
-            })
-    };
-
     showState = () => {
-        console.log(this.state);
-        console.log(this.props.episodeDetails)
+        console.log(this.props.series);
+        console.log(this.props.episode)
     };
 
     backToList = () => {
@@ -85,6 +57,7 @@ class SeriesDetails extends Component {
         this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData)
     };
 
+    // kan weg
     saveOptions = () => {
         const seriesData = {
             seriesId: this.state.seriesId,
@@ -99,8 +72,9 @@ class SeriesDetails extends Component {
 
         return (<div>
             <p onClick={this.backToList}>back to list</p>
-            {(this.state.seriesDetails) ? <SeriesDetailsMain details={this.state.seriesDetails}/> : <Spinner/>}
-            <p>SeriesDetails</p>
+            {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
+
+            <p>EpisodeDetails</p>
             <button onClick={this.showState}>load details</button>
             <button onClick={this.saveSeries}>Save</button>
             <button onClick={this.saveOptions}>Save Options</button>
@@ -111,7 +85,8 @@ class SeriesDetails extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        episodeDetails: state.series.episodeDetails,
+        series: state.series.seriesDetails,
+        episode: state.series.episodeDetails,
         userId: state.auth.userId,
         idToken: state.auth.idToken
     }
@@ -119,8 +94,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => {
     return {
-        onGetEpisodeDetails: (seriesId, season, episode) =>
-            dispatch(actions.getEpisodeDetails(seriesId, season, episode)),
+        onFetchSeriesDetails: (seriesId) =>
+            dispatch(actions.fetchSeriesDetails(seriesId)),
+
+        onFetchEpisodeDetails: (seriesId, season, episode) =>
+            dispatch(actions.fetchEpisodeDetails(seriesId, season, episode)),
 
         onSaveSeries: (token, userId, seriesData) =>
             dispatch(actions.saveMySeries(token, userId, seriesData)),
