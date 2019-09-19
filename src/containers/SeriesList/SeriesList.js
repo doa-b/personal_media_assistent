@@ -73,8 +73,6 @@ class SeriesList extends Component {
         return (
             <Aux>
                 {this.props.loading?<p>loading</p>: null}
-                <button
-                    onClick={()=>this.props.onFetchMyData(this.props.idToken, this.props.userId)}></button>
                 {searchbar}
                 {filterBar}
                 {this.props.seriesList.map((series) =>
@@ -84,6 +82,7 @@ class SeriesList extends Component {
                         <SeriesListItem
                             series={series}/>
                     </div>)}
+                    <button onClick={this.props.onFetchMyData}>Fetch my Data</button>
             </Aux>)
     }
 }
@@ -93,9 +92,9 @@ const mapStateToProps = (state) => {
         userId: state.auth.userId,
         idToken: state.auth.idToken,
         seriesList: state.mySeries.series,
-        search: state.series.search,
-        filter: state.series.filter,
-        Order: state.series.order,
+        search: state.mySeries.options.search,
+        filter: state.mySeries.options.filter,
+        order: state.mySeries.options.order,
         loading: state.mySeries.loading
     }
 };

@@ -49,10 +49,19 @@ class SeriesDetails extends Component {
     };
 
     saveSeries = () => {
+        const s = this.props.series;
+        let nextAirDate = (s.next_episode_to_air) ? s.next_episode_to_air.air_date : "none"
         const seriesData = {
+            name: s.name,
+            status: s.status,
+            nextAirDate: nextAirDate,
             seriesId: this.state.seriesId,
             season: this.state.season,
+            seasonTotal: s.number_of_seasons,
+            episodeTotal: s.seasons[this.state.season].episode_count,
             episode: this.state.episode,
+            episodeTitle: this.props.episode.name,
+            image: this.props.episode.still_path
         };
         this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData)
     };
@@ -60,9 +69,9 @@ class SeriesDetails extends Component {
     // kan weg
     saveOptions = () => {
         const seriesData = {
-            seriesId: this.state.seriesId,
-            season: this.state.season,
-            episode: this.state.episode,
+            filter: 'kippen',
+            search: 'doa',
+            order: 'ascending'
         };
         this.props.onSaveOptions(this.props.idToken, this.props.userId, seriesData)
     };

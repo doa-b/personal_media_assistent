@@ -13,9 +13,11 @@ export const fireBaseSaveSucces = () => {
     }
 };
 
-export const fireBaseFetchSucces = () => {
+export const fireBaseFetchSucces = (options, series) => {
     return {
-        type: actionTypes.FIREBASE_FETCH_DATA_SUCCES
+        type: actionTypes.FIREBASE_FETCH_DATA_SUCCES,
+        options: options,
+        series: series
     }
 };
 
@@ -30,11 +32,7 @@ export const fireBaseFail = () => {
 export const saveMySeries = (token, userId, seriesData) => {
     return dispatch => {
         dispatch(fireBaseStart());
-        const data = {
-            userId: userId,
-            seriesData: seriesData
-        };
-        axios.put(`${userId}/series/${seriesData.seriesId}.json?auth=` + token, data)
+        axios.put(`${userId}/series/${seriesData.seriesId}.json?auth=` + token, seriesData)
             .then((response) => {
                 console.log(response);
                 dispatch(fireBaseSaveSucces())
@@ -47,11 +45,7 @@ export const saveMySeries = (token, userId, seriesData) => {
 export const saveMyOptions = (token, userId, options) => {
     return dispatch => {
         dispatch(fireBaseStart());
-        const data = {
-            userId: userId,
-            options: options
-        };
-        axios.put(`${userId}/options.json?auth=` + token, data)
+        axios.put(`${userId}/options.json?auth=` + token, options)
             .then((response) => {
                 dispatch(fireBaseSaveSucces())
             })
@@ -67,7 +61,16 @@ export const fetchMyData = () => {
         axios.get(`/${getState().auth.userId}.json?auth=` + getState().auth.idToken)
             .then((response) => {
                 console.log(response);
-                dispatch(fireBaseFetchSucces(response.data))
+               const options = response.data.options;
+               const series = [];
+                for (let key in response.data.series) {
+                    series.push(
+                        {
+                            ...response.data.series[key],
+                            id: key
+                        });
+                }
+                dispatch(fireBaseFetchSucces(options, series))
             })
             .catch(error => {
                 dispatch(fireBaseFail(error));

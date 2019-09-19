@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes'
-import { updateObject } from '../../shared/utility';
+import {updateObject} from '../../shared/utility';
 
 const initialState = {
     series: [
@@ -24,23 +24,29 @@ const initialState = {
             status: 'continuing'
         }
     ],
-    search: 'dead',
-    filter: 'continuing',
-    order: 'Ascending',
+    options: {
+        search: 'dead',
+        filter: 'continuing',
+        order: 'Ascending',
+    },
     idToken: null,
     error: null,
     loading: false,
-   // episodeDetails: null,
+    // episodeDetails: null,
 };
 
-const fetchMySeries = (state, action) => {
-  return updateObject(state, {
-      loading: false
-  })
+const fetchMyData = (state, action) => {
+    console.log(action.series);
+    const newState =  {
+        options: action.options,
+        series: action.series,
+        loading: false
+    };
+    return updateObject(state, newState)
 };
 
 const SaveMySeries = (state, action) => {
-    return updateObject ( state, {
+    return updateObject(state, {
 
         results: action.results,
         error: null,
@@ -50,11 +56,16 @@ const SaveMySeries = (state, action) => {
 
 const myTrackedSeriesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.FIREBASE_FETCH_DATA_SUCCES: return fetchMySeries(state, action);
-        case actionTypes.FIREBASE_SAVE_SUCCES: return SaveMySeries(state, action);
-        case actionTypes.FIREBASE_FAIL: return updateObject(state, {error: action.error, loading: false});
-        case actionTypes.FIREBASE_START: return updateObject(state, {error: null, loading: true});
-        default: return state;
+        case actionTypes.FIREBASE_FETCH_DATA_SUCCES:
+            return fetchMyData(state, action);
+        case actionTypes.FIREBASE_SAVE_SUCCES:
+            return SaveMySeries(state, action);
+        case actionTypes.FIREBASE_FAIL:
+            return updateObject(state, {error: action.error, loading: false});
+        case actionTypes.FIREBASE_START:
+            return updateObject(state, {error: null, loading: true});
+        default:
+            return state;
     }
 
 };

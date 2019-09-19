@@ -8,19 +8,18 @@ import stepForward from '../../assets/images/step_forward.svg'
  * Created by Doa on 9-9-2019.
  */
 const SeriesListItem = (props) => {
+    const p = props.series;
+    const nextAirDate = (p.nextAirDate === "none") ? <p>Series has ended</p> : <p>Next airdate {p.nextAirDate}</p>
 
     return (
         <div className={classes.cardBody}>
-            <div className={classes.cardHeader}>{props.series.name}</div>
+            <div className={classes.cardHeader}>{p.name}</div>
             <div className={classes.cardMain}>
                 <div className={classes.cardDetails}>
-                    <p>Season <em>{props.series.season}</em> (8)</p>
-                    <p>Episode <em>{props.series.episode}</em> (12)</p>
+                    <p>Season <em>{p.season}</em> ({p.seasonTotal})</p>
+                    <p>Episode <em>{p.episode}</em> ({p.episodeTotal})</p>
                     <div className={classes.next}>
-                        {props.series.nextAirDate
-                            ? <p>Next airdate {props.series.nextAirDate}</p>
-                            : <p> series ended</p>
-                        }
+                        {nextAirDate}
                     </div>
                 </div>
                 <img className={classes.image}
@@ -28,9 +27,9 @@ const SeriesListItem = (props) => {
                      alt='season'/>
 
                 <img className={classes.forward}
-                src={stepForward}
-                alt='forward'
-                onClick={props.Onforward}/>
+                     src={stepForward}
+                     alt='forward'
+                     onClick={props.Onforward}/>
             </div>
 
             <div className={classes.cardFooter}>{props.series.episodeTitle}</div>
