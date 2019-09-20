@@ -10,6 +10,7 @@ import * as actions from "../../store/actions";
 import WithModal from "../../hoc/withModal/withModal";
 import NumberPicker from "../../components/UI/Input/NumberPicker";
 import ListPicker from "../../components/UI/Input/ListPicker";
+import {updateObject} from "../../shared/utility";
 
 /**
  * Created by Doa on 9-9-2019.
@@ -19,10 +20,7 @@ class SeriesList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: false,
-            pickOption: 'none',
-            filter: null,
-            sortBy: 'name',
+            pickOption: null,
             orderIcon: 'sort-up'
         }
     }
@@ -49,31 +47,37 @@ class SeriesList extends Component {
     };
 
     closeModalHandler = () => {
-        this.setState({pickOption: 'none'});
+        this.setState({pickOption: null});
         console.log(this.state);
     };
 
-    saveFilter = (filter) => {
-        const options = {
-            filter: filter,
-            sortBy: 'name',
-            order: this.props.order,
-            search: this.props.search
-        };
-        this.setState ({filter: filter, pickOption: 'none'});
-        this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
-    };
+    // saveFilter = (filter) => {
+    //     const options = {
+    //         filter: filter,
+    //         sortBy: 'name',
+    //         order: this.props.order,
+    //         search: this.props.search
+    //     };
+    //     this.setState ({filter: filter, pickOption: null});
+    //     this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
+    // };
+    //
+    // saveSortBy = (sortBy) => {
+    //     const options = {
+    //         filter: this.props.filter,
+    //         sortBy: sortBy,
+    //         order: this.props.order,
+    //         search: this.props.search
+    //     };
+    //     this.setState ({sortBy: sortBy, pickOption: null});
+    //     this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
+    // };
 
-    saveSortBy = (sortBy) => {
-        const options = {
-            filter: this.props.filter,
-            sortBy: sortBy,
-            order: this.props.order,
-            search: this.props.search
-        };
-        this.setState ({sortBy: sortBy, pickOption: 'none'});
-        this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
-    };
+    saveOptions = (element, value) => {
+    const newOptions = updateObject(this.props.options, { [element]: value} );
+    this.setState ({pickOption: null});
+    this.props.onSaveOptions(this.props.idToken, this.props.userId, newOptions)
+};
 
     toggleOrderHandler = () => {
        let order;
@@ -84,13 +88,14 @@ class SeriesList extends Component {
            order = 'ascending';
            this.setState({orderIcon : 'sort-up'})
        }
-        const options = {
-            filter: this.props.filter,
-            sortBy: 'name',
-            order: order,
-            search: this.props.search
-        };
-        this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
+       this.saveOptions('order', order)
+        // const options = {
+        //     filter: this.props.filter,
+        //     sortBy: 'name',
+        //     order: order,
+        //     search: this.props.search
+        // };
+        // this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
     };
 
     render() {
@@ -111,7 +116,7 @@ class SeriesList extends Component {
                     'all'
                 ];
                 optionsPicker = (
-                    <WithModal show modalClosed={this.closeModalHandler}>
+                    <WithModal show={(this.state.pickOption===null)} modalClosed={this.closeModalHandler}>
                         <ListPicker choices={choices}
                         chosen={this.saveFilter}/>
                     </WithModal>
@@ -157,7 +162,7 @@ class SeriesList extends Component {
             sortBar = (
                 <div className={classes.filterBar}
                      onClick={()=> this.setOptionHandler ('filter')}>
-                        <b>filter: </b>{this.props.filter}
+                        <b>filter: </b>{this.props.options.filter}
                 </div>
             )
         }
@@ -166,7 +171,7 @@ class SeriesList extends Component {
             filterBar = (
                 <div className={classes.filterBar}>
                     <div onClick={()=> this.setOptionHandler ('sortBy')}>
-                        <b>sort By: </b>{this.props.sortBy}
+                        <b>sort By: </b>{this.props.options.sortBy}
                     </div>
                     <div onClick={this.toggleOrderHandler}>
                         <FontAwesomeIcon
@@ -180,10 +185,14 @@ class SeriesList extends Component {
         return (
             <Aux>
                 {this.props.loading?<p>loading</p>: null}
+                <WithModal show ={(this.state.pickOption!=null)}
+                           modalClosed={this.closeModalHandler}>
+                    <ListPicker choices={this.state.pickOption}
+                                chosen={this.saveOptions}/>
+                </WithModal>
                 {searchBar}
                 {sortBar}
                 {filterBar}
-                {optionsPicker}
                 {this.props.seriesList.map((series) =>
                     <div className={classes.SeriesList}
                          key={series.id}
@@ -202,6 +211,7 @@ const mapStateToProps = (state) => {
         idToken: state.auth.idToken,
         seriesList: state.mySeries.series,
         search: state.mySeries.options.search,
+        options: state.mySeries.options,
         filter: state.mySeries.options.filter,
         order: state.mySeries.options.order,
         sortBy: state.mySeries.options.sortBy,

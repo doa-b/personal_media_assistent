@@ -52,7 +52,7 @@ export const saveMySeries = (token, userId, seriesData) => {
 
 export const saveMyOptions = (token, userId, options) => {
     return dispatch => {
-        dispatch(fireBaseStart());
+        // dispatch(fireBaseStart());
         axios.put(`${userId}/options.json?auth=` + token, options)
             .then((response) => {
                 dispatch(fireBaseSaveOptionsSucces(options))

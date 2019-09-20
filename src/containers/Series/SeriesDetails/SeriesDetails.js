@@ -72,7 +72,8 @@ class SeriesDetails extends Component {
         const seriesData = {
             filter: 'kippen',
             search: 'doa',
-            order: 'ascending'
+            order: 'ascending',
+            sortBy: 'name'
         };
         this.props.onSaveOptions(this.props.idToken, this.props.userId, seriesData)
     };

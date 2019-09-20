@@ -28,6 +28,7 @@ const initialState = {
         search: 'dead',
         filter: 'continuing',
         order: 'Ascending',
+        sortBy: 'name'
     },
     idToken: null,
     error: null,
