@@ -37,18 +37,26 @@ const initialState = {
 
 const fetchMyData = (state, action) => {
     console.log(action.series);
-    const newState =  {
+    const newState = {
         options: action.options,
         series: action.series,
-        loading: false
+        loading: false,
+        error: null
     };
     return updateObject(state, newState)
 };
 
+const SaveMyOptions = (state, action) => {
+    return updateObject(state, {
+        options: action.options,
+        error: null,
+        loading: false
+    })
+};
+
 const SaveMySeries = (state, action) => {
     return updateObject(state, {
-
-        results: action.results,
+        series: state.series.concat(action.series),
         error: null,
         loading: false
     })
@@ -58,7 +66,9 @@ const myTrackedSeriesReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.FIREBASE_FETCH_DATA_SUCCES:
             return fetchMyData(state, action);
-        case actionTypes.FIREBASE_SAVE_SUCCES:
+        case actionTypes.FIREBASE_SAVE_OPTIONS_SUCCES:
+            return SaveMyOptions(state, action);
+        case actionTypes.FIREBASE_SAVE_SERIES_SUCCES:
             return SaveMySeries(state, action);
         case actionTypes.FIREBASE_FAIL:
             return updateObject(state, {error: action.error, loading: false});

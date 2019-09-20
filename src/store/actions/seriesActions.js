@@ -125,7 +125,7 @@ export const fetchEpisodeDetails = (seriesId, season, episode)=> {
 //     };
 //     axios.post('/series.json?auth=' + token, data)
 //         .then((response) => {
-//             dispatch(fireBaseSaveSucces)
+//             dispatch(fireBaseSaveOptionsSucces)
 //         })
 //         .catch(error => {
 //         dispatch(fireBaseFail(error));

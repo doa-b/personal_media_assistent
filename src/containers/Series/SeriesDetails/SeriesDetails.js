@@ -54,6 +54,7 @@ class SeriesDetails extends Component {
         const seriesData = {
             name: s.name,
             status: s.status,
+            myStatus: 'Available',
             nextAirDate: nextAirDate,
             seriesId: this.state.seriesId,
             season: this.state.season,
@@ -76,14 +77,49 @@ class SeriesDetails extends Component {
         this.props.onSaveOptions(this.props.idToken, this.props.userId, seriesData)
     };
 
+    changeSeasonHandler = (event) => {
+        event.preventDefault();
+        this.setState({season: parseInt(event.target.value), episode: 1})
+    };
+
+    changeEpisodeHandler = (event) => {
+        event.preventDefault();
+        this.setState({episode: parseInt(event.target.value)})
+    };
+
     render() {
+        let controls = <Spinner/>;
+
         console.log(this.state);
+        if (this.props.series) {
+            let max=this.props.series.seasons[this.state.season].episode_count;
+            controls = <form>
+                <input
+                    onChange={this.changeSeasonHandler}
+                    type='number'
+                    name='season'
+                    value={this.state.season}
+                    min='0'
+                    max={this.props.series.number_of_seasons}/>
+
+                <input
+                    onChange={this.changeEpisodeHandler}
+                    type='number'
+                    name='episode'
+                    value={this.state.episode}
+                    min='1'
+                    max={max}/>
+                {/**/}
+            </form>
+        }
 
         return (<div>
             <p onClick={this.backToList}>back to list</p>
             {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
 
             <p>EpisodeDetails</p>
+            {controls}
+
             <button onClick={this.showState}>load details</button>
             <button onClick={this.saveSeries}>Save</button>
             <button onClick={this.saveOptions}>Save Options</button>

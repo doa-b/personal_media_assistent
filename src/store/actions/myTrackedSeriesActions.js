@@ -7,9 +7,17 @@ export const fireBaseStart = () => {
     }
 };
 
-export const fireBaseSaveSucces = () => {
+export const fireBaseSaveOptionsSucces = (options) => {
     return {
-        type: actionTypes.FIREBASE_SAVE_SUCCES
+        type: actionTypes.FIREBASE_SAVE_OPTIONS_SUCCES,
+        options: options
+    }
+};
+
+export const fireBaseSaveSeriesSucces = (series) => {
+    return {
+        type: actionTypes.FIREBASE_SAVE_SERIES_SUCCES,
+        series: series
     }
 };
 
@@ -35,7 +43,7 @@ export const saveMySeries = (token, userId, seriesData) => {
         axios.put(`${userId}/series/${seriesData.seriesId}.json?auth=` + token, seriesData)
             .then((response) => {
                 console.log(response);
-                dispatch(fireBaseSaveSucces())
+                dispatch(fireBaseSaveSeriesSucces(seriesData))
             })
             .catch(error => {
                 dispatch(fireBaseFail(error));
@@ -47,7 +55,7 @@ export const saveMyOptions = (token, userId, options) => {
         dispatch(fireBaseStart());
         axios.put(`${userId}/options.json?auth=` + token, options)
             .then((response) => {
-                dispatch(fireBaseSaveSucces())
+                dispatch(fireBaseSaveOptionsSucces(options))
             })
             .catch(error => {
                 dispatch(fireBaseFail(error));
