@@ -21,7 +21,8 @@ class SeriesList extends Component {
         super(props);
         this.state = {
             pickOption: null,
-            orderIcon: 'sort-up'
+            orderIcon: 'sort-up',
+            search: null
         }
     }
 
@@ -51,28 +52,6 @@ class SeriesList extends Component {
         console.log(this.state);
     };
 
-    // saveFilter = (filter) => {
-    //     const options = {
-    //         filter: filter,
-    //         sortBy: 'name',
-    //         order: this.props.order,
-    //         search: this.props.search
-    //     };
-    //     this.setState ({filter: filter, pickOption: null});
-    //     this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
-    // };
-    //
-    // saveSortBy = (sortBy) => {
-    //     const options = {
-    //         filter: this.props.filter,
-    //         sortBy: sortBy,
-    //         order: this.props.order,
-    //         search: this.props.search
-    //     };
-    //     this.setState ({sortBy: sortBy, pickOption: null});
-    //     this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
-    // };
-
     saveOptions = (element, value) => {
     const newOptions = updateObject(this.props.options, { [element]: value} );
     this.setState ({pickOption: null});
@@ -89,13 +68,6 @@ class SeriesList extends Component {
            this.setState({orderIcon : 'sort-up'})
        }
        this.saveOptions('order', order)
-        // const options = {
-        //     filter: this.props.filter,
-        //     sortBy: 'name',
-        //     order: order,
-        //     search: this.props.search
-        // };
-        // this.props.onSaveOptions(this.props.idToken, this.props.userId, options)
     };
 
     render() {
@@ -138,11 +110,8 @@ class SeriesList extends Component {
                 );
                 break;
             }
-
             default: optionsPicker = null;
         }
-
-
 
         if (this.props.search) {
             searchBar = (
@@ -158,7 +127,7 @@ class SeriesList extends Component {
             )
         }
 
-        if (this.props.filter) {
+        if (this.props.options.filter) {
             sortBar = (
                 <div className={classes.filterBar}
                      onClick={()=> this.setOptionHandler ('filter')}>
@@ -167,7 +136,7 @@ class SeriesList extends Component {
             )
         }
 
-        if(this.props.sortBy) {
+        if(this.props.options.sortBy) {
             filterBar = (
                 <div className={classes.filterBar}>
                     <div onClick={()=> this.setOptionHandler ('sortBy')}>
@@ -212,9 +181,9 @@ const mapStateToProps = (state) => {
         seriesList: state.mySeries.series,
         search: state.mySeries.options.search,
         options: state.mySeries.options,
-        filter: state.mySeries.options.filter,
-        order: state.mySeries.options.order,
-        sortBy: state.mySeries.options.sortBy,
+        // filter: state.mySeries.options.filter,
+        // order: state.mySeries.options.order,
+        // sortBy: state.mySeries.options.sortBy,
         loading: state.mySeries.loading
     }
 };

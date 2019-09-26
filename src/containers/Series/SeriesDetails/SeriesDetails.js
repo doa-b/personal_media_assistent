@@ -7,6 +7,10 @@ import axios from "../../../axios/tvdbAxios";
 import * as keys from "../../../kluis";
 import SeriesDetailsMain from "../../../components/Series/SeriesDetails/SeriesDetailsMain";
 import Spinner from '../../../components/UI/Spinner/Spinner'
+import NumberPicker from '../../../components/UI/Input/NumberPicker'
+import WithModal from "../../../hoc/withModal/withModal";
+import ListPicker from "../../../components/UI/Input/ListPicker";
+
 
 /**
  * Created by Doa on 17-9-2019.
@@ -17,6 +21,7 @@ class SeriesDetails extends Component {
         season: 0,
         episode: 0,
         firebaseId: null,
+        picker: null,
 
         seriesDetails: null,
         showDetails: false,
@@ -78,48 +83,54 @@ class SeriesDetails extends Component {
         this.props.onSaveOptions(this.props.idToken, this.props.userId, seriesData)
     };
 
-    changeSeasonHandler = (event) => {
-        event.preventDefault();
-        this.setState({season: parseInt(event.target.value), episode: 1})
+    setValue = (value) => {
+        if(this.state.picker==='season'){
+            this.setState({season: value, episode: 1})
+        } else {this.setState({episode: value});}
+        this.closeModalHandler();
     };
 
-    changeEpisodeHandler = (event) => {
-        event.preventDefault();
-        this.setState({episode: parseInt(event.target.value)})
+    changeNumberHandler = (name) => {
+        let max=this.props.series.seasons[this.state.season].episode_count;
+        if (name==='season') max = this.props.series.number_of_seasons;
+        this.setState({picker: name})
+    };
+
+    closeModalHandler = () => {
+      this.setState({picker: null})
     };
 
     render() {
-        let controls = <Spinner/>;
-
         console.log(this.state);
-        if (this.props.series) {
-            let max=this.props.series.seasons[this.state.season].episode_count;
-            controls = <form>
-                <input
-                    onChange={this.changeSeasonHandler}
-                    type='number'
-                    name='season'
-                    value={this.state.season}
-                    min='0'
-                    max={this.props.series.number_of_seasons}/>
+        let picker = null;
+        let max=0;
 
-                <input
-                    onChange={this.changeEpisodeHandler}
-                    type='number'
-                    name='episode'
-                    value={this.state.episode}
-                    min='1'
-                    max={max}/>
-                {/**/}
-            </form>
-        }
+        if (this.state.picker) {
+            if(this.state.picker === 'episode') { max=this.props.series.seasons[this.state.season].episode_count; }
+            else { max=this.props.series.number_of_seasons; }
+                picker = (
+                    <WithModal show modalClosed={this.closeModalHandler}>
+                        <NumberPicker name={this.state.picker}
+                                      max={max}
+                                      min={0}
+                                      chosen={(value)=>this.setValue(value)}/>
+                    </WithModal>
+                );
+            }
 
         return (<div>
+            {picker}
             <p onClick={this.backToList}>back to list</p>
             {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
 
             <p>EpisodeDetails</p>
-            {controls}
+            <span
+                className={classes.number}
+            onClick={() => this.changeNumberHandler('season')}>
+                {this.state.season}</span>
+            <span className={classes.number}
+                  onClick={() => this.changeNumberHandler('episode')}>
+                {this.state.episode}</span>
 
             <button onClick={this.showState}>load details</button>
             <button onClick={this.saveSeries}>Save</button>
