@@ -55,7 +55,7 @@ class SeriesDetails extends Component {
 
     saveSeries = () => {
         const s = this.props.series;
-        let nextAirDate = (s.next_episode_to_air) ? s.next_episode_to_air.air_date : "none"
+        let nextAirDate = (s.next_episode_to_air) ? s.next_episode_to_air.air_date : "none";
         const seriesData = {
             name: s.name,
             status: s.status,
@@ -72,7 +72,7 @@ class SeriesDetails extends Component {
         this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData)
     };
 
-    // kan weg
+    // can be removed
     saveOptions = () => {
         const seriesData = {
             filter: 'kippen',

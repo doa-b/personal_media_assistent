@@ -1,13 +1,16 @@
-.NumberPicker {
+.Numbers {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1;
     width: 90%;
     padding: 10px;
 }
 
-.number {
+.Number {
     box-shadow: 0 2px 1px #ccc;
-    margin: auto;
-    padding: 10px;
+    margin: 5px 5px;
+    padding: 10px 15px;
     text-align: center;
     cursor: pointer;
 }

@@ -21,11 +21,19 @@ class App extends Component {
 
         let routes = (
             <Switch>
+                <Route path="/auth" component={Authentication}/>
+                <Redirect to="/auth"/>
+            </Switch>
+        );
+
+        if (this.props.isAuthenticated) routes = (
+            <Switch>
                 <Route path="/series/add" exact component={AddSeries} />
                 <Route path="/" exact component={SeriesList} />
                 <Route path="/authentication" exact component={Authentication} />
                 <Route path="/logout" exact component={Logout}/>
                 <Route path="/details" exact component={SeriesDetails}/>
+                <Redirect to="/"/>
             </Switch>
         );
         return (
@@ -38,10 +46,16 @@ class App extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        isAuthenticated: state.auth.idToken !=null
+    }
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
         onTryAutoSignup: () => dispatch(actions.authCheckState())
     }
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

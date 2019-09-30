@@ -10,18 +10,17 @@ const NumberPicker = (props) => {
 
     for (let i = 0; i <= props.max; i++) {
         numbers.push(<span key={i}
-                           className={classes.number}
-                           onClick={()=>props.chosen(i)}>{i}</span>)
+                           className={classes.Number}
+                           onClick={() => props.chosen(i)}>{i}</span>)
     }
 
-
     return (
-        <div className={classes.NumberPicker}>
-            <p> Select {props.name}</p>
-            {numbers}
-        </div>);
-
-
+        <>
+            <h3> Select {props.name}</h3>
+            <div className={classes.Numbers}>
+                {numbers}
+            </div>
+        </>);
 };
 
 export default NumberPicker;
