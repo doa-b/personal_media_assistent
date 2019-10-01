@@ -103,7 +103,8 @@ class SeriesDetails extends Component {
     };
 
     changeNumberHandler = (name) => {
-        let max = this.props.series.seasons[this.state.season].episode_count;
+        let max = (this.props.series.seasons[this.state.season].episode_count) ?
+       this.props.series.seasons[this.state.season].episode_count : 1;
         if (name === 'season') max = this.props.series.number_of_seasons;
         this.setState({picker: name})
     };

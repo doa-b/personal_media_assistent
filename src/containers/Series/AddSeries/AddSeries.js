@@ -46,17 +46,14 @@ class AddSeries extends Component {
                 <table>
                     <tbody>
                     <tr>
-                        <th>First Aired</th>
-                        <th>name</th>
+                        <th>First aired</th>
+                        <th>Name</th>
                     </tr>
                     {this.props.results.map((result) => {
                         return (
                             <tr key={result.id}>
                                 <td> {result.first_air_date} </td>
-                                <td onClick={() => this.showDetailsHandler(result.id)}> {result.name} </td>
-                                <td>
-                                    <button onClick={()=> this.addSeriesHandler(result.id)}>Add</button>
-                                </td>
+                                <td onClick={() => this.showDetailsHandler(result.id)}><u> {result.name}</u></td>
                             </tr>
                         )
                     })}
@@ -65,18 +62,22 @@ class AddSeries extends Component {
             );
         }
 
-        return (<div>
-            {loading}
-            <form onSubmit={this.submitHandler}>
-                <input type='text'
-                       value={this.state.query}
-                       onChange={this.changeHandler}/>
-                <button type='submit'>
-                    Submit
-                </button>
-            </form>
-            {table}
-        </div>);
+        return (
+            <div className={classes.AddSeries}>
+                {loading}
+                <form onSubmit={this.submitHandler}>
+
+                    <input type='text'
+                           value={this.state.query}
+                           placeholder='enter series title'
+                           onChange={this.changeHandler}/>
+                    <button type='submit'>
+                        Search
+                    </button>
+                </form>
+                <br/>
+                {table}
+            </div>);
     }
 }
 
