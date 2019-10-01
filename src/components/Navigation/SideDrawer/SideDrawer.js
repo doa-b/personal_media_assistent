@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import classes from './SideDrawer.module.css'
 import Aux from '../../../hoc/Auxiliary/Auxiliary'
-import Avatar from '../../../components/Avatar/Avatar'
+import Avatar from '../../UI/Avatar/Avatar'
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
 

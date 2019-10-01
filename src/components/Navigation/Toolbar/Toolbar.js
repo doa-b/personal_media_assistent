@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 import classes from './Toolbar.module.css'
 
-import Avatar from '../../../components/Avatar/Avatar'
+import Avatar from '../../UI/Avatar/Avatar'
 
 
 /**
