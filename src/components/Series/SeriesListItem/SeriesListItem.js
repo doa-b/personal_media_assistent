@@ -1,8 +1,8 @@
 import React from 'react';
 
 import classes from './SeriesListItem.module.css'
-import seriesPlaceHolder from '../../assets/images/series_placeholder.png'
-import stepForward from '../../assets/images/step_forward.svg'
+import seriesPlaceHolder from '../../../assets/images/series_placeholder.png'
+import stepForward from '../../../assets/images/step_forward.svg'
 
 /**
  * Created by Doa on 9-9-2019.

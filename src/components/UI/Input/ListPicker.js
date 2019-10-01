@@ -11,14 +11,14 @@ const ListPicker = (props) => {
         'name',
         'next airdate',
         'last seen',
-        ]
+        ];
 
     if (props.choices === 'filter') {
         choices = [
             'paused',
             'available',
             'finished',
-            'all'
+            'none'
         ];
     }
 

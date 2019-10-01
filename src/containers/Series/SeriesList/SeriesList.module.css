@@ -16,6 +16,11 @@
     cursor: pointer;
 }
 
+.searchBar input {
+    margin: auto 5px;
+    border: 0px;
+}
+
 .closeIcon {
     margin: auto 0px;
     color: red;
@@ -26,7 +31,7 @@
     font-size: 1.5em;
 }
 
-.filterBar {
+.sortBar {
     display: flex;
     min-height: fit-content;
     justify-content: space-between;
@@ -38,7 +43,12 @@
     cursor: pointer;
 }
 
-.filterBar p {
-    margin: 0px;
-    padding: 1px;
+.filterBar {
+    min-height: fit-content;
+    margin: 10px 10px;
+    padding: 1px 5px;
+    border: 1px solid #999;
+    border-radius: 7px;
+    box-shadow: 0 2px 3px #ccc;
+    cursor: pointer;
 }

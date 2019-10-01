@@ -5,7 +5,7 @@ import './App.css';
 
 import * as actions from "./store/actions";
 import Layout from './hoc/Layout/Layout'
-import SeriesList from './containers/SeriesList/SeriesList'
+import SeriesList from './containers/Series/SeriesList/SeriesList'
 import Authentication from './containers/Authentication/Authentication'
 import Logout from './containers/Authentication/Logout/Logout'
 import AddSeries from './containers/Series/AddSeries/AddSeries'

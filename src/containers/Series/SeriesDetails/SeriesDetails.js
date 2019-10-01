@@ -3,13 +3,13 @@ import {connect} from 'react-redux'
 
 import classes from './SeriesDetails.module.css'
 import * as actions from "../../../store/actions";
-import axios from "../../../axios/tvdbAxios";
-import * as keys from "../../../kluis";
+
 import SeriesDetailsMain from "../../../components/Series/SeriesDetails/SeriesDetailsMain";
 import Spinner from '../../../components/UI/Spinner/Spinner'
 import NumberPicker from '../../../components/UI/Input/NumberPicker'
 import WithModal from "../../../hoc/withModal/withModal";
-import ListPicker from "../../../components/UI/Input/ListPicker";
+import { getSeriesStatus } from '../../../shared/utility'
+
 
 
 /**
@@ -55,11 +55,12 @@ class SeriesDetails extends Component {
 
     saveSeries = () => {
         const s = this.props.series;
-        let nextAirDate = (s.next_episode_to_air) ? s.next_episode_to_air.air_date : "none";
+        let nextAirDate = (s.next_episode_to_air) ? s.next_episode_to_air.air_date : 'none';
         const seriesData = {
             name: s.name,
             status: s.status,
-            myStatus: 'Available',
+            myStatus: getSeriesStatus(this.props.series, this.state.season * this.state.episode),
+            lastSeen: new Date(),
             nextAirDate: nextAirDate,
             seriesId: this.state.seriesId,
             season: this.state.season,
@@ -94,6 +95,10 @@ class SeriesDetails extends Component {
         let max=this.props.series.seasons[this.state.season].episode_count;
         if (name==='season') max = this.props.series.number_of_seasons;
         this.setState({picker: name})
+        this.props.onFetchEpisodeDetails(
+            this.state.seriesId,
+            this.state.season,
+            this.state.episode)
     };
 
     closeModalHandler = () => {
