@@ -5,11 +5,11 @@ import classes from './SeriesDetails.module.css'
 import * as actions from "../../../store/actions";
 
 import SeriesDetailsMain from "../../../components/Series/SeriesDetails/SeriesDetailsMain";
+import EpisodeDetails from '../../../components/Series/EpisodeDetails/EpisodeDetails'
 import Spinner from '../../../components/UI/Spinner/Spinner'
 import NumberPicker from '../../../components/UI/Input/NumberPicker'
 import WithModal from "../../../hoc/withModal/withModal";
-import { getSeriesStatus } from '../../../shared/utility'
-
+import {getSeriesStatus} from '../../../shared/utility'
 
 
 /**
@@ -42,6 +42,15 @@ class SeriesDetails extends Component {
             this.state.season,
             this.state.episode
         );
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.episode !== prevState.episode || this.state.season !== prevState.season) {
+            this.props.onFetchEpisodeDetails(
+                this.state.seriesId,
+                this.state.season,
+                this.state.episode)
+        }
     }
 
     showState = () => {
@@ -85,61 +94,75 @@ class SeriesDetails extends Component {
     };
 
     setValue = (value) => {
-        if(this.state.picker==='season'){
+        if (this.state.picker === 'season') {
             this.setState({season: value, episode: 1})
-        } else {this.setState({episode: value});}
+        } else {
+            this.setState({episode: value});
+        }
         this.closeModalHandler();
     };
 
     changeNumberHandler = (name) => {
-        let max=this.props.series.seasons[this.state.season].episode_count;
-        if (name==='season') max = this.props.series.number_of_seasons;
+        let max = this.props.series.seasons[this.state.season].episode_count;
+        if (name === 'season') max = this.props.series.number_of_seasons;
         this.setState({picker: name})
-        this.props.onFetchEpisodeDetails(
-            this.state.seriesId,
-            this.state.season,
-            this.state.episode)
     };
 
     closeModalHandler = () => {
-      this.setState({picker: null})
+        this.setState({picker: null})
     };
 
     render() {
         console.log(this.state);
         let picker = null;
-        let max=0;
+        let max = 0;
 
         if (this.state.picker) {
-            if(this.state.picker === 'episode') { max=this.props.series.seasons[this.state.season].episode_count; }
-            else { max=this.props.series.number_of_seasons; }
-                picker = (
-                    <WithModal show modalClosed={this.closeModalHandler}>
-                        <NumberPicker name={this.state.picker}
-                                      max={max}
-                                      min={0}
-                                      chosen={(value)=>this.setValue(value)}/>
-                    </WithModal>
-                );
+            if (this.state.picker === 'episode') {
+                max = this.props.series.seasons[this.state.season].episode_count;
             }
+            else {
+                max = this.props.series.number_of_seasons;
+            }
+            picker = (
+                <WithModal show modalClosed={this.closeModalHandler}>
+                    <NumberPicker name={this.state.picker}
+                                  max={max}
+                                  min={0}
+                                  chosen={(value) => this.setValue(value)}/>
+                </WithModal>
+            );
+        }
 
-        return (<div>
+        return (
+            <div className={classes.SeriesDetails}>
             {picker}
             <p onClick={this.backToList}>back to list</p>
             {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
 
-            <p>EpisodeDetails</p>
-            <span
-                className={classes.number}
-            onClick={() => this.changeNumberHandler('season')}>
-                {this.state.season}</span>
-            <span className={classes.number}
-                  onClick={() => this.changeNumberHandler('episode')}>
-                {this.state.episode}</span>
+            <p>Next Episode to watch
 
+            </p>
+            <label>
+                Season
+                <span
+                    className={classes.number}
+                    onClick={() => this.changeNumberHandler('season')}>
+                {this.state.season}</span>
+            </label>
+            <label>
+                Episode
+                <span className={classes.number}
+                      onClick={() => this.changeNumberHandler('episode')}>
+                {this.state.episode}</span>
+            </label>
+                {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/> }
+            <p>
+                <br/>
             <button onClick={this.showState}>load details</button>
             <button onClick={this.saveSeries}>Save</button>
             <button onClick={this.saveOptions}>Save Options</button>
+            </p>
         </div>);
 
     }

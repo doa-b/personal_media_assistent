@@ -2,24 +2,29 @@ import React from 'react';
 
 import classes from './SeriesDetailsMain.module.css'
 
+import ScoreIndicator from 'react-score-indicator'
+
+import Poster from '../../UI/TmdbImages/Poster'
+
 /**
  * Created by Doa on 17-9-2019.
  */
 const seriesDetailsMain = (props) => {
-    let nextEpisode=<h4>Series has ended</h4>;
-    let next=props.details.next_episode_to_air;
-    let url = `https://image.tmdb.org/t/p/original/${props.details.poster_path}`;
-    let url2 = "https://image.tmdb.org/t/p/original/fNSVO2LRkAmbyA8kFNnr4Btq1xp.jpg";
+    console.log(props.details);
+    let nextEpisode = <h4>Series has ended</h4>;
+    let next = props.details.next_episode_to_air;
+    let url = "https://image.tmdb.org/t/p/w500/" + props.details.poster_path;
+
     let seasonList = (
         props.details.seasons.map((season) => {
             return (
-            <li key={season.id}>
-                ({season.season_number}) episodes: {season.episode_count}
-            </li>)
+                <li key={season.id}>
+                    ({season.season_number}) episodes: {season.episode_count}
+                </li>)
         })
     );
     if (next) {
-        nextEpisode=(
+        nextEpisode = (
             <div>
                 <h4> Next Episode {next.air_date} </h4>
                 <p> S{next.season_number} E{next.episode_number} </p>
@@ -29,26 +34,17 @@ const seriesDetailsMain = (props) => {
     }
     return (
         <div className={classes.SeriesDetailsMain}>
-            <h3>{props.details.name}</h3>
-            <img src={url2}></img>
-            <p>{'first air date: ' + props.details.first_air_date}</p>
+            <img src={url}></img>
             <p>{props.details.overview}</p>
-            <ul>
-                {seasonList}
-            </ul>
-            <p>{props.details.number_of_episodes} episodes in {props.details.number_of_seasons} seasons</p>
-            {nextEpisode}
-            <p>
-                {props.details.poster_path}
-            </p>
+                {props.details.number_of_episodes} episodes in {props.details.number_of_seasons} seasons
+                {nextEpisode}
+                {'first air date: ' + props.details.first_air_date}
 
+            <ScoreIndicator value={props.details.vote_average * 10} maxValue={100}/>
 
-            <img scr={`https://image.tmdb.org/t/p/original${props.details.poster_path}`}
-            alt="kip"/>
-            <img scr={"https://image.tmdb.org/t/p/original" + props.details.poster_path}
-                 >
-            </img>
-
+            {/*<ul>*/}
+                {/*{seasonList}*/}
+            {/*</ul>*/}
         </div>
     );
 };

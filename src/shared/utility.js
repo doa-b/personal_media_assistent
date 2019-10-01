@@ -25,7 +25,7 @@ export const compareValues = (key, order='ascending') => {
             comparison = -1;
         }
         return (
-            (order == 'descending') ? (comparison * -1) : comparison
+            (order === 'descending') ? (comparison * -1) : comparison
         );
     };
 };
@@ -36,15 +36,18 @@ export const filterByValue = (array, key, string) => {
 };
 
 export const getSeriesStatus = (series, currentEpisode) => {
-    console.log(series);
-    console.log(currentEpisode);
     const latestEpisode = series.last_episode_to_air.episode_number * series.last_episode_to_air.season_number;
-    console.log(latestEpisode);
+
     if (currentEpisode < latestEpisode) return 'available';
     else if (series.status === 'Returning Series') {
             return 'paused'
         }
         return 'finished'
+};
+
+export const convertStringToDate = (string) => {
+    var parts =string.split('-');
+    return new Date(parts[0], parts[1] - 1, parts[2]);
 };
 
 

@@ -9,7 +9,6 @@ import Aux from '../../../hoc/Auxiliary/Auxiliary'
 import * as actions from "../../../store/actions/index";
 import WithModal from '../../../hoc/withModal/withModal';
 import ListPicker from '../../../components/UI/Input/ListPicker';
-import Search from '../../../components/UI/Input/Search'
 import {updateObject, compareValues, filterByValue} from '../../../shared/utility';
 
 /**
@@ -85,13 +84,13 @@ class SeriesList extends Component {
         let filterBar = null;
         let sortBar = null;
         let filteredSeriesList = this.props.seriesList;
-        if (this.state.search != '') {
+        if (this.state.search !== '') {
             filteredSeriesList = filterByValue(filteredSeriesList,'name', this.state.search)
         }
-        if (this.props.options.filter !='none') {
+        if (this.props.options.filter !=='none') {
             filteredSeriesList = filteredSeriesList.filter(element => element.myStatus === this.props.options.filter);
         }
-        if (this.props.options.sortBy == 'last seen') {
+        if (this.props.options.sortBy === 'last seen') {
         filteredSeriesList.sort(compareValues('lastSeen', this.props.options.order));
         } else if (this.props.options.sortBy === 'name') {
             filteredSeriesList.sort(compareValues('name', this.props.options.order));
@@ -156,7 +155,6 @@ class SeriesList extends Component {
                         <SeriesListItem
                             series={series}/>
                     </div>)}
-                <button onClick={this.props.onFetchMyData}>Fetch my Data</button>
             </Aux>)
     }
 }

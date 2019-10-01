@@ -9,7 +9,6 @@ const ListPicker = (props) => {
 
     let choices=[
         'name',
-        'next airdate',
         'last seen',
         ];
 

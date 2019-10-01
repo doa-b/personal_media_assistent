@@ -10,6 +10,7 @@ import stepForward from '../../../assets/images/step_forward.svg'
 const SeriesListItem = (props) => {
     const p = props.series;
     const nextAirDate = (p.nextAirDate === "none") ? <p>Series has ended</p> : <p>Next airdate {p.nextAirDate}</p>
+    const url = "https://image.tmdb.org/t/p/w300/" + p.image
 
     return (
         <div className={classes.cardBody}>
@@ -23,8 +24,8 @@ const SeriesListItem = (props) => {
                     </div>
                 </div>
                 <img className={classes.image}
-                     src={seriesPlaceHolder}
-                     alt='season'/>
+                     src={url}
+                     alt='episode'/>
 
                 <img className={classes.forward}
                      src={stepForward}

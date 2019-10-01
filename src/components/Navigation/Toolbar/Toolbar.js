@@ -37,12 +37,6 @@ const toolbar = (props) => (
             icon={'plus-circle'}
             size={'2x'}/>
         </Link>
-
-        <FontAwesomeIcon
-            className={classes.Icon}
-            icon={'search'}
-            size={'2x'}/>
-
         <div className={classes.Avatar}>
             <Avatar/>
         </div>

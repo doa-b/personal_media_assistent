@@ -1,0 +1,20 @@
+.EpisodeDetails {
+    padding: 3px;
+    margin: 10px;
+}
+/*.Top {*/
+    /*display: flex;*/
+    /*width: available;*/
+    /*height: 100px;*/
+
+/*}*/
+
+/*.Top img {*/
+    /*height: 80px;*/
+    /*flex-grow: 2;*/
+/*}*/
+
+/*.ScoreIndicator {*/
+    /*flex-grow: 1;*/
+    /*height: 80px;*/
+/*}*/
