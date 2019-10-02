@@ -2,44 +2,29 @@ import * as actionTypes from '../actions/actionTypes'
 import {updateObject} from '../../shared/utility';
 
 const initialState = {
-    series: [
-        {
-            id: 0,
-            name: 'The walking Dead',
-            season: 1,
-            episode: 2,
-            episodeTitle: 'Ye of little faith',
-            episodeDescription: 'bla bla bla bla bla',
-            nextAirDate: '12-12-2020',
-            status: 'continuing'
-        },
-        {
-            id: 1,
-            name: 'Dexter',
-            season: 5,
-            episode: 12,
-            episodeTitle: 'Death comes in many ways',
-            episodeDescription: 'bla bla bla bla bla',
-            nextAirDate: null,
-            status: 'continuing'
-        }
-    ],
+    series: [],
     options: {
-        search: 'dead',
-        filter: 'continuing',
-        order: 'Ascending',
+        search: '',
+        filter: 'none',
+        order: 'ascending',
         sortBy: 'name'
     },
     idToken: null,
     error: null,
-    loading: false,
-    // episodeDetails: null,
+    loading: false
 };
 
 const fetchMyData = (state, action) => {
     console.log(action.series);
-    const newState = {
-        options: action.options,
+    let newState = null;
+    if (action.options) {
+        newState = {
+            options: action.options,
+            series: action.series,
+            loading: false,
+            error: null
+        };
+    } else newState = {
         series: action.series,
         loading: false,
         error: null

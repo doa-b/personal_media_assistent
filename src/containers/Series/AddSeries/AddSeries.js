@@ -6,8 +6,6 @@ import {updateObject} from '../../../shared/utility';
 import * as actions from '../../../store/actions';
 import Spinner from '../../../components/UI/Spinner/Spinner'
 
-//TODO store search query after submit in options Store, and load on mount, so we can go back to this page
-
 /**
  * Created by Doa on 16-9-2019.
  */

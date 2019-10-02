@@ -82,17 +82,6 @@ class SeriesDetails extends Component {
         this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData)
     };
 
-    // can be removed
-    saveOptions = () => {
-        const seriesData = {
-            filter: 'kippen',
-            search: 'doa',
-            order: 'ascending',
-            sortBy: 'name'
-        };
-        this.props.onSaveOptions(this.props.idToken, this.props.userId, seriesData)
-    };
-
     setValue = (value) => {
         if (this.state.picker === 'season') {
             this.setState({season: value, episode: 1})
@@ -103,9 +92,6 @@ class SeriesDetails extends Component {
     };
 
     changeNumberHandler = (name) => {
-        let max = (this.props.series.seasons[this.state.season].episode_count) ?
-       this.props.series.seasons[this.state.season].episode_count : 1;
-        if (name === 'season') max = this.props.series.number_of_seasons;
         this.setState({picker: name})
     };
 
@@ -120,7 +106,8 @@ class SeriesDetails extends Component {
 
         if (this.state.picker) {
             if (this.state.picker === 'episode') {
-                max = this.props.series.seasons[this.state.season].episode_count;
+                max = (this.props.series.seasons[this.state.season].episode_count) ?
+                    this.props.series.seasons[this.state.season].episode_count : 1;
             }
             else {
                 max = this.props.series.number_of_seasons;
@@ -128,6 +115,7 @@ class SeriesDetails extends Component {
             picker = (
                 <WithModal show modalClosed={this.closeModalHandler}>
                     <NumberPicker name={this.state.picker}
+                                  current={this.state[this.state.picker]}
                                   max={max}
                                   min={0}
                                   chosen={(value) => this.setValue(value)}/>
@@ -162,7 +150,6 @@ class SeriesDetails extends Component {
                 <br/>
             <button onClick={this.showState}>load details</button>
             <button onClick={this.saveSeries}>Save</button>
-            <button onClick={this.saveOptions}>Save Options</button>
             </p>
         </div>);
 
@@ -187,10 +174,7 @@ const mapDispatchtoProps = (dispatch) => {
             dispatch(actions.fetchEpisodeDetails(seriesId, season, episode)),
 
         onSaveSeries: (token, userId, seriesData) =>
-            dispatch(actions.saveMySeries(token, userId, seriesData)),
-
-        onSaveOptions: (token, userId, options) =>
-            dispatch(actions.saveMyOptions(token, userId, options))
+            dispatch(actions.saveMySeries(token, userId, seriesData))
     };
 };
 

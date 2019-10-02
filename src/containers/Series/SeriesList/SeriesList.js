@@ -21,8 +21,7 @@ class SeriesList extends Component {
         this.state = {
             pickOption: null,
             orderIcon: 'sort-up',
-            search: '',
-            filteredSeriesList: []
+            search: ''
         }
     }
 

@@ -18,8 +18,8 @@ class Authentication extends Component {
 
     state = {
         formData: {
-            name: 'Doa',
-            email: 'djdoa@hotmail.com',
+            name: 'Mr Examplary',
+            email: 'example@test.com',
             password: '123456',
             photoUrl: 'https://images1.persgroep.net/rcs/Lv_LIy7x1aZbGNHgwU46vnEznhc/diocontent/100818159/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.9'
         },
@@ -39,6 +39,15 @@ class Authentication extends Component {
     submitHandler = (event) => {
         event.preventDefault();
         console.log(this.state);
+        if(this.state.operation === constants.AUTH_SIGN_UP) {
+            const options = {
+                search: '',
+                filter: '',
+                order: 'ascending',
+                sortBy: 'name'
+            };
+            this.props.onSaveOptions()
+        }
         this.props.onAuth(this.state.formData.email,
             this.state.formData.password,
             this.state.operation);
@@ -105,9 +114,6 @@ class Authentication extends Component {
                     </button>
                 </form>
                 {footer}
-                <button onClick={()=> this.props.onSeries('62286')}>
-                    get series test
-                </button>
             </div>);
 
     }
@@ -116,8 +122,7 @@ class Authentication extends Component {
 const mapStatetoProps = (state) => {
     return {
         loading: state.auth.loading,
-        error: state.auth.error,
-        tvdbToken: state.series.idToken
+        error: state.auth.error
     }
 };
 
@@ -125,7 +130,8 @@ const mapDispatchtoProps = (dispatch) => {
     return {
         onAuth: (email, password, operation, name, photoUrl) =>
             dispatch(actions.auth(email, password, operation, name, photoUrl)),
-        onSeries: (tvdbToken) => dispatch(actions.fetchSeriesDetails(tvdbToken))
+        onSaveOptions: (token, userId, options) =>
+            dispatch(actions.saveMyOptions(token, userId, options))
     }
 };
 

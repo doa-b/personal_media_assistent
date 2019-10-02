@@ -9,7 +9,7 @@ import stepForward from '../../../assets/images/step_forward.svg'
  */
 const SeriesListItem = (props) => {
     const p = props.series;
-    const nextAirDate = (p.nextAirDate === "none") ? <p>Series has ended</p> : <p>Next airdate {p.nextAirDate}</p>
+    const nextAirDate = (p.nextAirDate === "none") ? <p>Series has ended</p> : <p>Next {p.nextAirDate}</p>
     const url = "https://image.tmdb.org/t/p/w300/" + p.image
 
     return (

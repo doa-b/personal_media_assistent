@@ -7,10 +7,16 @@ import classes from './NumberPicker.module.css'
 const NumberPicker = (props) => {
 
     const numbers = [];
+    let style = {};
 
-    for (let i = 0; i <= props.max; i++) {
+    for (let i = props.min; i <= props.max; i++) {
+        if (i === props.current) {
+            style = {backgroundColor: 'lightblue'}
+        } else style = {};
+
         numbers.push(<span key={i}
                            className={classes.Number}
+                           style={style}
                            onClick={() => props.chosen(i)}>{i}</span>)
     }
 
