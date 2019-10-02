@@ -10,6 +10,9 @@ import * as actions from "../../../store/actions/index";
 import WithModal from '../../../hoc/withModal/withModal';
 import ListPicker from '../../../components/UI/Input/ListPicker';
 import {updateObject, compareValues, filterByValue} from '../../../shared/utility';
+import SearchBar from '../../../components/UI/SearchBar/SearchBar'
+import FilterBar from '../../../components/UI/FilterBar/FilterBar'
+import SortBar from '../../../components/UI/SortBar/SortBar'
 
 /**
  * Created by Doa on 9-9-2019.
@@ -57,7 +60,6 @@ class SeriesList extends Component {
     };
 
     toggleOrderHandler = () => {
-        console.log('change order');
         let order;
         if (this.props.options.order === 'ascending') {
             order = 'descending';
@@ -70,7 +72,7 @@ class SeriesList extends Component {
     };
 
     searchHandler = (e) => {
-        this.setState({search: e.target.value})
+        this.setState({search: e.target.value});
         console.log(this.state);
     };
 
@@ -79,9 +81,6 @@ class SeriesList extends Component {
     };
 
     render() {
-        let searchBar = null;
-        let filterBar = null;
-        let sortBar = null;
         let filteredSeriesList = this.props.seriesList;
         if (this.state.search !== '') {
             filteredSeriesList = filterByValue(filteredSeriesList,'name', this.state.search)
@@ -95,47 +94,6 @@ class SeriesList extends Component {
             filteredSeriesList.sort(compareValues('name', this.props.options.order));
         }
 
-            searchBar = (
-                <div className={classes.searchBar}>
-                    <div>
-                        <label><b>search</b>:
-                        <input value={this.state.search}
-                        onChange={this.searchHandler}/>
-                        </label>
-                    </div>
-                    <div onClick={this.clearSearchHandler}>
-                    <FontAwesomeIcon
-                        className={classes.closeIcon}
-                        icon={'times-circle'}/>
-                    </div>
-                </div>
-            );
-
-
-        if (this.props.options.filter) {
-            filterBar = (
-                <div className={classes.filterBar}
-                     onClick={() => this.setOptionHandler('filter')}>
-                    <b>filter: </b>{this.props.options.filter}
-                </div>
-            )
-        }
-
-        if (this.props.options.sortBy) {
-            sortBar = (
-                <div className={classes.sortBar}>
-                    <div onClick={() => this.setOptionHandler('sortBy')}>
-                        <b>sort by: </b>{this.props.options.sortBy}
-                    </div>
-                    <div onClick={this.toggleOrderHandler}>
-                        <FontAwesomeIcon
-                            className={classes.sortIcon}
-                            icon={this.state.orderIcon}/>
-                    </div>
-                </div>
-            )
-        }
-
         return (
             <Aux>
                 {this.props.loading ? <p>loading</p> : null}
@@ -144,9 +102,22 @@ class SeriesList extends Component {
                     <ListPicker choices={this.state.pickOption}
                                 chosen={this.saveOptions}/>
                 </WithModal>
-                {searchBar}
-                {filterBar}
-                {sortBar}
+                <SearchBar
+                search={this.state.search}
+                setSearch={(event)=>this.searchHandler(event)}
+                clearSearch={this.clearSearchHandler}
+                />
+                <FilterBar
+                setOption={this.setOptionHandler}
+                filter={this.props.options.filter}
+                />
+                <SortBar
+                sortBy={this.props.options.sortBy}
+                setOption={this.setOptionHandler}
+                toggleOrder={this.toggleOrderHandler}
+                orderIcon={this.state.orderIcon}
+                />
+
                 {filteredSeriesList.map((series) =>
                     <div className={classes.SeriesList}
                          key={series.id}

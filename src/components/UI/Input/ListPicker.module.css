@@ -1,0 +1,10 @@
+.ListPicker {
+}
+
+.ListItem {
+    box-shadow: 0 2px 1px #ccc;
+    margin: 10px 10px;
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+}

@@ -1,16 +1,16 @@
 import React from 'react';
 
-// import classes from './ListPicker.module.css'
+import classes from './ListPicker.module.css'
 
 /**
  * Created by Doa on 20-9-2019.
  */
 const ListPicker = (props) => {
 
-    let choices=[
+    let choices = [
         'name',
         'last seen',
-        ];
+    ];
 
     if (props.choices === 'filter') {
         choices = [
@@ -21,14 +21,16 @@ const ListPicker = (props) => {
         ];
     }
 
-    return (<div>
-        {choices.map((choice) =>
-            <p key={choice}
-            onClick={()=> props.chosen(props.choices, choice)}>
-                {choice}
-            </p>
-        )}
-    </div>);
+    return (
+        <div className={classes.ListPicker}>
+            {choices.map((choice) =>
+                <p className={classes.ListItem}
+                    key={choice}
+                   onClick={() => props.chosen(props.choices, choice)}>
+                    {choice}
+                </p>
+            )}
+        </div>);
 };
 
 export default ListPicker;
