@@ -1,15 +1,34 @@
 import React, {Component} from 'react';
 import {Route, Switch, withRouter, Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
-import './App.css';
 
+import './App.css';
+import asyncComponent from './hoc/asyncComponent/asyncComponent'
 import * as actions from "./store/actions";
 import Layout from './hoc/Layout/Layout'
-import SeriesList from './containers/Series/SeriesList/SeriesList'
-import Authentication from './containers/Authentication/Authentication'
-import Logout from './containers/Authentication/Logout/Logout'
-import AddSeries from './containers/Series/AddSeries/AddSeries'
-import SeriesDetails from './containers/Series/SeriesDetails/SeriesDetails'
+
+
+const asyncAuth = asyncComponent(() => {
+    return import ('./containers/Authentication/Authentication')
+});
+
+const asyncLogout = asyncComponent(() => {
+    return import ('./containers/Authentication/Logout/Logout')
+});
+
+const asyncSeriesList = asyncComponent(() => {
+    return import ('./containers/Series/SeriesList/SeriesList')
+});
+
+const asyncAddSeries = asyncComponent(() => {
+    return import ('./containers/Series/AddSeries/AddSeries')
+});
+
+const asyncSeriesDetails = asyncComponent(() => {
+    return import ('./containers/Series/SeriesDetails/SeriesDetails')
+});
+
+
 
 class App extends Component {
 
@@ -21,18 +40,18 @@ class App extends Component {
 
         let routes = (
             <Switch>
-                <Route path="/auth" component={Authentication}/>
+                <Route path="/auth" component={asyncAuth}/>
                 <Redirect to="/auth"/>
             </Switch>
         );
 
         if (this.props.isAuthenticated) routes = (
             <Switch>
-                <Route path="/series/add" exact component={AddSeries} />
-                <Route path="/" exact component={SeriesList} />
-                <Route path="/authentication" exact component={Authentication} />
-                <Route path="/logout" exact component={Logout}/>
-                <Route path="/details" exact component={SeriesDetails}/>
+                <Route path="/series/add" exact component={asyncAddSeries} />
+                <Route path="/" exact component={asyncSeriesList} />
+                <Route path="/authentication" exact component={asyncAuth} />
+                <Route path="/logout" exact component={asyncLogout}/>
+                <Route path="/details" exact component={asyncSeriesDetails}/>
                 <Redirect to="/"/>
             </Switch>
         );

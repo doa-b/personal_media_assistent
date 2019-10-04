@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d6efb2d-828b-47d4-89d1-429d0a33d734" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/hoc/asyncComponent/asyncComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/HamburgerMenu/HamburgerMenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/HamburgerMenu/HamburgerMenu.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +37,7 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
           <entry key="ico" value="2" />
-          <entry key="js" value="203" />
+          <entry key="js" value="205" />
           <entry key="json" value="7" />
           <entry key="lock" value="1" />
           <entry key="md" value="3" />
@@ -54,7 +54,7 @@
           <entry key="HTML" value="3" />
           <entry key="Image" value="19" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="203" />
+          <entry key="JavaScript" value="205" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="TypeScript" value="1" />
@@ -75,10 +75,10 @@
           <entry key="ft" value="11" />
           <entry key="gitignore" value="18" />
           <entry key="html" value="65" />
-          <entry key="js" value="39964" />
+          <entry key="js" value="40119" />
           <entry key="json" value="51" />
           <entry key="md" value="318" />
-          <entry key="txt" value="1656" />
+          <entry key="txt" value="1686" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -86,16 +86,16 @@
           <entry key="CSS" value="2472" />
           <entry key="HTML" value="65" />
           <entry key="JSON" value="51" />
-          <entry key="JavaScript" value="39964" />
+          <entry key="JavaScript" value="40119" />
           <entry key="Markdown" value="318" />
-          <entry key="PLAIN_TEXT" value="1726" />
+          <entry key="PLAIN_TEXT" value="1756" />
           <entry key="VTL" value="11" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.35027856">
+    <splitter split-orientation="horizontal" split-proportion="0.1908622">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -213,19 +213,27 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/UI/Input/NumberPicker.module.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="20" selection-start-line="10" selection-start-column="3" selection-end-line="14" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="748">
                   <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hoc/asyncComponent/asyncComponent.js">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/App.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -334,7 +342,6 @@
         <option value="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/seriesReducer.js" />
         <option value="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/UI/Input/Search.js" />
         <option value="$PROJECT_DIR$/src/components/UI/TmdbImages/Poster.js" />
         <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.module.css" />
@@ -373,6 +380,7 @@
         <option value="$PROJECT_DIR$/src/components/UI/Input/areYouSure.module.css" />
         <option value="$PROJECT_DIR$/src/components/UI/Input/areYouSure.js" />
         <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -589,6 +597,12 @@
               <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
               <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hoc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -614,7 +628,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570190146471" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570190798176" />
     <property name="last_opened_file_path" value="D:/PROJECTS/burger-builder" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -631,11 +645,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PROJECTS2\personal_media_assistent\src\hoc" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI\Input" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\axios" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\components\Series\SeriesDetails" />
-      <recent name="C:\PROJECTS2\personal_media_assistent\src\hoc\withModal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI\AreYouSure" />
@@ -688,7 +702,7 @@
       <workItem from="1569921030296" duration="26330000" />
       <workItem from="1570024137424" duration="7672000" />
       <workItem from="1570176377456" duration="1372000" />
-      <workItem from="1570178305362" duration="11648000" />
+      <workItem from="1570178305362" duration="12043000" />
     </task>
     <task id="LOCAL-00001" summary="Created Responsive layout closes #4">
       <created>1568024706359</created>
@@ -900,11 +914,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570190109357</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Removed Hamburger Menu Closes #18">
+      <created>1570190320809</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1570190320809</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238907000" />
+    <option name="totallyTimeSpent" value="239302000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -917,8 +938,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.35181236" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.27665246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -958,7 +980,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Starting to add Firebase Auth" />
     <MESSAGE value="Added firebase Authentication. ERROR: 2 way binding is broken" />
     <MESSAGE value="Added firebase login with Auth Reducer &amp; Actions. Closes #16" />
     <MESSAGE value="Added token expiration timer and auto logout and auto login. closes #27 closes #28" />
@@ -983,12 +1004,10 @@
     <MESSAGE value="Added Delete Series Closes #39" />
     <MESSAGE value="Improved loading and saving" />
     <MESSAGE value="Added &quot;are you sure&quot; prompt Closes #10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;are you sure&quot; prompt Closes #10" />
+    <MESSAGE value="Removed Hamburger Menu Closes #18" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Hamburger Menu Closes #18" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/favicon-32x32.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/mstile-310x150.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1036,15 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1288,6 +1298,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hoc/asyncComponent/asyncComponent.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
