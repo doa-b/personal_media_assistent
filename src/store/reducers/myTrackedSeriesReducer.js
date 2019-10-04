@@ -11,7 +11,8 @@ const initialState = {
     },
     idToken: null,
     error: null,
-    loading: false
+    loading: false,
+    saving: false
 };
 
 const fetchMyData = (state, action) => {
@@ -44,7 +45,7 @@ const saveMySeries = (state, action) => {
     return updateObject(state, {
         series: state.series.concat(action.series),
         error: null,
-        loading: false
+        saving: false
     })
 };
 
@@ -52,7 +53,7 @@ const deleteMySeries = (state, action) => {
     return updateObject(state, {
         series: state.series.filter(serie => serie.id !== action.seriesId),
         error: null,
-        loading: false
+        saving: false
     })
 };
 
@@ -65,9 +66,11 @@ const myTrackedSeriesReducer = (state = initialState, action) => {
         case actionTypes.FIREBASE_SAVE_SERIES_SUCCES:
             return saveMySeries(state, action);
         case actionTypes.FIREBASE_FAIL:
-            return updateObject(state, {error: action.error, loading: false});
+            return updateObject(state, {error: action.error, loading: false, saving: false});
         case actionTypes.FIREBASE_START:
             return updateObject(state, {error: null, loading: true});
+        case actionTypes.FIREBASE_SAVE:
+            return updateObject(state, {error: null, saving: true});
         case actionTypes.FIREBASE_DELETE_SERIES_SUCCES:
             return deleteMySeries(state, action);
         default:

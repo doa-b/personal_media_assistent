@@ -7,6 +7,12 @@ export const fireBaseStart = () => {
     }
 };
 
+export const fireBaseSave = () => {
+    return {
+        type: actionTypes.FIREBASE_SAVE
+    }
+};
+
 export const fireBaseSaveOptionsSucces = (options) => {
     return {
         type: actionTypes.FIREBASE_SAVE_OPTIONS_SUCCES,
@@ -46,7 +52,7 @@ export const fireBaseFail = () => {
 // asynchronous actionsCreators
 export const saveMySeries = (token, userId, seriesData) => {
     return dispatch => {
-        dispatch(fireBaseStart());
+        dispatch(fireBaseSave());
         axios.put(`${userId}/series/${seriesData.seriesId}.json?auth=` + token, seriesData)
             .then((response) => {
                 console.log(response);
@@ -70,7 +76,7 @@ export const saveMyOptions = (token, userId, options) => {
 
 export const deleteMySeries = (seriesId) => {
     return (dispatch, getState) => {
-        dispatch(fireBaseStart());
+        dispatch(fireBaseSave());
         // we get the auth data here directly from the store, not from Caller
         axios.delete(`/${getState().auth.userId}/series/${seriesId}.json?auth=` + getState().auth.idToken)
             .then((response) => {

@@ -30,6 +30,7 @@ class AddSeries extends Component {
                 seriesId: id,
                 season: 1,
                 episode: 1,
+                stored: false
             }
         })
     };

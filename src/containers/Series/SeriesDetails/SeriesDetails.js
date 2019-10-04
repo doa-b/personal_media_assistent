@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 
 import classes from './SeriesDetails.module.css'
 import * as actions from "../../../store/actions";
@@ -20,18 +21,17 @@ class SeriesDetails extends Component {
         seriesId: 0,
         season: 0,
         episode: 0,
-        firebaseId: null,
         picker: null,
-
-        seriesDetails: null,
-        showDetails: false,
+        stored: null,
+        backToPreviousList: null,
     };
 
     componentWillMount() {
         this.setState({
             seriesId: this.props.location.state.seriesId,
             season: this.props.location.state.season,
-            episode: this.props.location.state.episode
+            episode: this.props.location.state.episode,
+            stored: this.props.location.state.stored
         });
     }
 
@@ -40,7 +40,7 @@ class SeriesDetails extends Component {
         this.props.onFetchEpisodeDetails(
             this.state.seriesId,
             this.state.season,
-            this.state.episode
+            this.state.episode,
         );
     }
 
@@ -79,13 +79,13 @@ class SeriesDetails extends Component {
             episodeTitle: this.props.episode.name,
             image: this.props.episode.still_path
         };
-        this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData)
-        this.backToList();
+        this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData);
+        this.state.backToPreviousList = '/'
     };
 
     deleteSeries = () => {
         this.props.onDeleteSeries(this.state.seriesId);
-        this.backToList();
+        this.state.backToPreviousList = '/'
     };
 
     setValue = (value) => {
@@ -107,8 +107,18 @@ class SeriesDetails extends Component {
 
     render() {
         console.log(this.state);
+        let saving = null;
         let picker = null;
         let max = 0;
+
+
+        if (this.props.saving) {
+            saving = <p>SAVING...</p>;
+        }
+        if (!this.props.saving && this.state.backToPreviousList) {
+            saving = <Redirect to={this.state.backToPreviousList}/>
+        }
+
 
         if (this.state.picker) {
             if (this.state.picker === 'episode') {
@@ -154,37 +164,42 @@ class SeriesDetails extends Component {
                 {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/>}
                 <p>
                     <br/>
-                    <button onClick={this.saveSeries}>Save</button>
-                    <button onClick={this.deleteSeries}>Delete</button>
+                    {(!this.props.loading) ? <button onClick={this.saveSeries}>Save</button> : null}
+                    {(this.state.stored) ? <button onClick={this.deleteSeries}>Delete</button> : null}
                 </p>
+                {saving}
             </div>);
 
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        series: state.series.seriesDetails,
-        episode: state.series.episodeDetails,
-        userId: state.auth.userId,
-        idToken: state.auth.idToken
-    }
-};
-
-const mapDispatchtoProps = (dispatch) => {
-    return {
-        onFetchSeriesDetails: (seriesId) =>
-            dispatch(actions.fetchSeriesDetails(seriesId)),
-
-        onFetchEpisodeDetails: (seriesId, season, episode) =>
-            dispatch(actions.fetchEpisodeDetails(seriesId, season, episode)),
-
-        onSaveSeries: (token, userId, seriesData) =>
-            dispatch(actions.saveMySeries(token, userId, seriesData)),
-
-        onDeleteSeries: (seriesId) =>
-            dispatch(actions.deleteMySeries(seriesId))
+const
+    mapStateToProps = (state) => {
+        return {
+            series: state.series.seriesDetails,
+            episode: state.series.episodeDetails,
+            userId: state.auth.userId,
+            idToken: state.auth.idToken,
+            saving: state.mySeries.saving,
+            loading: state.series.loading
+        }
     };
-};
+
+const
+    mapDispatchtoProps = (dispatch) => {
+        return {
+            onFetchSeriesDetails: (seriesId) =>
+                dispatch(actions.fetchSeriesDetails(seriesId)),
+
+            onFetchEpisodeDetails: (seriesId, season, episode) =>
+                dispatch(actions.fetchEpisodeDetails(seriesId, season, episode)),
+
+            onSaveSeries: (token, userId, seriesData) =>
+                dispatch(actions.saveMySeries(token, userId, seriesData)),
+
+            onDeleteSeries: (seriesId) =>
+                dispatch(actions.deleteMySeries(seriesId))
+        };
+    };
 
 export default connect(mapStateToProps, mapDispatchtoProps)(SeriesDetails);

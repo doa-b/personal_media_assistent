@@ -40,6 +40,7 @@ class SeriesList extends Component {
                 seriesId: mySeries.id,
                 season: mySeries.season,
                 episode: mySeries.episode,
+                stored: true
             }
         })
     };
@@ -120,9 +121,9 @@ class SeriesList extends Component {
                     orderIcon={this.state.orderIcon}
                 />
 
-                {filteredSeriesList.map((series) =>
+                {filteredSeriesList.map((series, index) =>
                     <div className={classes.SeriesList}
-                         key={series.id}
+                         key={index}
                          onClick={() => this.showDetailsHandler(series)}>
                         <SeriesListItem
                             series={series}/>
