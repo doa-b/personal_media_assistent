@@ -9,8 +9,10 @@ import SeriesDetailsMain from "../../../components/Series/SeriesDetails/SeriesDe
 import EpisodeDetails from '../../../components/Series/EpisodeDetails/EpisodeDetails'
 import Spinner from '../../../components/UI/Spinner/Spinner'
 import NumberPicker from '../../../components/UI/Input/NumberPicker'
-import WithModal from "../../../hoc/withModal/withModal";
+import AreYouSure from '../../../components/UI/AreYouSure/AreYouSure'
+import WithModal from '../../../hoc/withModal/withModal';
 import {getSeriesStatus} from '../../../shared/utility'
+import Aux from "../../../hoc/Auxiliary/Auxiliary";
 
 
 /**
@@ -24,6 +26,7 @@ class SeriesDetails extends Component {
         picker: null,
         stored: null,
         backToPreviousList: null,
+        showPrompt: false
     };
 
     componentWillMount() {
@@ -80,12 +83,19 @@ class SeriesDetails extends Component {
             image: this.props.episode.still_path
         };
         this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData);
-        this.state.backToPreviousList = '/'
+        this.setState({backToPreviousList: '/'})
     };
 
     deleteSeries = () => {
         this.props.onDeleteSeries(this.state.seriesId);
-        this.state.backToPreviousList = '/'
+        this.setState({
+            backToPreviousList: '/',
+            showPrompt: false
+        })
+    };
+
+    showPromptHandler = () => {
+        this.setState({showPrompt: true})
     };
 
     setValue = (value) => {
@@ -102,12 +112,16 @@ class SeriesDetails extends Component {
     };
 
     closeModalHandler = () => {
-        this.setState({picker: null})
+        this.setState({
+            picker: null,
+            showPrompt: false
+        })
     };
 
     render() {
         console.log(this.state);
         let saving = null;
+        let prompt = null;
         let picker = null;
         let max = 0;
 
@@ -118,7 +132,6 @@ class SeriesDetails extends Component {
         if (!this.props.saving && this.state.backToPreviousList) {
             saving = <Redirect to={this.state.backToPreviousList}/>
         }
-
 
         if (this.state.picker) {
             if (this.state.picker === 'episode') {
@@ -139,37 +152,50 @@ class SeriesDetails extends Component {
             );
         }
 
+        if (this.state.showPrompt) {
+            console.log('showing Are You Sure')
+            prompt = <WithModal show modalClosed={this.closeModalHandler}>
+                <AreYouSure
+                    message={'Are you sure to delete ' + this.props.series.name + '?'}
+                    yes={this.deleteSeries}
+                    no={this.closeModalHandler}/>
+            </WithModal>
+        }
+
         return (
-            <div className={classes.SeriesDetails}>
-                {picker}
-                <p onClick={this.backToList}>back to list</p>
-                {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
+            <>
+                {prompt}
+                <div className={classes.SeriesDetails}>
+                    {picker}
+                    <p onClick={this.backToList}>back to list</p>
+                    {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
 
-                <p>Next Episode to watch
+                    <p>Next Episode to watch
 
-                </p>
-                <label>
-                    Season
-                    <span
-                        className={classes.number}
-                        onClick={() => this.changeNumberHandler('season')}>
+                    </p>
+                    <label>
+                        Season
+                        <span
+                            className={classes.number}
+                            onClick={() => this.changeNumberHandler('season')}>
                 {this.state.season}</span>
-                </label>
-                <label>
-                    Episode
-                    <span className={classes.number}
-                          onClick={() => this.changeNumberHandler('episode')}>
+                    </label>
+                    <label>
+                        Episode
+                        <span className={classes.number}
+                              onClick={() => this.changeNumberHandler('episode')}>
                 {this.state.episode}</span>
-                </label>
-                {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/>}
-                <p>
-                    <br/>
-                    {(!this.props.loading) ? <button onClick={this.saveSeries}>Save</button> : null}
-                    {(this.state.stored) ? <button onClick={this.deleteSeries}>Delete</button> : null}
-                </p>
-                {saving}
-            </div>);
-
+                    </label>
+                    {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/>}
+                    <p>
+                        <br/>
+                        {(!this.props.loading) ? <button onClick={this.saveSeries}>Save</button> : null}
+                        {(this.state.stored) ? <button onClick={this.showPromptHandler}>Delete</button> : null}
+                    </p>
+                    {saving}
+                </div>
+            </>
+        )
     }
 }
 

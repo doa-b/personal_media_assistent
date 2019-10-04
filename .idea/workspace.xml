@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d6efb2d-828b-47d4-89d1-429d0a33d734" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetailsMain.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetailsMain2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/myTrackedSeriesActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/myTrackedSeriesActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/myTrackedSeriesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/myTrackedSeriesReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +34,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="78" />
+          <entry key="css" value="79" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
           <entry key="ico" value="2" />
-          <entry key="js" value="202" />
+          <entry key="js" value="203" />
           <entry key="json" value="7" />
           <entry key="lock" value="1" />
           <entry key="md" value="3" />
@@ -57,11 +51,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="78" />
+          <entry key="CSS" value="79" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="19" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="202" />
+          <entry key="JavaScript" value="203" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="TypeScript" value="1" />
@@ -82,10 +76,10 @@
           <entry key="ft" value="11" />
           <entry key="gitignore" value="18" />
           <entry key="html" value="65" />
-          <entry key="js" value="39228" />
+          <entry key="js" value="39964" />
           <entry key="json" value="51" />
           <entry key="md" value="318" />
-          <entry key="txt" value="1587" />
+          <entry key="txt" value="1619" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -93,16 +87,16 @@
           <entry key="CSS" value="2472" />
           <entry key="HTML" value="65" />
           <entry key="JSON" value="51" />
-          <entry key="JavaScript" value="39228" />
+          <entry key="JavaScript" value="39964" />
           <entry key="Markdown" value="318" />
-          <entry key="PLAIN_TEXT" value="1657" />
+          <entry key="PLAIN_TEXT" value="1689" />
           <entry key="VTL" value="11" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.56347716">
+    <splitter split-orientation="horizontal" split-proportion="0.35027856">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -128,11 +122,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="170">
-                  <caret line="115" column="18" lean-forward="true" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
+                  <caret line="103" column="64" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="103" selection-end-column="64" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -140,10 +134,27 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                  <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.module.css">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/UI/Input/ListPicker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
+                <state relative-caret-position="595">
                   <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
@@ -214,8 +225,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+                <state relative-caret-position="374">
+                  <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -312,8 +323,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetailsMain2.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/hoc/withModal/withModal.js" />
         <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetailsMain.module.css" />
         <option value="$PROJECT_DIR$/src/components/Series/SeriesDetails/SeriesDetailsMain.module.css" />
@@ -361,8 +370,10 @@
         <option value="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.module.css" />
         <option value="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/myTrackedSeriesReducer.js" />
-        <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" />
         <option value="$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/Input/areYouSure.module.css" />
+        <option value="$PROJECT_DIR$/src/components/UI/Input/areYouSure.js" />
+        <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" />
       </list>
     </option>
   </component>
@@ -467,6 +478,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="AreYouSure" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
@@ -581,7 +600,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570187495544" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570189993135" />
     <property name="last_opened_file_path" value="D:/PROJECTS/burger-builder" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -597,19 +616,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.6\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI\SearchBar" />
-      <recent name="C:\PROJECTS2\personal_media_assistent\public" />
-      <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI" />
-      <recent name="C:\PROJECTS2\personal_media_assistent\src\containers\Series" />
-      <recent name="C:\PROJECTS2\personal_media_assistent\src\components\Series" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI\Input" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\axios" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\components\Series\SeriesDetails" />
       <recent name="C:\PROJECTS2\personal_media_assistent\src\hoc\withModal" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI\AreYouSure" />
+      <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI" />
+      <recent name="C:\PROJECTS2\personal_media_assistent\src\components\UI\SearchBar" />
+      <recent name="C:\PROJECTS2\personal_media_assistent\public" />
+      <recent name="C:\PROJECTS2\personal_media_assistent\src\containers\Series" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -655,7 +674,7 @@
       <workItem from="1569921030296" duration="26330000" />
       <workItem from="1570024137424" duration="7672000" />
       <workItem from="1570176377456" duration="1372000" />
-      <workItem from="1570178305362" duration="8847000" />
+      <workItem from="1570178305362" duration="11342000" />
     </task>
     <task id="LOCAL-00001" summary="Created Responsive layout closes #4">
       <created>1568024706359</created>
@@ -853,11 +872,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570181799392</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Improved loading and saving">
+      <created>1570187675462</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1570187675462</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236106000" />
+    <option name="totallyTimeSpent" value="238601000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,7 +898,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.14765458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.23454158" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -912,7 +938,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Integrated Font Awesome Closes #7" />
     <MESSAGE value="Added Routes and Login / Sign-up Page Closes #15" />
     <MESSAGE value="Starting to add Firebase Auth" />
     <MESSAGE value="Added firebase Authentication. ERROR: 2 way binding is broken" />
@@ -937,22 +962,10 @@
     <MESSAGE value="Improved NumberPicker to highlight current number&#10;Added test User with some series" />
     <MESSAGE value="Moved SearchBar, FilterBar and SortBar to their own components. Closes #48&#10;Added CSS to ListPicker" />
     <MESSAGE value="Added Delete Series Closes #39" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Delete Series Closes #39" />
+    <MESSAGE value="Improved loading and saving" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved loading and saving" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/static/media/anonymous-avatar.fbbfa4f9.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="170">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/favicon-32x32.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1064,16 +1077,6 @@
         <state>
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/ListPicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1228,12 +1231,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
+    <entry file="file://$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.module.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/ListPicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+        <state relative-caret-position="595">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1241,7 +1247,27 @@
     <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="115" column="18" lean-forward="true" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
+          <caret line="103" column="64" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="103" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
