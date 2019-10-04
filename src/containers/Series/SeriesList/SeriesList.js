@@ -82,40 +82,42 @@ class SeriesList extends Component {
 
     render() {
         let filteredSeriesList = this.props.seriesList;
-        if (this.state.search !== '') {
-            filteredSeriesList = filterByValue(filteredSeriesList,'name', this.state.search)
-        }
-        if (this.props.options.filter !=='none') {
-            filteredSeriesList = filteredSeriesList.filter(element => element.myStatus === this.props.options.filter);
-        }
-        if (this.props.options.sortBy === 'last seen') {
-        filteredSeriesList.sort(compareValues('lastSeen', this.props.options.order));
-        } else if (this.props.options.sortBy === 'name') {
-            filteredSeriesList.sort(compareValues('name', this.props.options.order));
+        if (this.props.options) {
+            if (this.state.search !== '') {
+                filteredSeriesList = filterByValue(filteredSeriesList, 'name', this.state.search)
+            }
+            if (this.props.options.filter !== 'none') {
+                filteredSeriesList = filteredSeriesList.filter(element => element.myStatus === this.props.options.filter);
+            }
+            if (this.props.options.sortBy === 'last seen') {
+                filteredSeriesList.sort(compareValues('lastSeen', this.props.options.order));
+            } else if (this.props.options.sortBy === 'name') {
+                filteredSeriesList.sort(compareValues('name', this.props.options.order));
+            }
         }
 
         return (
             <Aux>
                 {this.props.loading ? <p>loading</p> : null}
-                <WithModal show ={(this.state.pickOption!=null)}
+                <WithModal show={(this.state.pickOption != null)}
                            modalClosed={this.closeModalHandler}>
                     <ListPicker choices={this.state.pickOption}
                                 chosen={this.saveOptions}/>
                 </WithModal>
                 <SearchBar
-                search={this.state.search}
-                setSearch={(event)=>this.searchHandler(event)}
-                clearSearch={this.clearSearchHandler}
+                    search={this.state.search}
+                    setSearch={(event) => this.searchHandler(event)}
+                    clearSearch={this.clearSearchHandler}
                 />
                 <FilterBar
-                setOption={this.setOptionHandler}
-                filter={this.props.options.filter}
+                    setOption={this.setOptionHandler}
+                    filter={this.props.options.filter}
                 />
                 <SortBar
-                sortBy={this.props.options.sortBy}
-                setOption={this.setOptionHandler}
-                toggleOrder={this.toggleOrderHandler}
-                orderIcon={this.state.orderIcon}
+                    sortBy={this.props.options.sortBy}
+                    setOption={this.setOptionHandler}
+                    toggleOrder={this.toggleOrderHandler}
+                    orderIcon={this.state.orderIcon}
                 />
 
                 {filteredSeriesList.map((series) =>

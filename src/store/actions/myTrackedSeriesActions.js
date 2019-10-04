@@ -29,6 +29,13 @@ export const fireBaseFetchSucces = (options, series) => {
     }
 };
 
+export const fireBaseDeleteSeriesSucces = (seriesId) => {
+    return {
+        type: actionTypes.FIREBASE_DELETE_SERIES_SUCCES,
+        seriesId: seriesId
+    }
+};
+
 export const fireBaseFail = () => {
     return {
         type: actionTypes.FIREBASE_FAIL
@@ -52,7 +59,6 @@ export const saveMySeries = (token, userId, seriesData) => {
 
 export const saveMyOptions = (token, userId, options) => {
     return dispatch => {
-        // dispatch(fireBaseStart());
         axios.put(`${userId}/options.json?auth=` + token, options)
             .then((response) => {
                 dispatch(fireBaseSaveOptionsSucces(options))
@@ -62,15 +68,30 @@ export const saveMyOptions = (token, userId, options) => {
             });
     }};
 
-export const fetchMyData = () => {
+export const deleteMySeries = (seriesId) => {
+    return (dispatch, getState) => {
+        dispatch(fireBaseStart());
+        // we get the auth data here directly from the store, not from Caller
+        axios.delete(`/${getState().auth.userId}/series/${seriesId}.json?auth=` + getState().auth.idToken)
+            .then((response) => {
+                console.log(response);
+                dispatch(fireBaseDeleteSeriesSucces(seriesId))
+            })
+            .catch(error => {
+                dispatch(fireBaseFail(error));
+            });
+    }
+};
+
+export const fetchMyData = (seriesId) => {
     return (dispatch, getState) => {
         dispatch(fireBaseStart());
         // we get the auth data here directly from the store, not from Caller
         axios.get(`/${getState().auth.userId}.json?auth=` + getState().auth.idToken)
             .then((response) => {
                 console.log(response);
-               const options = response.data.options;
-               const series = [];
+                const options = response.data.options;
+                const series = [];
                 for (let key in response.data.series) {
                     series.push(
                         {
@@ -83,7 +104,5 @@ export const fetchMyData = () => {
             .catch(error => {
                 dispatch(fireBaseFail(error));
             });
-    }
+    };
 };
-
-// fetchmyoptions

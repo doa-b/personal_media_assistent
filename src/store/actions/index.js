@@ -13,5 +13,6 @@ export {
 export {
     saveMySeries,
     saveMyOptions,
-    fetchMyData
+    fetchMyData,
+    deleteMySeries
 } from './myTrackedSeriesActions'

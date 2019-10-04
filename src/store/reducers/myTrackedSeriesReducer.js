@@ -32,7 +32,7 @@ const fetchMyData = (state, action) => {
     return updateObject(state, newState)
 };
 
-const SaveMyOptions = (state, action) => {
+const saveMyOptions = (state, action) => {
     return updateObject(state, {
         options: action.options,
         error: null,
@@ -40,9 +40,17 @@ const SaveMyOptions = (state, action) => {
     })
 };
 
-const SaveMySeries = (state, action) => {
+const saveMySeries = (state, action) => {
     return updateObject(state, {
         series: state.series.concat(action.series),
+        error: null,
+        loading: false
+    })
+};
+
+const deleteMySeries = (state, action) => {
+    return updateObject(state, {
+        series: state.series.filter(serie => serie.id !== action.seriesId),
         error: null,
         loading: false
     })
@@ -53,17 +61,18 @@ const myTrackedSeriesReducer = (state = initialState, action) => {
         case actionTypes.FIREBASE_FETCH_DATA_SUCCES:
             return fetchMyData(state, action);
         case actionTypes.FIREBASE_SAVE_OPTIONS_SUCCES:
-            return SaveMyOptions(state, action);
+            return saveMyOptions(state, action);
         case actionTypes.FIREBASE_SAVE_SERIES_SUCCES:
-            return SaveMySeries(state, action);
+            return saveMySeries(state, action);
         case actionTypes.FIREBASE_FAIL:
             return updateObject(state, {error: action.error, loading: false});
         case actionTypes.FIREBASE_START:
             return updateObject(state, {error: null, loading: true});
+        case actionTypes.FIREBASE_DELETE_SERIES_SUCCES:
+            return deleteMySeries(state, action);
         default:
             return state;
     }
-
 };
 
 export default myTrackedSeriesReducer;

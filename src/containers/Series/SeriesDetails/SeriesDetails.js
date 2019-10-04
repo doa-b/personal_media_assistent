@@ -80,6 +80,12 @@ class SeriesDetails extends Component {
             image: this.props.episode.still_path
         };
         this.props.onSaveSeries(this.props.idToken, this.props.userId, seriesData)
+        this.backToList();
+    };
+
+    deleteSeries = () => {
+        this.props.onDeleteSeries(this.state.seriesId);
+        this.backToList();
     };
 
     setValue = (value) => {
@@ -125,33 +131,33 @@ class SeriesDetails extends Component {
 
         return (
             <div className={classes.SeriesDetails}>
-            {picker}
-            <p onClick={this.backToList}>back to list</p>
-            {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
+                {picker}
+                <p onClick={this.backToList}>back to list</p>
+                {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
 
-            <p>Next Episode to watch
+                <p>Next Episode to watch
 
-            </p>
-            <label>
-                Season
-                <span
-                    className={classes.number}
-                    onClick={() => this.changeNumberHandler('season')}>
+                </p>
+                <label>
+                    Season
+                    <span
+                        className={classes.number}
+                        onClick={() => this.changeNumberHandler('season')}>
                 {this.state.season}</span>
-            </label>
-            <label>
-                Episode
-                <span className={classes.number}
-                      onClick={() => this.changeNumberHandler('episode')}>
+                </label>
+                <label>
+                    Episode
+                    <span className={classes.number}
+                          onClick={() => this.changeNumberHandler('episode')}>
                 {this.state.episode}</span>
-            </label>
-                {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/> }
-            <p>
-                <br/>
-            <button onClick={this.showState}>load details</button>
-            <button onClick={this.saveSeries}>Save</button>
-            </p>
-        </div>);
+                </label>
+                {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/>}
+                <p>
+                    <br/>
+                    <button onClick={this.saveSeries}>Save</button>
+                    <button onClick={this.deleteSeries}>Delete</button>
+                </p>
+            </div>);
 
     }
 }
@@ -174,7 +180,10 @@ const mapDispatchtoProps = (dispatch) => {
             dispatch(actions.fetchEpisodeDetails(seriesId, season, episode)),
 
         onSaveSeries: (token, userId, seriesData) =>
-            dispatch(actions.saveMySeries(token, userId, seriesData))
+            dispatch(actions.saveMySeries(token, userId, seriesData)),
+
+        onDeleteSeries: (seriesId) =>
+            dispatch(actions.deleteMySeries(seriesId))
     };
 };
 
