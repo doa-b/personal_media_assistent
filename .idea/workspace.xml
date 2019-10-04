@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d6efb2d-828b-47d4-89d1-429d0a33d734" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/HamburgerMenu/HamburgerMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/SideDrawer/HamburgerMenu/HamburgerMenu.module.css" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,7 +78,7 @@
           <entry key="js" value="39964" />
           <entry key="json" value="51" />
           <entry key="md" value="318" />
-          <entry key="txt" value="1619" />
+          <entry key="txt" value="1656" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -89,7 +88,7 @@
           <entry key="JSON" value="51" />
           <entry key="JavaScript" value="39964" />
           <entry key="Markdown" value="318" />
-          <entry key="PLAIN_TEXT" value="1689" />
+          <entry key="PLAIN_TEXT" value="1726" />
           <entry key="VTL" value="11" />
         </counts>
       </usages-collector>
@@ -225,7 +224,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
+                <state relative-caret-position="748">
                   <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
@@ -454,6 +453,21 @@
               <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="SideDrawer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Series" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -600,7 +614,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570189993135" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570190146471" />
     <property name="last_opened_file_path" value="D:/PROJECTS/burger-builder" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -674,7 +688,7 @@
       <workItem from="1569921030296" duration="26330000" />
       <workItem from="1570024137424" duration="7672000" />
       <workItem from="1570176377456" duration="1372000" />
-      <workItem from="1570178305362" duration="11342000" />
+      <workItem from="1570178305362" duration="11648000" />
     </task>
     <task id="LOCAL-00001" summary="Created Responsive layout closes #4">
       <created>1568024706359</created>
@@ -879,11 +893,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570187675462</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added &quot;are you sure&quot; prompt Closes #10">
+      <created>1570190109357</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1570190109357</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238601000" />
+    <option name="totallyTimeSpent" value="238907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -896,9 +917,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.23454158" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.35181236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -938,7 +958,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Routes and Login / Sign-up Page Closes #15" />
     <MESSAGE value="Starting to add Firebase Auth" />
     <MESSAGE value="Added firebase Authentication. ERROR: 2 way binding is broken" />
     <MESSAGE value="Added firebase login with Auth Reducer &amp; Actions. Closes #16" />
@@ -963,7 +982,8 @@
     <MESSAGE value="Moved SearchBar, FilterBar and SortBar to their own components. Closes #48&#10;Added CSS to ListPicker" />
     <MESSAGE value="Added Delete Series Closes #39" />
     <MESSAGE value="Improved loading and saving" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved loading and saving" />
+    <MESSAGE value="Added &quot;are you sure&quot; prompt Closes #10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;are you sure&quot; prompt Closes #10" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build/favicon-32x32.png">
@@ -1266,7 +1286,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="748">
           <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
