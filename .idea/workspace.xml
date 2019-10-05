@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d6efb2d-828b-47d4-89d1-429d0a33d734" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hoc/asyncComponent/asyncComponent.js" afterDir="false" />
+    <list default="true" id="9d6efb2d-828b-47d4-89d1-429d0a33d734" name="Default Changelist" comment="Added  #20">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/NumberPicker.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/NumberPicker.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/seriesActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/seriesActions.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,27 +20,28 @@
     <session id="-1716003674">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="13" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="79" />
+          <entry key="css" value="80" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
           <entry key="ico" value="2" />
-          <entry key="js" value="205" />
+          <entry key="js" value="212" />
           <entry key="json" value="7" />
           <entry key="lock" value="1" />
           <entry key="md" value="3" />
@@ -50,11 +54,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="79" />
+          <entry key="CSS" value="80" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="19" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="205" />
+          <entry key="JavaScript" value="212" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="TypeScript" value="1" />
@@ -64,76 +68,76 @@
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="22" />
+          <entry key="ESLintLanguageService" value="23" />
           <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2472" />
+          <entry key="css" value="2478" />
           <entry key="dummy" value="52" />
           <entry key="ft" value="11" />
           <entry key="gitignore" value="18" />
           <entry key="html" value="65" />
-          <entry key="js" value="40119" />
+          <entry key="js" value="43656" />
           <entry key="json" value="51" />
           <entry key="md" value="318" />
-          <entry key="txt" value="1686" />
+          <entry key="txt" value="1741" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2472" />
+          <entry key="CSS" value="2478" />
           <entry key="HTML" value="65" />
           <entry key="JSON" value="51" />
-          <entry key="JavaScript" value="40119" />
+          <entry key="JavaScript" value="43656" />
           <entry key="Markdown" value="318" />
-          <entry key="PLAIN_TEXT" value="1756" />
+          <entry key="PLAIN_TEXT" value="1811" />
           <entry key="VTL" value="11" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1908622">
+    <splitter split-orientation="horizontal" split-proportion="0.3990547">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.js">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/store/actions/seriesActions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="616">
-                  <caret line="120" selection-start-line="120" selection-end-line="120" />
+                <state relative-caret-position="646">
+                  <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
                   <folding>
-                    <element signature="e#0#39#0" expanded="true" />
+                    <element signature="e#0#41#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/hoc/Layout/Layout.js">
+            <entry file="file://$PROJECT_DIR$/src/components/Series/EpisodeDetails/EpisodeDetails.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
                   <folding>
-                    <element signature="e#0#39#0" expanded="true" />
+                    <element signature="e#0#26#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js">
+            <entry file="file://$PROJECT_DIR$/src/store/actions/myTrackedSeriesActions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="103" column="64" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="103" selection-end-column="64" />
+                <state relative-caret-position="612">
+                  <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
                   <folding>
-                    <element signature="e#0#39#0" expanded="true" />
+                    <element signature="e#0#45#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="306">
@@ -153,7 +157,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/UI/Input/ListPicker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
+                <state relative-caret-position="561">
                   <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
@@ -185,7 +189,7 @@
             <entry file="file://$PROJECT_DIR$/build/index.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="17">
-                  <caret line="1" column="2208" selection-start-line="1" selection-start-column="2208" selection-end-line="1" selection-end-column="2208" />
+                  <caret line="1" column="3891" selection-start-line="1" selection-start-column="3891" selection-end-line="1" selection-end-column="3891" />
                 </state>
               </provider>
             </entry>
@@ -198,28 +202,40 @@
             <entry file="file://$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.module.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="323">
-                  <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+                  <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Series/SeriesListItem/SeriesListItem.module.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
+                <state relative-caret-position="378">
+                  <caret line="148" column="14" lean-forward="true" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="197">
+                  <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/shared/utility.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="595">
+                  <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -229,11 +245,11 @@
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+                <state relative-caret-position="616">
+                  <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -244,8 +260,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+                <state relative-caret-position="425">
+                  <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -254,19 +270,7 @@
             <entry file="file://$PROJECT_DIR$/src/store/actions/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="204">
-                  <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/store/actions/myTrackedSeriesActions.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-                  <folding>
-                    <element signature="e#0#45#0" expanded="true" />
-                  </folding>
+                  <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -274,7 +278,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/store/reducers/myTrackedSeriesReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
+                <state relative-caret-position="1173">
                   <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
                 </state>
               </provider>
@@ -284,7 +288,7 @@
             <entry file="file://$PROJECT_DIR$/src/store/actions/actionTypes.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
-                  <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+                  <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -314,6 +318,8 @@
       <find>firebaseId</find>
       <find>seriesDetails</find>
       <find>showDetails</find>
+      <find>stored</find>
+      <find>getSeriesStatus</find>
     </findStrings>
     <replaceStrings>
       <replace>tmdb</replace>
@@ -338,7 +344,6 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/store/actions/authActions.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/seriesReducer2.js" />
-        <option value="$PROJECT_DIR$/src/store/actions/seriesActions.js" />
         <option value="$PROJECT_DIR$/src/components/SeriesListItem/SeriesListItem.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/seriesReducer.js" />
         <option value="$PROJECT_DIR$/src/containers/SeriesList/SeriesList.js" />
@@ -347,7 +352,6 @@
         <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.module.css" />
         <option value="$PROJECT_DIR$/src/components/Series/EpisodeDetails/EpisodeDetails.module.css" />
         <option value="$PROJECT_DIR$/src/components/Series/SeriesDetails/SeriesDetailsMain.js" />
-        <option value="$PROJECT_DIR$/src/shared/utility.js" />
         <option value="$PROJECT_DIR$/src/components/Series/EpisodeDetails/EpisodeDetails.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.js" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -359,7 +363,6 @@
         <option value="$PROJECT_DIR$/src/containers/Authentication/Authentication.js" />
         <option value="$PROJECT_DIR$/src/components/Series/SeriesListItem/SeriesListItem.module.css" />
         <option value="$PROJECT_DIR$/src/components/UI/Input/NumberPicker.js" />
-        <option value="$PROJECT_DIR$/src/components/UI/Input/NumberPicker.module.css" />
         <option value="$PROJECT_DIR$/src/components/UI/SearchBar/SearchBar.module.css" />
         <option value="$PROJECT_DIR$/src/components/UI/FilterBar/FilterBar.module.css" />
         <option value="$PROJECT_DIR$/src/components/UI/FilterBar/FilterBar.js" />
@@ -374,13 +377,16 @@
         <option value="$PROJECT_DIR$/src/store/actions/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/store/actions/myTrackedSeriesActions.js" />
         <option value="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.module.css" />
-        <option value="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/myTrackedSeriesReducer.js" />
-        <option value="$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js" />
         <option value="$PROJECT_DIR$/src/components/UI/Input/areYouSure.module.css" />
         <option value="$PROJECT_DIR$/src/components/UI/Input/areYouSure.js" />
-        <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/Input/NumberPicker.module.css" />
+        <option value="$PROJECT_DIR$/src/store/actions/seriesActions.js" />
+        <option value="$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js" />
+        <option value="$PROJECT_DIR$/src/shared/utility.js" />
+        <option value="$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js" />
+        <option value="$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js" />
       </list>
     </option>
   </component>
@@ -477,6 +483,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Series" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Series" type="462c0819:PsiDirectoryNode" />
+              <item name="EpisodeDetails" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
@@ -603,6 +617,12 @@
               <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
               <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="personal_media_assistent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="personal_media_assistent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -628,7 +648,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570190798176" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570280648530" />
     <property name="last_opened_file_path" value="D:/PROJECTS/burger-builder" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -702,7 +722,8 @@
       <workItem from="1569921030296" duration="26330000" />
       <workItem from="1570024137424" duration="7672000" />
       <workItem from="1570176377456" duration="1372000" />
-      <workItem from="1570178305362" duration="12043000" />
+      <workItem from="1570178305362" duration="12614000" />
+      <workItem from="1570263523159" duration="16164000" />
     </task>
     <task id="LOCAL-00001" summary="Created Responsive layout closes #4">
       <created>1568024706359</created>
@@ -921,11 +942,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570190320809</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Added lazy loading to optimize speed Closes #20">
+      <created>1570190901000</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1570190901000</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239302000" />
+    <option name="totallyTimeSpent" value="256037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -940,7 +968,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.27665246" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49898168" visible="true" weight="0.21055438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -980,7 +1008,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added firebase Authentication. ERROR: 2 way binding is broken" />
     <MESSAGE value="Added firebase login with Auth Reducer &amp; Actions. Closes #16" />
     <MESSAGE value="Added token expiration timer and auto logout and auto login. closes #27 closes #28" />
     <MESSAGE value="Added login and auto logout to TVDB. closes #31" />
@@ -1005,20 +1032,10 @@
     <MESSAGE value="Improved loading and saving" />
     <MESSAGE value="Added &quot;are you sure&quot; prompt Closes #10" />
     <MESSAGE value="Removed Hamburger Menu Closes #18" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Hamburger Menu Closes #18" />
+    <MESSAGE value="Added lazy loading to optimize speed Closes #20" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added lazy loading to optimize speed Closes #20" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/mstile-310x150.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/site.webmanifest" />
     <entry file="file://$PROJECT_DIR$/public/apple-touch-icon.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1102,35 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hoc/Layout/Layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/ListPicker.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/Name.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="2208" selection-start-line="1" selection-start-column="2208" selection-end-line="1" selection-end-column="2208" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/SortBar/SortBar.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1156,9 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,79 +1161,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/NumberPicker.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="20" selection-start-line="10" selection-start-column="3" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Series/SeriesListItem/SeriesListItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Series/SeriesListItem/SeriesListItem.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions/myTrackedSeriesActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/myTrackedSeriesReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -1261,12 +1177,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Authentication/Authentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hoc/Layout/Layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/AreYouSure/AreYouSure.module.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Input/ListPicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="561">
           <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1274,13 +1209,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js">
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/ListPicker.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="103" column="64" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="103" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/Name.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="3891" selection-start-line="1" selection-start-column="3891" selection-end-line="1" selection-end-column="3891" />
         </state>
       </provider>
     </entry>
@@ -1294,23 +1239,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Series/SeriesListItem/SeriesListItem.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="158" column="84" lean-forward="true" selection-start-line="158" selection-start-column="84" selection-end-line="158" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hoc/asyncComponent/asyncComponent.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/myTrackedSeriesReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="616">
+          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/myTrackedSeriesActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/NumberPicker.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Series/EpisodeDetails/EpisodeDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/seriesActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/utility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Series/AddSeries/AddSeries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesList/SeriesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Series/SeriesDetails/SeriesDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="148" column="14" lean-forward="true" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

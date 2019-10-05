@@ -37,7 +37,6 @@ export const fetchSeriesDetailsSucces = (details) => {
 };
 
 // Asynchronous ActionReducers
-
 export const findSeries = (query) => {
     return dispatch => {
         dispatch(seriesStart());
@@ -94,40 +93,3 @@ export const fetchEpisodeDetails = (seriesId, season, episode)=> {
             });
     }
 };
-// kan weg
-//
-// export const addSeries = (seriesId) => {
-//     return dispatch => {
-//         dispatch(seriesStart());
-//         axios.get(`/tv/${seriesId}`, {
-//             params: {
-//                 api_key: keys.TMDB_SLEUTEL
-//             }
-//         })
-//             .then((response) => {
-//                 console.log(response);
-//                 dispatch(AddSeriesSucces(response.data))
-//             })
-//             .catch((err) => {
-//                 console.log(err);
-//             });
-//     }
-// };
-//
-//
-// // Kan weg
-// export const saveMySeries = (token, userId, seriesData) => {
-//     return dispatch => {
-//     dispatch(fireBaseStart());
-//     const data = {
-//         userId: userId,
-//         SeriesData: seriesData
-//     };
-//     axios.post('/series.json?auth=' + token, data)
-//         .then((response) => {
-//             dispatch(fireBaseSaveOptionsSucces)
-//         })
-//         .catch(error => {
-//         dispatch(fireBaseFail(error));
-//     });
-// }};

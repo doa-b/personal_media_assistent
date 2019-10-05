@@ -29,8 +29,7 @@ class AddSeries extends Component {
             state: {
                 seriesId: id,
                 season: 1,
-                episode: 1,
-                stored: false
+                episode: 1
             }
         })
     };

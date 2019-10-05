@@ -12,8 +12,6 @@ import NumberPicker from '../../../components/UI/Input/NumberPicker'
 import AreYouSure from '../../../components/UI/AreYouSure/AreYouSure'
 import WithModal from '../../../hoc/withModal/withModal';
 import {getSeriesStatus} from '../../../shared/utility'
-import Aux from "../../../hoc/Auxiliary/Auxiliary";
-
 
 /**
  * Created by Doa on 17-9-2019.
@@ -24,9 +22,9 @@ class SeriesDetails extends Component {
         season: 0,
         episode: 0,
         picker: null,
-        stored: null,
+        stored: false,
         backToPreviousList: null,
-        showPrompt: false
+        showPrompt: false,
     };
 
     componentWillMount() {
@@ -34,7 +32,8 @@ class SeriesDetails extends Component {
             seriesId: this.props.location.state.seriesId,
             season: this.props.location.state.season,
             episode: this.props.location.state.episode,
-            stored: this.props.location.state.stored
+            stored: this.props.location.state.stored,
+
         });
     }
 
@@ -70,8 +69,8 @@ class SeriesDetails extends Component {
         let nextAirDate = (s.next_episode_to_air) ? s.next_episode_to_air.air_date : 'none';
         const seriesData = {
             name: s.name,
-            status: s.status,
-            myStatus: getSeriesStatus(this.props.series, this.state.season * this.state.episode),
+            status: getSeriesStatus(this.props.series, this.props.episode.id),
+            myStatus: this.state.myStatus,
             lastSeen: new Date(),
             nextAirDate: nextAirDate,
             seriesId: this.state.seriesId,
@@ -118,13 +117,56 @@ class SeriesDetails extends Component {
         })
     };
 
+    findNumberOfEpisodes = (season) => {
+        if (this.props.series.seasons[0]) {
+            // check if season 1 is stored in seasons[0], this is the case when there are no specials
+            if (this.props.series.seasons.length === this.props.series.number_of_seasons) {
+                season--
+            }
+        }
+
+        if (this.props.series.seasons[season]) {
+            if (this.props.series.seasons[season].episode_count) {
+                return this.props.series.seasons[season].episode_count
+            }
+        }
+        return 30
+    };
+
+    moveEpisodeForwardHandler = (episode) => {
+        if (episode < this.findNumberOfEpisodes(this.state.season)) {
+            this.setState({episode: episode + 1});
+        } else if (this.state.season < this.props.series.number_of_seasons) {
+            this.setState((prevState) => {
+                return {
+                    season: prevState.season + 1,
+                    episode: 1
+                };
+            })
+        }
+    };
+
     render() {
         console.log(this.state);
         let saving = null;
         let prompt = null;
         let picker = null;
         let max = 0;
+        let min = 0;
+        let status = null;
+        let nextButton = null;
 
+        if (this.props.episode && !this.props.loading) {
+            status = getSeriesStatus(this.props.series, this.props.episode.id);
+        }
+
+        if (status === 'available') {
+            nextButton = (
+                <button onClick={() => this.moveEpisodeForwardHandler(this.state.episode)}>
+                    Next Episode
+                </button>
+            )
+        }
 
         if (this.props.saving) {
             saving = <p>SAVING...</p>;
@@ -135,8 +177,14 @@ class SeriesDetails extends Component {
 
         if (this.state.picker) {
             if (this.state.picker === 'episode') {
-                max = (this.props.series.seasons[this.state.season].episode_count) ?
-                    this.props.series.seasons[this.state.season].episode_count : 1;
+                // if we are at latest season, find the latest episode
+                if (this.state.season === this.props.series.number_of_seasons) {
+                    console.log('last season');
+                    max = this.props.series.last_episode_to_air.episode_number
+                } else {
+                    max = this.findNumberOfEpisodes(this.state.season);
+                    min = 1;
+                }
             }
             else {
                 max = this.props.series.number_of_seasons;
@@ -146,7 +194,7 @@ class SeriesDetails extends Component {
                     <NumberPicker name={this.state.picker}
                                   current={this.state[this.state.picker]}
                                   max={max}
-                                  min={0}
+                                  min={min}
                                   chosen={(value) => this.setValue(value)}/>
                 </WithModal>
             );
@@ -186,6 +234,8 @@ class SeriesDetails extends Component {
                               onClick={() => this.changeNumberHandler('episode')}>
                 {this.state.episode}</span>
                     </label>
+                    {nextButton}
+                    <p>MY REALTIME STATUS: {status}</p>
                     {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/>}
                     <p>
                         <br/>

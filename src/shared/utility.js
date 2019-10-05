@@ -6,9 +6,9 @@ export const updateObject = (oldObject, updatedProperties) => {
 };
 
 // function for dynamic sorting
-export const compareValues = (key, order='ascending') => {
-    return function(a, b) {
-        if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+export const compareValues = (key, order = 'ascending') => {
+    return function (a, b) {
+        if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
             // property doesn't exist on either object
             return 0;
         }
@@ -35,18 +35,27 @@ export const filterByValue = (array, key, string) => {
     return array.filter(element => element[key].toLowerCase().includes(string.toLowerCase()));
 };
 
-export const getSeriesStatus = (series, currentEpisode) => {
-    const latestEpisode = series.last_episode_to_air.episode_number * series.last_episode_to_air.season_number;
-
-    if (currentEpisode < latestEpisode) return 'available';
-    else if (series.status === 'Returning Series') {
-            return 'paused'
+export const getSeriesStatus = (series, currentEpisodeId) => {
+    if (series.status !== 'Returning Series') {
+        if (currentEpisodeId === series.last_episode_to_air.id) {
+            return 'finished'
+        } else return 'available'
+    }
+    if (series.next_episode_to_air) {
+        if (currentEpisodeId === series.next_episode_to_air.id) {
+            console.log('next_episode_to_air');
+            return 'paused';
         }
-        return 'finished'
+    } else if (currentEpisodeId === series.last_episode_to_air.id) {
+        console.log('last_episode_to_air');
+        return 'paused';
+    }
+    return 'available'
 };
 
+
 export const convertStringToDate = (string) => {
-    var parts =string.split('-');
+    var parts = string.split('-');
     return new Date(parts[0], parts[1] - 1, parts[2]);
 };
 
