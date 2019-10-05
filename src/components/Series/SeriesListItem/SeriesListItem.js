@@ -1,16 +1,23 @@
 import React from 'react';
 
 import classes from './SeriesListItem.module.css'
-import seriesPlaceHolder from '../../../assets/images/series_placeholder.png'
 import stepForward from '../../../assets/images/step_forward.svg'
+import stop from '../../../assets/images/stop.svg'
+import pause from '../../../assets/images/pause.svg'
 
 /**
  * Created by Doa on 9-9-2019.
  */
 const SeriesListItem = (props) => {
     const p = props.series;
-    const nextAirDate = (p.nextAirDate === "none") ? <p>Series has ended</p> : <p>Next {p.nextAirDate}</p>
-    const url = "https://image.tmdb.org/t/p/w300/" + p.image
+    const nextAirDate = (p.nextAirDate === "none") ? <p>Series has ended</p> : <p>Next {p.nextAirDate}</p>;
+    const url = "https://image.tmdb.org/t/p/w300/" + p.image;
+    let myStatusIcon = stepForward;
+    if (props.series.myStatus === 'paused') {
+        myStatusIcon = pause
+    } else if (props.series.myStatus === 'finished') {
+        myStatusIcon = stop
+    }
 
     return (
         <div className={classes.cardBody}>
@@ -28,8 +35,8 @@ const SeriesListItem = (props) => {
                      alt='episode'/>
 
                 <img className={classes.forward}
-                     src={stepForward}
-                     alt='forward'
+                     src={myStatusIcon}
+                     alt='series Status'
                      onClick={props.Onforward}/>
             </div>
 

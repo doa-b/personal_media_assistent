@@ -69,8 +69,8 @@ class SeriesDetails extends Component {
         let nextAirDate = (s.next_episode_to_air) ? s.next_episode_to_air.air_date : 'none';
         const seriesData = {
             name: s.name,
-            status: getSeriesStatus(this.props.series, this.props.episode.id),
-            myStatus: this.state.myStatus,
+            status: s.status,
+            myStatus: getSeriesStatus(this.props.series, this.props.episode.id),
             lastSeen: new Date(),
             nextAirDate: nextAirDate,
             seriesId: this.state.seriesId,
