@@ -1,0 +1,38 @@
+/*.StarRating {*/
+    /*text-align:left;*/
+    /*padding: 0px;*/
+    /*margin: 0px;*/
+    /*flex-wrap: nowrap;*/
+/*}*/
+
+/*flex-display {*/
+     /*display: flex;*/
+ /*}*/
+/*.starRating {*/
+/*@extend %flex-display;*/
+    /*align-items: center;*/
+    /*font-size: 3em;*/
+    /*justify-content: center;*/
+    /*margin-top: 50px;*/
+/*}*/
+/*.backStars {*/
+/*@extend %flex-display;*/
+    /*color: #bb5252;*/
+    /*position: relative;*/
+    /*text-shadow: 4px 4px 10px #843a3a;*/
+/*}*/
+/*.frontStars {*/
+/*@extend %flex-display;*/
+    /*color: #FFBC0B;*/
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*position: absolute;*/
+    /*text-shadow: 2px 2px 5px #d29b09;*/
+    /*top: 0;*/
+    /*transition: all .5s*/
+/*}*/
+
+/*.percent {*/
+    /*color: #bb5252;*/
+    /*font-size: 1.5em;*/
+/*}*/

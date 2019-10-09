@@ -1,9 +1,9 @@
 import React from 'react';
-import ScoreIndicator from 'react-score-indicator'
-import { convertStringToDate} from '../../../shared/utility'
-
+import { convertStringToDate } from '../../../shared/utility'
 
 import classes from './EpisodeDetails.module.css'
+
+import StarRating from '../../UI/StarRating/StarRating'
 
 /**
  * Created by Doa on 1-10-2019.
@@ -21,13 +21,13 @@ const EpisodeDetails = (props) => {
 
     return (
         <div className={classes.EpisodeDetails}>
-
             {available}
             <div className={classes.Top}>
                 <img src={url}
                      alt='episode still'/>
                 <div className={classes.ScoreIndicator}>
-                <ScoreIndicator value={props.episode.vote_average * 10} maxValue={100} width={120}/>
+                <StarRating
+                rating={props.episode.vote_average * 10} />
                 </div>
             </div>
             <p>{props.episode.overview}</p>

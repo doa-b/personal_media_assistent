@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './SeriesDetailsMain.module.css'
 
-import ScoreIndicator from 'react-score-indicator'
+import StarRating from '../../UI/StarRating/StarRating'
 
 import Poster from '../../UI/TmdbImages/Poster'
 
@@ -40,7 +40,7 @@ const seriesDetailsMain = (props) => {
                 {nextEpisode}
                 {'first air date: ' + props.details.first_air_date}
 
-            <ScoreIndicator value={props.details.vote_average * 10} maxValue={100}/>
+            <StarRating rating={props.details.vote_average * 10}/>
 
             {/*<ul>*/}
                 {/*{seasonList}*/}
