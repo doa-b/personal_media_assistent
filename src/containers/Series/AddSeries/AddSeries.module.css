@@ -15,9 +15,16 @@
     padding: 5px;
 }
 
-.AddSeries td, tr {
-    width: auto;
+.AddSeries td {
+    width: fit-content;
     padding: 1px 5px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.AddSeries tr {
+    width: fit-content;
+    padding: 1px 5px 1px 0px;
     text-align: left;
     cursor: pointer;
 }

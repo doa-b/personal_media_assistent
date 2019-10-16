@@ -1,6 +1,8 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
+import classes from './StarRating.module.css'
+
 const starRating = (props) => {
 
     let stars = [];
@@ -33,12 +35,12 @@ const starRating = (props) => {
             )
     }
     return (
-        <>
+        <div className={classes.StarRating}>
             <div className={'fa-lg'}>
                 {stars}
             </div>
-            {'  ' + rating + ' / 100'}
-        </>
+            {(props.details) ? '  ' + rating + ' / 100' : null}
+        </div>
     )
 };
 export default starRating;

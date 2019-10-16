@@ -1,13 +1,30 @@
 .EpisodeDetails {
     padding: 3px;
     margin: 10px;
+    background-color: #eeeeee;
 }
-/*.Top {*/
-    /*display: flex;*/
-    /*width: available;*/
-    /*height: 100px;*/
 
-/*}*/
+.Title {
+    font-weight: bold;
+    text-align: center;
+    margin: 2px;
+}
+
+.Img {
+    width: 100%;
+    height: auto;
+}
+
+.Top {
+    margin: 0px 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Overview {
+    magin: 0px 5px;
+    padding: 0px;
+}
 
 /*.Top img {*/
     /*height: 80px;*/

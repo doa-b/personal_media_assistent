@@ -36,19 +36,21 @@ export const filterByValue = (array, key, string) => {
 };
 
 export const getSeriesStatus = (series, currentEpisodeId) => {
-    if (series.status !== 'Returning Series') {
-        if (currentEpisodeId === series.last_episode_to_air.id) {
-            return 'finished'
-        } else return 'available'
-    }
-    if (series.next_episode_to_air) {
-        if (currentEpisodeId === series.next_episode_to_air.id) {
-            console.log('next_episode_to_air');
+    if (series) {
+        if (series.status !== 'Returning Series') {
+            if (currentEpisodeId === series.last_episode_to_air.id) {
+                return 'finished'
+            } else return 'available'
+        }
+        if (series.next_episode_to_air) {
+            if (currentEpisodeId === series.next_episode_to_air.id) {
+                console.log('next_episode_to_air');
+                return 'paused';
+            }
+        } else if (currentEpisodeId === series.last_episode_to_air.id) {
+            console.log('last_episode_to_air');
             return 'paused';
         }
-    } else if (currentEpisodeId === series.last_episode_to_air.id) {
-        console.log('last_episode_to_air');
-        return 'paused';
     }
     return 'available'
 };

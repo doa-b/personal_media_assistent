@@ -1,17 +1,17 @@
 import React from 'react';
-
+import Img from 'react-image';
 import classes from './SeriesDetailsMain.module.css'
-
 import StarRating from '../../UI/StarRating/StarRating'
+import seriesPlaceholder from '../../../assets/images/series_placeholder.png';
 
-import Poster from '../../UI/TmdbImages/Poster'
+
 
 /**
  * Created by Doa on 17-9-2019.
  */
 const seriesDetailsMain = (props) => {
     console.log(props.details);
-    let nextEpisode = <h4>Series has ended</h4>;
+    let nextEpisode = <i className={classes.Ended}>Series has ended</i>;
     let next = props.details.next_episode_to_air;
     let url = "https://image.tmdb.org/t/p/w500/" + props.details.poster_path;
 
@@ -25,27 +25,36 @@ const seriesDetailsMain = (props) => {
     );
     if (next) {
         nextEpisode = (
-            <div>
-                <h4> Next Episode {next.air_date} </h4>
-                <p> S{next.season_number} E{next.episode_number} </p>
-                <p> {next.name} </p>
+            <div className={classes.Next}>
+                <p>Newest episode: <span>"{next.name}"</span></p>
+                <p>
+                    <span>(S{next.season_number} E{next.episode_number})</span>
+                    on <span>{next.air_date}</span>
+                    </p>
             </div>
         )
     }
     return (
-        <div className={classes.SeriesDetailsMain}>
-            <img src={url}></img>
-            <p>{props.details.overview}</p>
-                {props.details.number_of_episodes} episodes in {props.details.number_of_seasons} seasons
+        <>
+            <div className={classes.Top}>
+                <span className={classes.Name}>{props.details.name}</span>
+                <StarRating rating={props.details.vote_average * 10}/>
+            </div>
+            <Img className={classes.Img}
+                 src={[url, seriesPlaceholder]}
+                 alt='episode still'/>
+            <div className={classes.SeriesDetailsMain}>
+                <div className={classes.Info}>
+                    <p>First air date:<span>{props.details.first_air_date}</span></p>
+                    <p>
+                        <span>{props.details.number_of_episodes}</span>
+                        episodes in<span>{props.details.number_of_seasons}</span>seasons
+                    </p>
+                </div>
+                <p>{props.details.overview}</p>
                 {nextEpisode}
-                {'first air date: ' + props.details.first_air_date}
-
-            <StarRating rating={props.details.vote_average * 10}/>
-
-            {/*<ul>*/}
-                {/*{seasonList}*/}
-            {/*</ul>*/}
-        </div>
+            </div>
+        </>
     );
 };
 

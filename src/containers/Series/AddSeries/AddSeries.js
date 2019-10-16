@@ -44,7 +44,7 @@ class AddSeries extends Component {
                 <table>
                     <tbody>
                     <tr>
-                        <th>First aired</th>
+                        <th>First air date </th>
                         <th>Name</th>
                     </tr>
                     {this.props.results.map((result) => {

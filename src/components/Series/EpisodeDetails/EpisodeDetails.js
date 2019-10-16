@@ -1,16 +1,21 @@
 import React from 'react';
-import { convertStringToDate } from '../../../shared/utility'
+import Img from 'react-image';
+
+import {convertStringToDate} from '../../../shared/utility'
+import seriesPlaceholder from '../../../assets/images/series_placeholder.png'
+import StarRating from '../../UI/StarRating/StarRating'
+import Spinner from '../../UI/Spinner/Spinner'
 
 import classes from './EpisodeDetails.module.css'
 
-import StarRating from '../../UI/StarRating/StarRating'
+
 
 /**
  * Created by Doa on 1-10-2019.
  */
 const EpisodeDetails = (props) => {
 
-    let url = "https://image.tmdb.org/t/p/w300/" + props.episode.still_path;
+    let url = "https://image.tmdb.org/t/p/original/" + props.episode.still_path;
     let airDateParts = props.episode.air_date.split('-');
     let airDate = new Date(airDateParts[0], airDateParts[1] - 1, airDateParts[2]);
     let available = <p style={{color: 'green'}}>Available</p>
@@ -21,16 +26,18 @@ const EpisodeDetails = (props) => {
 
     return (
         <div className={classes.EpisodeDetails}>
-            {available}
+            <p className={classes.Title}> {props.episode.name} </p>
+            <Img className={classes.Img}
+                 src={[url, seriesPlaceholder]}
+                 alt='episode still'
+            loader={<Spinner/>}/>
             <div className={classes.Top}>
-                <img src={url}
-                     alt='episode still'/>
-                <div className={classes.ScoreIndicator}>
                 <StarRating
-                rating={props.episode.vote_average * 10} />
-                </div>
+                    rating={props.episode.vote_average * 10}
+                    details/>
+                {available}
             </div>
-            <p>{props.episode.overview}</p>
+            <span className={classes.Overview}>{props.episode.overview}</span>
         </div>
     );
 };

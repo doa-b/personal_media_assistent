@@ -1,8 +1,57 @@
 .SeriesDetailsMain {
-    width: 100%;
+    margin: 2px 5px 0px 5px;
+}
+.SeriesDetailsMain span {
+    color: darkgrey;
+    margin: 0px 5px
 }
 
-.SeriesDetailsMain img {
+.SeriesDetailsMain p {
+    margin: 3px 0px;
+}
+
+.Name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.Air {
+    text-align: center;
+}
+.Top {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+    margin: 0px 2px;
+}
+
+.Img {
     width: 100%;
     height: auto;
+}
+
+.Info {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Next {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #999;
+    box-shadow: 0 2px 3px #ccc;
+    flex: border-box;
+    margin: 0px 2px;
+    padding: 3px;
+}
+
+.Ended {
+    font-weight: bold;
+    color: red;
 }

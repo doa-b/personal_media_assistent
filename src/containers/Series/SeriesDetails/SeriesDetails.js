@@ -215,30 +215,27 @@ class SeriesDetails extends Component {
                 {prompt}
                 <div className={classes.SeriesDetails}>
                     {picker}
-                    <p onClick={this.backToList}>back to list</p>
+                    {/*<p onClick={this.backToList}>back to list</p>*/}
                     {(this.props.series) ? <SeriesDetailsMain details={this.props.series}/> : <Spinner/>}
 
-                    <p>Next Episode to watch
-
-                    </p>
+                    <h3>My next episode to watch</h3>
+                    <div className={classes.Next}>
                     <label>
-                        Season
-                        <span
-                            className={classes.number}
-                            onClick={() => this.changeNumberHandler('season')}>
+                        Season <span
+                        className={classes.number}
+                        onClick={() => this.changeNumberHandler('season')}>
                 {this.state.season}</span>
                     </label>
                     <label>
-                        Episode
-                        <span className={classes.number}
-                              onClick={() => this.changeNumberHandler('episode')}>
+                        Episode <span
+                        className={classes.number}
+                        onClick={() => this.changeNumberHandler('episode')}>
                 {this.state.episode}</span>
                     </label>
                     {nextButton}
-                    <p>MY REALTIME STATUS: {status}</p>
+                    </div>
                     {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/>}
                     <p>
-                        <br/>
                         {(!this.props.loading) ? <button onClick={this.saveSeries}>Save</button> : null}
                         {(this.state.stored) ? <button onClick={this.showPromptHandler}>Delete</button> : null}
                     </p>
