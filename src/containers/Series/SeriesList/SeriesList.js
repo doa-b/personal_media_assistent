@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-
 import classes from './SeriesList.module.css'
 import SeriesListItem from '../../../components/Series/SeriesListItem/SeriesListItem'
-import Aux from '../../../hoc/Auxiliary/Auxiliary'
 import * as actions from "../../../store/actions/index";
 import WithModal from '../../../hoc/withModal/withModal';
 import ListPicker from '../../../components/UI/Input/ListPicker';
@@ -98,7 +95,7 @@ class SeriesList extends Component {
         }
 
         return (
-            <Aux>
+            <>
                 {this.props.loading ? <p>loading</p> : null}
                 <WithModal show={(this.state.pickOption != null)}
                            modalClosed={this.closeModalHandler}>
@@ -128,7 +125,7 @@ class SeriesList extends Component {
                         <SeriesListItem
                             series={series}/>
                     </div>)}
-            </Aux>)
+            </>)
     }
 }
 

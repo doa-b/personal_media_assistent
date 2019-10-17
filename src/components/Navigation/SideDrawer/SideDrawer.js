@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import classes from './SideDrawer.module.css'
-import Aux from '../../../hoc/Auxiliary/Auxiliary'
 import Avatar from '../../UI/Avatar/Avatar'
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
@@ -17,7 +16,7 @@ const sideDrawer = (props) => {
     }
 
     return (
-        <Aux>
+        <>
             <Backdrop show={props.open} clicked={props.closed}/>
             <div className={attachedClasses.join(' ')} onClick={props.closed}>
                 <div className={classes.AvatarHeight}>
@@ -28,7 +27,7 @@ const sideDrawer = (props) => {
                 </div>
             </div>
 
-        </Aux>
+        </>
     );
 };
 
