@@ -1,6 +1,8 @@
 export {
-    auth,
-    logout,
+    login,
+    updateProfile,
+    register,
+    preLogout,
     authCheckState
 } from './authActions'
 
@@ -14,5 +16,6 @@ export {
     saveMySeries,
     saveMyOptions,
     fetchMyData,
-    deleteMySeries
+    deleteMySeries,
+    clearMyData
 } from './myTrackedSeriesActions'

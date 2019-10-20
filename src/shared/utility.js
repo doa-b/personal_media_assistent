@@ -55,10 +55,25 @@ export const getSeriesStatus = (series, currentEpisodeId) => {
     return 'available'
 };
 
-
 export const convertStringToDate = (string) => {
     var parts = string.split('-');
     return new Date(parts[0], parts[1] - 1, parts[2]);
+};
+
+export const addToLocalStorage = (token, expiresIn, userId) => {
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+    localStorage.setItem('token', token);
+    localStorage.setItem('expirationDate', expirationDate);
+    localStorage.setItem('userId', userId);
+    localStorage.setItem('hasAccount', true);
+
+};
+
+export const removeFromLocalStorage = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('expirationDate');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('userName');
 };
 
 

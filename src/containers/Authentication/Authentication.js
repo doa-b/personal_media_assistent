@@ -1,126 +1,113 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+
+import RegistrationForm from '../../forms/RegistrationForm/RegistrationForm';
+import LoginForm from '../../forms/LoginForm/LoginForm';
+import * as actions from '../../store/actions';
+import connect from 'react-redux/es/connect/connect';
 
 import classes from './Authentication.module.css'
 
-import Name from '../../components/UI/Input/Name'
-import Email from '../../components/UI/Input/Email'
-import Password from '../../components/UI/Input/Password'
-import * as constants from '../../shared/constants'
-import * as actions from '../../store/actions/index'
-import { updateObject } from "../../shared/utility";
-
 /**
- * Created by Doa on 11-9-2019.
+ * Created by Doa on 18-10-2019.
  */
 class Authentication extends Component {
 
-    state = {
-        formData: {
-            name: 'Mr Examplary',
-            email: 'example@test.com',
-            password: '123456',
-            photoUrl: 'https://images1.persgroep.net/rcs/Lv_LIy7x1aZbGNHgwU46vnEznhc/diocontent/100818159/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.9'
-        },
-        operation: constants.AUTH_SIGN_IN
-    };
+    constructor(props) {
+        super(props);
 
-    switchAuthModeHandler = (operation) => {
-        this.setState(updateObject(this.state, {operation: operation}))
-    };
+        const signIn = (localStorage.getItem('hasAccount'))? true : false
 
-    changeHandler = (event, controlName) => {
-        const updatedForm = updateObject(this.state.formData,
-            {[controlName]: event.target.value});
-        this.setState({formData: updatedForm});
-    };
-
-    submitHandler = (event) => {
-        event.preventDefault();
-        console.log(this.state);
-        if(this.state.operation === constants.AUTH_SIGN_UP) {
-            const options = {
-                search: '',
-                filter: '',
-                order: 'ascending',
-                sortBy: 'name'
-            };
-            this.props.onSaveOptions()
+        this.state = {
+            photoUrl: 'http://URLtest',
+            signIn: signIn
         }
-        this.props.onAuth(this.state.formData.email,
-            this.state.formData.password,
-            this.state.operation);
+    }
+
+    ToggleSignInHandler = () => {
+        this.setState(prevState => ({
+            signIn: !prevState.signIn
+        }))
     };
+
+    registrationHandler = (data) => {
+        console.log(data);
+        this.props.onRegister(data, this.state.photoUrl, false);
+    };
+
+    updateHandler = (data) => {
+        this.props.onUpdateProfile(this.props.idToken, data, this.state.photoUrl);
+    };
+
+    logInHandler = (data) => {
+        this.props.onLogin(data)
+
+    };
+
 
     render() {
+        let title = '';
+        let form = null;
+        let change = null;
 
-        let errorMessage = null;
-        if (this.props.error) {
-            errorMessage = (
-                <p className={classes.Error}>{this.props.error.message}</p>
+        if (this.props.userId) {
+            title = 'Update your profile';
+            form = (
+                <RegistrationForm
+                    name={this.props.name}
+                    email=''
+                    submit='update'
+                    save={this.updateHandler}
+                />
+            )
+        } else if (this.state.signIn) {
+            title = 'Please sign in';
+            form = (<LoginForm
+                email='example@test.com'
+                password='123456'
+                save={this.logInHandler}/>);
+            change = (
+                <p className={classes.Footer}>Don't have an account yet?
+                    <button
+                        onClick={this.ToggleSignInHandler}>
+                        Register
+                    </button>
+                </p>
+            )
+        } else {
+            title = 'Please Register now';
+            form = (
+                <RegistrationForm
+                    name='doa'
+                    email='kip@ei.com'
+                    submit={'Register Now!'}
+                    save={this.registrationHandler}
+                />);
+            change = (
+                <p className={classes.Footer}>Already have an account?
+                    <button
+                        onClick={this.ToggleSignInHandler}>
+                        Log in
+                    </button>
+                </p>
             )
         }
 
-        let header = '';
-        let footer = null;
-        switch (this.state.operation) {
-            case constants.AUTH_SIGN_UP: {
-                header = 'Sign up';
-                footer = (
-                    <p> Already have an account? <button
-                        onClick={() => this.switchAuthModeHandler(constants.AUTH_SIGN_IN)}>
-                        Sign in
-                    </button></p>);
-                break
-            }
-            case constants.AUTH_CHANGE_INFO: {
-                header = 'Change account info';
-                footer = (
-                    <p>Forgot password? <Link to={'/newpassword'}>Get new password</Link></p>
-                );
-                break
-            }
-            default : {
-                header = 'Sign in';
-                footer = (<p className={classes.footer}> Don't have an account yet? <button
-                    onClick={() => this.switchAuthModeHandler(constants.AUTH_SIGN_UP)}>
-                    Sign up
-                </button></p>);
-            }
-        }
-
-        let details = null;
-        if (this.state.operation !== constants.AUTH_SIGN_IN) {
-            details = <Name
-                value={this.state.formData.name}
-                changed={(event) => this.changeHandler(event, 'name')}/>
-        }
-
         return (
-            <div className={classes.Authentication}>
-                <h2> {header} </h2>
-                {errorMessage}
-                <form onSubmit={this.submitHandler}>
-                    {details}
-                    <Email
-                        value={this.state.formData.email}
-                        changed={(event) => this.changeHandler(event, 'email')}/>
-                    <Password
-                        value={this.state.formData.password}
-                        changed={(event) => this.changeHandler(event, 'password')}/>
-                    <button type='submit'>
-                        Submit
-                    </button>
-                </form>
-                {footer}
-            </div>);
-
+            <>
+                <h1 className={classes.Title}>{title}</h1>
+                {form}
+                {change}
+            </>
+        )
     }
 }
 
-const mapStatetoProps = (state) => {
+const mapStateToProps = (state) => {
     return {
+        userId: state.auth.userId,
+        idToken: state.auth.idToken,
+        name: state.auth.name,
+        photoUrl: state.auth.photoUrl,
         loading: state.auth.loading,
         error: state.auth.error
     }
@@ -128,11 +115,10 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => {
     return {
-        onAuth: (email, password, operation, name, photoUrl) =>
-            dispatch(actions.auth(email, password, operation, name, photoUrl)),
-        onSaveOptions: (token, userId, options) =>
-            dispatch(actions.saveMyOptions(token, userId, options))
+        onRegister: (data, photoUrl, isUpdate) => dispatch(actions.register(data, photoUrl)),
+        onUpdateProfile: (idToken, data, photoUrl) => dispatch(actions.updateProfile(idToken, data, photoUrl)),
+        onLogin: (data) => dispatch(actions.login((data)))
     }
 };
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(Authentication);
+export default connect(mapStateToProps, mapDispatchtoProps)(Authentication);

@@ -27,11 +27,13 @@ export const fireBaseSaveSeriesSucces = (series) => {
     }
 };
 
-export const fireBaseFetchSucces = (options, series) => {
+export const fireBaseFetchSucces = (options, series, userId) => {
+    console.log('Series ' + series)
     return {
         type: actionTypes.FIREBASE_FETCH_DATA_SUCCES,
         options: options,
-        series: series
+        series: series,
+        userId: userId
     }
 };
 
@@ -89,11 +91,14 @@ export const deleteMySeries = (seriesId) => {
     }
 };
 
-export const fetchMyData = (seriesId) => {
+export const fetchMyData = (userId) => {
     return (dispatch, getState) => {
         dispatch(fireBaseStart());
         // we get the auth data here directly from the store, not from Caller
-        axios.get(`/${getState().auth.userId}.json?auth=` + getState().auth.idToken)
+        console.log(userId);
+        const id = (userId) ? userId : getState().auth.userId;
+        console.log(id);
+        axios.get(`/${id}.json?auth=` + getState().auth.idToken)
             .then((response) => {
                 console.log(response);
                 const options = response.data.options;
@@ -105,10 +110,17 @@ export const fetchMyData = (seriesId) => {
                             id: key
                         });
                 }
-                dispatch(fireBaseFetchSucces(options, series))
+                dispatch(fireBaseFetchSucces(options, series, id))
             })
             .catch(error => {
                 dispatch(fireBaseFail(error));
             });
     };
+};
+
+export const clearMyData = () => {
+    console.log('clearing Data');
+    return {
+        type: actionTypes.CLEAR_MY_DATA
+    }
 };

@@ -29,7 +29,6 @@ const toolbar = (props) => (
                 icon={'home'}
                 size={'2x'}/>
         </Link>
-
         <Link
             to={'series/add'}>
         <FontAwesomeIcon

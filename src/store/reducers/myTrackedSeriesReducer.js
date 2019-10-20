@@ -9,7 +9,7 @@ const initialState = {
         order: 'ascending',
         sortBy: 'name'
     },
-    idToken: null,
+    userId: null,
     error: null,
     loading: false,
     saving: false
@@ -23,12 +23,14 @@ const fetchMyData = (state, action) => {
             options: action.options,
             series: action.series,
             loading: false,
-            error: null
+            error: null,
+            userId: action.userId
         };
     } else newState = {
         series: action.series,
         loading: false,
-        error: null
+        error: null,
+        userId: action.userId
     };
     return updateObject(state, newState)
 };
@@ -57,6 +59,21 @@ const deleteMySeries = (state, action) => {
     })
 };
 
+const clearMyData = (state) => {
+    return updateObject(state, {
+        series: [],
+        error: null,
+        saving: false,
+        userId: null,
+        options: {
+            search: '',
+            filter: 'none',
+            order: 'ascending',
+            sortBy: 'name'
+        },
+    })
+};
+
 const myTrackedSeriesReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.FIREBASE_FETCH_DATA_SUCCES:
@@ -73,6 +90,9 @@ const myTrackedSeriesReducer = (state = initialState, action) => {
             return updateObject(state, {error: null, saving: true});
         case actionTypes.FIREBASE_DELETE_SERIES_SUCCES:
             return deleteMySeries(state, action);
+        case actionTypes.CLEAR_MY_DATA:
+            return clearMyData(state);
+
         default:
             return state;
     }

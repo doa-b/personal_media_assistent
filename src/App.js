@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 import './App.css';
 import asyncComponent from './hoc/asyncComponent/asyncComponent'
 import * as actions from "./store/actions";
-import Layout from './hoc/Layout/Layout'
+import Layout from './hoc/Layout/Layout';
+import Register from './containers/Authentication/Authentication'
 
 
 const asyncAuth = asyncComponent(() => {

@@ -26,8 +26,9 @@ class SeriesList extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props.userId);
         this.props.onTryAutoSignup();
-        this.props.onFetchMyData();
+        this.props.onFetchMyData(this.props.userId); // Todo Check if this keeps working
     }
 
     showDetailsHandler = (mySeries) => {
@@ -149,8 +150,8 @@ const mapDispatchtoProps = (dispatch) => {
         onSaveOptions: (token, userId, options) =>
             dispatch(actions.saveMyOptions(token, userId, options)),
 
-        onFetchMyData: (token, userId) =>
-            dispatch(actions.fetchMyData(token, userId))
+        onFetchMyData: (userId) =>
+            dispatch(actions.fetchMyData(userId))
     };
 };
 

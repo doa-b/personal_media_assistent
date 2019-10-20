@@ -17,6 +17,8 @@ import {getSeriesStatus} from '../../../shared/utility'
  * Created by Doa on 17-9-2019.
  */
 class SeriesDetails extends Component {
+
+    //todo remove state here
     state = {
         seriesId: 57243,
         season: 1,
