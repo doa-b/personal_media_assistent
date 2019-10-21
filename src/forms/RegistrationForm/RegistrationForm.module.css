@@ -2,7 +2,7 @@
     background-color: whitesmoke;
     list-style-type: none;
     padding: 0;
-    margin: 0px 5px;
+    margin: 0 5px;
     border-radius: 3px;
 }
 .formRow {
@@ -17,9 +17,7 @@
 }
 
 .formRow button {
-    background: gray;
-    color: white;
-    border: 0;
+    align-items: center;
 }
 
 .textBox {

@@ -3,6 +3,16 @@
     padding: 5px;
 }
 
+.Title {
+    margin: 0 auto 10px auto;
+    text-align: center;
+}
+
+.Form {
+    display: flex;
+    justify-content: center;
+}
+
 .AddSeries table {
     width: 100%;
     border: 1px solid black;
@@ -24,7 +34,7 @@
 
 .AddSeries tr {
     width: fit-content;
-    padding: 1px 5px 1px 0px;
+    padding: 1px 5px 1px 0;
     text-align: left;
     cursor: pointer;
 }

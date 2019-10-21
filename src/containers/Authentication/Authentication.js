@@ -20,7 +20,7 @@ class Authentication extends Component {
     constructor(props) {
         super(props);
 
-        const signIn = (localStorage.getItem('hasAccount')) ? true : false
+        const signIn = (localStorage.getItem('hasAccount')) ? true : false;
 
         this.state = {
             photoUrl: this.props.photoUrl,
@@ -52,7 +52,7 @@ class Authentication extends Component {
         maxFiles: 1,
     };
 
-    componentDisplayMode = {
+    pickerDisplayMode = {
         type: 'button',
         customText: 'Choose your own Avatar',
         customClass: ''
@@ -70,6 +70,12 @@ class Authentication extends Component {
     };
 
     render() {
+        let errorMessage = null;
+        if (this.props.error) {
+            errorMessage = (
+                <p className={classes.Error}>{this.props.error.message}</p>
+            )
+        }
         let title = '';
         let form = null;
         let change = null;
@@ -82,7 +88,7 @@ class Authentication extends Component {
                 <div className={classes.ReactFileStack}>
                     <ReactFileStack
                         apikey={FILESTACK_SLEUTEL}
-                        componentDisplayMode={this.componentDisplayMode}
+                        componentDisplayMode={this.pickerDisplayMode}
                         actionOptions={this.pickerOptions}
                         options={this.basicOptions}
                         onSuccess={this.onFilePickerSucces}
@@ -111,10 +117,9 @@ class Authentication extends Component {
                 save={this.logInHandler}/>);
             change = (
                 <p className={classes.Footer}>Don't have an account yet?
-                    <button
-                        onClick={this.ToggleSignInHandler}>
-                        Register
-                    </button>
+                    <u onClick={this.ToggleSignInHandler}>
+                        Register now!
+                    </u>
                 </p>
             )
         } else {
@@ -128,19 +133,18 @@ class Authentication extends Component {
                 />);
             change = (
                 <p className={classes.Footer}>Already have an account?
-                    <button
-                        onClick={this.ToggleSignInHandler}>
-                        Log in
-                    </button>
+                    <u onClick={this.ToggleSignInHandler}>
+                        Sign in
+                    </u>
                 </p>
             )
         }
 
         return (
             <>
-
                 <h1 className={classes.Title}>{title}</h1>
                 {picker}
+                {errorMessage}
                 {form}
                 {change}
             </>
@@ -161,7 +165,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchtoProps = (dispatch) => {
     return {
-        onRegister: (data, photoUrl, isUpdate) => dispatch(actions.register(data, photoUrl)),
+        onRegister: (data, photoUrl) => dispatch(actions.register(data, photoUrl)),
         onUpdateProfile: (idToken, data, photoUrl) => dispatch(actions.updateProfile(idToken, data, photoUrl)),
         onLogin: (data) => dispatch(actions.login((data)))
     }

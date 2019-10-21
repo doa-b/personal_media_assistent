@@ -1,6 +1,7 @@
 .SideDrawer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     position: fixed;
     left: 0;
     top: 0;
@@ -8,7 +9,7 @@
     max-width: 70%;
     height: 100%;
     z-index: 200; /* side drawer should be above backdrop */
-    background-color: lightgreen;
+    background-color: lightgray;
     padding: 32px 16px;
     box-sizing: border-box; /* adjust the size to the padding */
     transition: transform 0.3s ease-out; /* transistion property reacts to changes of the transform property below
@@ -16,9 +17,18 @@
 }
 
 .SideDrawerBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     background-color: white;
-    top: 20%;
+    top: 10%;
     height: 80%;
+    padding: 10px 5px 10px 5px;
+}
+
+.AvatarHeight {
+    height: 20%;
+    margin-bottom: 5px;
 }
 
 @media (min-width: 500px) { /* if device width exceeds 500px, then the sideDrawer should not be visible*/
@@ -35,7 +45,3 @@
     transform: translateX(-100%); /* shift it to the left */
 }
 
-.AvatarHeight {
-    height: 20%;
-    margin-bottom: 32px;
-}

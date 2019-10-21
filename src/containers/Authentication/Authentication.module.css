@@ -1,5 +1,5 @@
 .Title {
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
     text-align: center;
 }
 
@@ -10,8 +10,10 @@
     background-color: lightgreen;
 }
 
-.Footer button {
-    margin: 0px 5px;
+.Footer u {
+    margin: 0 5px;
+    cursor: pointer;
+    color: #531883;
 }
 .Picker {
     display: flex;
@@ -29,4 +31,9 @@
 .AvatarHeight {
     display: flex;
     height: 100px;
+}
+
+.Error {
+    color: red;
+    font-weight: bold;
 }

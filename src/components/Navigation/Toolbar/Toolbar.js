@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
@@ -10,10 +10,37 @@ import Avatar from '../../UI/Avatar/Avatar'
 
 /**
  * Created by Doa on 8-9-2019.
+ *
  */
-const toolbar = (props) => (
-    <header className={classes.Toolbar}>
 
+
+const toolbar = (props) => {
+
+    let home = null;
+    let add = null;
+
+    if (props.auth) {
+        home = (
+            <Link
+                to={'/'}>
+                <FontAwesomeIcon
+                    className={classes.Icon}
+                    icon={'home'}
+                    size={'2x'}/>
+            </Link>
+        );
+        add = (
+            <Link
+                to={'series/add'}>
+                <FontAwesomeIcon
+                    className={classes.Icon}
+                    icon={'plus-circle'}
+                    size={'2x'}/>
+            </Link>
+        )
+    }
+    return (
+        <header className={classes.Toolbar}>
         <span
             onClick={props.drawerToggleClicked}
             className={classes.Hamburger}>
@@ -22,26 +49,14 @@ const toolbar = (props) => (
             size={'2x'}
         />
         </span>
-        <Link
-            to={'/'}>
-            <FontAwesomeIcon
-                className={classes.Icon}
-                icon={'home'}
-                size={'2x'}/>
-        </Link>
-        <Link
-            to={'series/add'}>
-        <FontAwesomeIcon
-            className={classes.Icon}
-            icon={'plus-circle'}
-            size={'2x'}/>
-        </Link>
-        <div className={classes.Avatar}>
-            <Avatar
-            url={props.avatar}/>
-        </div>
-
-    </header>
-);
+            {home}
+            {add}
+            <div className={classes.Avatar}>
+                <Avatar
+                    url={props.avatar}/>
+            </div>
+        </header>
+    )
+};
 
 export default toolbar;

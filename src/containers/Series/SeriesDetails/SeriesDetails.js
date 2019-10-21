@@ -177,7 +177,6 @@ class SeriesDetails extends Component {
         if (this.state.stored) {
             save = 'update'
         }
-        ;
 
         if (this.props.episode && !this.props.loading) {
             status = getSeriesStatus(this.props.series, this.props.episode.id);
@@ -224,7 +223,7 @@ class SeriesDetails extends Component {
         }
 
         if (this.state.showPrompt) {
-            console.log('showing Are You Sure')
+            console.log('showing Are You Sure');
             prompt = <WithModal show modalClosed={this.closeModalHandler}>
                 <AreYouSure
                     message={'Are you sure to delete ' + this.props.series.name + '?'}
@@ -258,7 +257,7 @@ class SeriesDetails extends Component {
                         {nextButton}
                     </div>
                     {(this.props.episode) ? <EpisodeDetails episode={this.props.episode}/> : <Spinner/>}
-                    <p>
+                    <p className={classes.Controls}>
                         {(!this.props.loading) ? <button onClick={this.saveSeries}>{save}</button> : null}
                         {(this.state.stored) ? <button onClick={this.showPromptHandler}>Delete</button> : null}
                     </p>

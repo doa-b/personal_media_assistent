@@ -62,9 +62,9 @@ class AddSeries extends Component {
 
         return (
             <div className={classes.AddSeries}>
+                <h2 className={classes.Title}>Add new Series</h2>
                 {loading}
-                <form onSubmit={this.submitHandler}>
-
+                <form className={classes.Form} onSubmit={this.submitHandler}>
                     <input type='text'
                            value={this.state.query}
                            placeholder='enter series title'

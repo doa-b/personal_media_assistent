@@ -17,21 +17,15 @@ const initialState = {
 
 const fetchMyData = (state, action) => {
     console.log(action.series);
-    let newState = null;
-    if (action.options) {
-        newState = {
-            options: action.options,
-            series: action.series,
-            loading: false,
-            error: null,
-            userId: action.userId
-        };
-    } else newState = {
+    let newState = {
         series: action.series,
         loading: false,
         error: null,
         userId: action.userId
     };
+    if (action.options) {
+        updateObject(newState, { options: action.options})
+    }
     return updateObject(state, newState)
 };
 
