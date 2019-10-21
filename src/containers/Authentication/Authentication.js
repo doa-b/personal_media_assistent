@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
+import connect from 'react-redux/es/connect/connect';
+import ReactFileStack from 'filestack-react'
+import {FILESTACK_SLEUTEL} from '../../kluis'
+
 
 import RegistrationForm from '../../forms/RegistrationForm/RegistrationForm';
 import LoginForm from '../../forms/LoginForm/LoginForm';
 import * as actions from '../../store/actions';
-import connect from 'react-redux/es/connect/connect';
+import Avatar from '../../components/UI/Avatar/Avatar';
+
 
 import classes from './Authentication.module.css'
 
@@ -15,11 +20,11 @@ class Authentication extends Component {
     constructor(props) {
         super(props);
 
-        const signIn = (localStorage.getItem('hasAccount'))? true : false
+        const signIn = (localStorage.getItem('hasAccount')) ? true : false
 
         this.state = {
-            photoUrl: 'http://URLtest',
-            signIn: signIn
+            photoUrl: this.props.photoUrl,
+            signIn: signIn,
         }
     }
 
@@ -43,11 +48,49 @@ class Authentication extends Component {
 
     };
 
+    pickerOptions = {
+        maxFiles: 1,
+    };
+
+    componentDisplayMode = {
+        type: 'button',
+        customText: 'Choose your own Avatar',
+        customClass: ''
+    };
+
+    onFilePickerSucces = (result) => {
+        console.log(result.filesUploaded[0].url);
+        this.setState({
+            photoUrl: result.filesUploaded[0].url
+        })
+    };
+
+    onFilePickerError = (error) => {
+        console.error('error', error)
+    };
 
     render() {
         let title = '';
         let form = null;
         let change = null;
+        let picker = (
+            <div className={classes.Picker}>
+                <div className={classes.AvatarHeight}>
+                    <Avatar
+                        url={this.state.photoUrl}/>
+                </div>
+                <div className={classes.ReactFileStack}>
+                    <ReactFileStack
+                        apikey={FILESTACK_SLEUTEL}
+                        componentDisplayMode={this.componentDisplayMode}
+                        actionOptions={this.pickerOptions}
+                        options={this.basicOptions}
+                        onSuccess={this.onFilePickerSucces}
+                        onError={this.onFilePickerError}
+                    />
+                </div>
+            </div>
+        );
 
         if (this.props.userId) {
             title = 'Update your profile';
@@ -60,6 +103,7 @@ class Authentication extends Component {
                 />
             )
         } else if (this.state.signIn) {
+            picker = null;
             title = 'Please sign in';
             form = (<LoginForm
                 email='example@test.com'
@@ -94,7 +138,9 @@ class Authentication extends Component {
 
         return (
             <>
+
                 <h1 className={classes.Title}>{title}</h1>
+                {picker}
                 {form}
                 {change}
             </>

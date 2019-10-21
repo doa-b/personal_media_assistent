@@ -30,11 +30,13 @@ class Layout extends Component {
         return (
             <>
                 <Toolbar
-                drawerToggleClicked={this.sideDrawerToggleHandler}/>
+                drawerToggleClicked={this.sideDrawerToggleHandler}
+                avatar={this.props.avatar}/>/>
                 <SideDrawer
                 closed={this.sideDrawerClosedHandler}
                 open={this.state.showSideDrawer}
-                auth={this.props.isAuthenticated}/>
+                auth={this.props.isAuthenticated}
+                avatar={this.props.avatar}/>
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
@@ -45,7 +47,8 @@ class Layout extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        isAuthenticated: state.auth.idToken !== null
+        isAuthenticated: state.auth.idToken !== null,
+        avatar: state.auth.photoUrl
     }
 };
 

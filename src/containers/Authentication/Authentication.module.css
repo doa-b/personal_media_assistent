@@ -13,4 +13,20 @@
 .Footer button {
     margin: 0px 5px;
 }
+.Picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
 
+.ReactFileStack {
+    border: #531883;
+    justify-content: center;
+    width: fit-content;
+}
+
+.AvatarHeight {
+    display: flex;
+    height: 100px;
+}

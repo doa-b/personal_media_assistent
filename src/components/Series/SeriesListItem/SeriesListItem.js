@@ -6,6 +6,7 @@ import stepForward from '../../../assets/images/step_forward.svg'
 import stop from '../../../assets/images/stop.svg'
 import pause from '../../../assets/images/pause.svg'
 import seriesPlaceholder from "../../../assets/images/series_placeholder.png";
+import Spinner from '../../UI/Spinner/Spinner'
 
 /**
  * Created by Doa on 9-9-2019.
@@ -34,6 +35,7 @@ const SeriesListItem = (props) => {
                 </div>
                 <Img className={classes.image}
                      src={[url, seriesPlaceholder]}
+                     loader={<Spinner/>}
                      alt='episode still'/>
                 <img className={classes.forward}
                      src={myStatusIcon}

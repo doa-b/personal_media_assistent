@@ -37,7 +37,8 @@ const toolbar = (props) => (
             size={'2x'}/>
         </Link>
         <div className={classes.Avatar}>
-            <Avatar/>
+            <Avatar
+            url={props.avatar}/>
         </div>
 
     </header>
