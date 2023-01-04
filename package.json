@@ -17,7 +17,7 @@
     "react-image": "^2.2.1",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "yup": "^0.27.0"
